@@ -62,3 +62,12 @@ Podstránky se stejnými URL: /osobni-znacka/, /firemni-znacka/, /sprava-socialn
 - Posledních 5 v registru: display Playfair, Bricolage, Young Serif, Playfair → Syne je nové písmo.
   Skladba (timeline + reels + oranžová plocha) se s nimi neshoduje. Bite Marks Media (také agentura):
   WebGL stuha, Playfair, mega menu – jiný směr.
+
+---
+
+## v2 (17. 10. 2026, podle Rafaela: „výrazně lepší“)
+- **Úvod = vrstvená scéna jako hledáček kamery:** rozhovor z CNN Prima News v rámu hledáčku (REC, běžící timecode, rohy), přes něj svislý reels (krátká smyčka z jejich videa s Petrem Vojnarem, bez zvuku, spouští se jen když je vidět), fotka ze studia a plovoucí karty s doloženými čísly (60 mil. Kč, 20M+, 100M+). Vrstvy mají při scrollu různou paralaxu (CSS scroll-driven). Pás „Důvěřují nám“ je součástí úvodu.
+- **Signature momenty:** (1) střihová osa BrandFormance (z v1, statická, playhead projede měsíc), (2) Mirka „před a po“: číslo portfolia roste 0 → 60 mil. Kč a osa M0–M3 se plní (CSS @property + view timeline), (3) pás reels + záběry ze zákulisí, který se při scrollu posouvá do strany (na mobilu swipe), (4) Vojta jako editorial s obřím jménem přes velkou fotku, CNN kartou a podcastem, (5) závěr jako celá oranžová plocha „Pojďme točit.“ s formulářem.
+- **Řemeslo:** filmové zrno jen na tmavých sekcích úvodu, metody a reels (koncept filmu a natáčení, ne celá stránka, ne fixed), jemné oranžové světlo za scénou a ve výsledcích, hover na kartách studií a reels, průběh scrollu v hlavičce.
+- Počty zhlédnutí u jednotlivých reels na webu klienta nejsou, proto u videí jen jméno, role a délka (nic nevymýšlíme).
+- Zrno: zakázaný vzor ve výchozím stavu, tady odůvodněný konceptem filmu (lokálně, opacity .07, bez position: fixed).

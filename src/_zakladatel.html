@@ -1,24 +1,37 @@
 {% set Z = data.obsah.zakladatel %}{% set M = data.podcast %}
 <section class="sekce zakladatel papir" id="o-nas" aria-labelledby="zakl-h">
-  <div class="wrap zakl-grid">
-    <figure class="zakl-foto" data-reveal>
-      {{ img('vojtech-barton.webp', 'Vojtěch Bartoň, zakladatel a CEO BoomBrand', sizes='(min-width: 64rem) 34vw, 90vw', cls='foto') }}
-    </figure>
-    <div class="zakl-txt">
-      <p class="stitek">{{ Z.role }}</p>
-      <h2 id="zakl-h" class="h-velky">{{ Z.jmeno }}</h2>
-      <p class="perex">Tři roky v&nbsp;oboru a&nbsp;přes 100&nbsp;milionů zhlédnutí pro klienty.</p>
-      {% for t in Z.text %}<p>{{ t }}</p>{% endfor %}
-      <ul class="zakl-odkazy" role="list">
-        {% for s in site.socialni %}<li><a class="link-sipka" href="{{ s.href }}" target="_blank" rel="noopener">{{ s.text }}<span aria-hidden="true"> ↗</span></a></li>{% endfor %}
-      </ul>
+  <div class="wrap">
+    <p class="stitek">{{ Z.role }}</p>
+    <h2 id="zakl-h" class="zakl-jmeno" data-reveal>{{ Z.jmeno }}</h2>
+    <div class="zakl-grid">
+      <figure class="zakl-foto">
+        {{ img('vojtech-barton.webp', 'Vojtěch Bartoň, zakladatel a CEO BoomBrand', sizes='(min-width: 64rem) 36vw, 90vw', cls='') }}
+        <figcaption class="tc">Vojtěch Bartoň · Brno</figcaption>
+      </figure>
+      <div class="zakl-txt">
+        <p class="zakl-perex">Tři roky v&nbsp;oboru a&nbsp;přes 100&nbsp;milionů zhlédnutí pro klienty.</p>
+        {% for t in Z.text %}<p>{{ t }}</p>{% endfor %}
+        <ul class="zakl-odkazy" role="list">
+          {% for s in site.socialni %}<li><a class="link-sipka" href="{{ s.href }}" target="_blank" rel="noopener">{{ s.text }}<span aria-hidden="true"> ↗</span></a></li>{% endfor %}
+        </ul>
+        <div class="zakl-cnn">
+          <div class="yt zakl-cnn-video" data-yt="{{ M.cnn.id }}">
+            {{ img('yt/' ~ M.cnn.id ~ '.jpg', '', sizes='(min-width: 64rem) 30vw, 90vw', cls='yt-nahled') }}
+            <button type="button" class="yt-play" aria-label="Přehrát rozhovor z CNN Prima News: {{ M.cnn.nazev }}"><span class="play-ikona" aria-hidden="true"></span></button>
+          </div>
+          <div class="zakl-cnn-txt">
+            <p class="tc">CNN Prima News · Nový den</p>
+            <p class="zakl-cnn-titul">„Na sociálních sítích se dnes neprodává jen výrobek. Prodává se i&nbsp;důvod, proč mu věřit.“</p>
+            <a class="link-sipka" href="{{ M.cnn.clanek.href }}" target="_blank" rel="noopener">Článek na CNN Prima News<span aria-hidden="true"> ↗</span></a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="wrap media" id="podcast">
     <div class="media-hlava">
-      <h3 class="h2">Před kamerou stojí i&nbsp;sám.</h3>
-      <p>Vojta vede podcast TalkToWin, kde se ptá podnikatelů a&nbsp;expertů, jak vyhrávat v&nbsp;byznysu i&nbsp;v&nbsp;komunikaci. A&nbsp;v&nbsp;pořadu Nový den na CNN Prima News mluvil o&nbsp;tom, jak nás ovlivňují sociální sítě.</p>
-      <p><a class="link-sipka" href="{{ M.cnn.clanek.href }}" target="_blank" rel="noopener">Článek na CNN Prima News: {{ M.cnn.clanek.text }}<span aria-hidden="true"> ↗</span></a></p>
+      <h3 class="h2">Podcast TalkToWin</h3>
+      <p>Vojta v&nbsp;něm vede rozhovory s&nbsp;podnikateli a&nbsp;experty o&nbsp;tom, jak vyhrávat v&nbsp;byznysu i&nbsp;v&nbsp;komunikaci.</p>
     </div>
     <ul class="epizody" role="list">
       {% for e in M.epizody %}
@@ -27,7 +40,7 @@
           {{ img('yt/' ~ e.id ~ '.jpg', '', sizes='(min-width: 64rem) 30vw, 90vw', cls='yt-nahled') }}
           <button type="button" class="yt-play" aria-label="Přehrát epizodu TalkToWin: {{ e.nazev }} (host {{ e.host }})"><span class="play-ikona" aria-hidden="true"></span></button>
         </div>
-        <p class="epizoda-meta"><span>TalkToWin · {{ e.host }}</span><span class="tc">{{ e.delka }}</span></p>
+        <p class="epizoda-meta"><span>{{ e.host }}</span><span class="tc">{{ e.delka }}</span></p>
         <p class="epizoda-nazev">{{ e.nazev }}</p>
       </li>
       {% endfor %}

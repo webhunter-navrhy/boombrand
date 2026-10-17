@@ -33,6 +33,7 @@
 {%- if h.startswith('#') -%}{{ '' if doma else url('') }}{{ h }}{%- elif h.startswith('http') -%}{{ h }}{%- else -%}{{ url(h) }}{%- endif -%}
 {%- endmacro %}
 <header class="hlavicka" data-hlavicka>
+  <span class="hlavicka-prubeh" aria-hidden="true"></span>
   <div class="hlavicka-in">
     <a href="{{ url('') }}" class="logo" aria-label="BoomBrand – úvodní stránka">
       <img src="{{ base }}{{ site.logo }}" alt="BoomBrand" width="226" height="13">

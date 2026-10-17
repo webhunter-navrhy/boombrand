@@ -55,6 +55,44 @@
     editor.querySelectorAll('[data-tl-klip]').forEach(function (k) { k.classList.add('is-hotovo'); });
   }
 
+
+  /* --- hero scéna: timecode, video a Ken Burns jen když je vidět --- */
+  var scena = document.querySelector('[data-scena]');
+  if (scena) {
+    var tc = scena.querySelector('[data-timecode]');
+    var heroVideo = scena.querySelector('video[data-autoplay]');
+    var start = Date.now(), timer = null;
+    var dva2 = function (x) { return (x < 10 ? '0' : '') + x; };
+    var tik = function () {
+      var t = (Date.now() - start) / 1000;
+      var f = Math.floor((t % 1) * 25), s = Math.floor(t) % 60, m = Math.floor(t / 60) % 60;
+      tc.textContent = '00:' + dva2(m) + ':' + dva2(s) + ':' + dva2(f);
+    };
+    var zapni = function (ano) {
+      scena.classList.toggle('is-pauza', !ano);
+      if (ano) {
+        if (!reduce && !timer && tc) timer = setInterval(tik, 80);
+        if (heroVideo && !reduce) { var pr = heroVideo.play(); if (pr && pr.catch) pr.catch(function () {}); }
+      } else {
+        if (timer) { clearInterval(timer); timer = null; }
+        if (heroVideo) heroVideo.pause();
+      }
+    };
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (en) { zapni(en[0].isIntersecting); }, { threshold: 0.05 }).observe(scena);
+    } else { zapni(true); }
+  }
+
+  /* --- pás reels: o kolik se má posunout do strany (spočítá se jen při načtení a změně velikosti) --- */
+  var pasObal = document.querySelector('[data-pas]');
+  if (pasObal) {
+    var pas = pasObal.querySelector('.pas');
+    var spocitejPas = function () { pas.style.setProperty('--posun', Math.max(0, pas.scrollWidth - pasObal.clientWidth) + 'px'); };
+    spocitejPas();
+    window.addEventListener('resize', spocitejPas, { passive: true });
+    window.addEventListener('load', spocitejPas);
+  }
+
   /* --- reels: přehrání po kliknutí, vždy jen jedno video --- */
   var hraje = null;
   document.querySelectorAll('[data-reel]').forEach(function (ram) {
@@ -90,7 +128,7 @@
       f.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:0;z-index:4';
       box.appendChild(f);
       btn.hidden = true;
-      box.querySelectorAll('.monitor-rec,.monitor-roh').forEach(function (x) { x.hidden = true; });
+      box.querySelectorAll('.monitor-rec,.monitor-roh,.hledacek-rec,.hledacek-info,.roh').forEach(function (x) { x.hidden = true; });
       if (hraje) { var v = hraje.querySelector('video'); if (v) v.pause(); }
     });
   });
