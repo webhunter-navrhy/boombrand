@@ -1,0 +1,172 @@
+{% extends "_base.html" %}
+{% set titulek = 'BoomBrand – osobní a firemní značka na sociálních sítích | Brno' %}
+{% set popis = site.popis %}
+{% set cesta = '' %}
+{% set O = data.obsah %}
+{% block head %}
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{% for f in data.faq %}{"@type":"Question","name":{{ f.q|replace(' ',' ')|tojson }},"acceptedAnswer":{"@type":"Answer","text":{{ f.a|replace(' ',' ')|tojson }}}}{{ ',' if not loop.last }}{% endfor %}]}</script>
+{% endblock %}
+{% block body_class %}doma{% endblock %}
+{% block obsah %}
+
+<section class="hero" aria-labelledby="hero-h">
+  <div class="wrap">
+    <p class="hero-nad"><span class="rec" aria-hidden="true"></span>{{ O.hero.nadtitul }}</p>
+    <h1 id="hero-h" class="hero-h1">{{ O.hero.h1 }}</h1>
+    <div class="hero-spod">
+      <p class="hero-h1b">{{ O.hero.h1b }}</p>
+      <div class="hero-akce">
+        <p>{{ O.hero.perex }}</p>
+        <div class="tlacitka">
+          <a href="#kontakt" class="btn">Domluvit konzultaci zdarma</a>
+          <a href="#metoda" class="btn btn-obrys">Jak pracujeme</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wrap monitor-obal">
+    <figure class="monitor" data-yt="{{ data.podcast.cnn.id }}">
+      {{ img('vojta-cnn-prima.webp', O.hero.popisek, sizes='(min-width: 64rem) 62vw, 100vw', cls='monitor-img') }}
+      <span class="monitor-roh monitor-roh-a" aria-hidden="true"></span><span class="monitor-roh monitor-roh-b" aria-hidden="true"></span>
+      <span class="monitor-rec tc" aria-hidden="true"><span class="rec"></span>CNN Prima News</span>
+      <button type="button" class="monitor-play" aria-label="Přehrát rozhovor: {{ data.podcast.cnn.nazev }} (CNN Prima News)">
+        <span class="play-ikona" aria-hidden="true"></span><span class="monitor-play-txt">Pustit rozhovor<small>z pořadu Nový den</small></span>
+      </button>
+    </figure>
+    <div class="monitor-popis">
+      <p class="stitek">Rozhovor v CNN Prima News</p>
+      <p class="monitor-titul">„{{ data.podcast.cnn.nazev }}“</p>
+      <p>Vojtěch Bartoň, zakladatel BoomBrand, v&nbsp;pořadu Nový den: „Na sociálních sítích se dnes neprodává jen výrobek. Prodává se i důvod, proč mu věřit.“</p>
+      <a class="link-sipka" href="{{ data.podcast.cnn.clanek.href }}" target="_blank" rel="noopener">Článek na CNN Prima News<span aria-hidden="true"> ↗</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="duvera" aria-label="Důvěřují nám">
+  <div class="wrap duvera-in">
+    <p class="duvera-k">Důvěřují nám</p>
+    <ul role="list" class="duvera-jmena">
+      {% for j in O.duveruji %}<li>{{ j }}</li>{% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="sekce proc papir" aria-labelledby="proc-h">
+  <div class="wrap">
+    <p class="stitek">Proč to řešit</p>
+    <h2 id="proc-h" class="h-velky proc-h">{{ O.proc.nadpis }}</h2>
+    <div class="proc-grid">
+      <div class="proc-txt">
+        {% for t in O.proc.odstavce[:-1] %}<p>{{ t }}</p>{% endfor %}
+      </div>
+      <div class="proc-cisla">
+        <p class="proc-zaver" data-reveal>{{ O.proc.odstavce[-1] }}</p>
+      </div>
+      <figure class="proc-foto" data-reveal>
+        {{ img('nataceni-studio.webp', 'Natáčení ve studiu u podcastového mikrofonu', sizes='(min-width: 64rem) 26vw, 90vw', cls='foto') }}
+        <figcaption>Natáčecí blok: jednou měsíčně, scénáře a technika od nás.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="sekce metoda" id="metoda" aria-labelledby="metoda-h">
+  <div class="wrap">
+    <div class="metoda-hlava">
+      <div class="metoda-hlava-txt">
+        <p class="stitek">Metoda BrandFormance™</p>
+        <h2 id="metoda-h" class="h-velky">{{ O.metoda.nadpis }}</h2>
+        <p class="perex">{{ O.metoda.perex }}</p>
+      </div>
+      <figure class="tl-monitor" data-reveal>
+        {{ img('nataceni-rozhovor.webp', 'Zákulisí natáčení rozhovoru: klienti u stolu, kamera a studiová světla', sizes='(min-width: 64rem) 40vw, 92vw', cls='tl-monitor-img') }}
+        <span class="monitor-roh monitor-roh-a" aria-hidden="true"></span><span class="monitor-roh monitor-roh-b" aria-hidden="true"></span>
+        <figcaption class="tl-titulek"><span class="tl-titulek-n tc">krok 05 / {{ O.metoda.kroky|length }}</span><span class="tl-titulek-t">Profi produkce: tady jste vy</span></figcaption>
+      </figure>
+    </div>
+
+    <div class="tl" data-tl style="--n: {{ O.metoda.kroky|length }}">
+      <div class="tl-editor" aria-hidden="true">
+        <div class="tl-hlava tc"><span>BrandFormance™ · jeden měsíc spolupráce</span><span>11 kroků · 4 stopy</span></div>
+        <div class="tl-stopy">
+          {% for st in O.metoda.stopy %}
+          <div class="tl-stopa">
+            <span class="tl-stopa-k tc">{{ st.nazev }}</span>
+            <div class="tl-stopa-pas">
+              {% for k in O.metoda.kroky %}{% if k.stopa == st.id %}
+              <span class="tl-klip tl-{{ st.id }}{% if k.vy %} tl-vy{% endif %}" style="--i: {{ loop.index0 }}" data-tl-klip="{{ loop.index0 }}"><span class="tc">{{ '%02d'|format(loop.index) }}</span><span class="tl-klip-n">{{ k.nazev }}</span></span>
+              {% endif %}{% endfor %}
+            </div>
+          </div>
+          {% endfor %}
+          <div class="tl-ph-drah"><span class="tl-ph"></span></div>
+        </div>
+        <div class="tl-smycka tc"><svg viewBox="0 0 400 24" preserveAspectRatio="none" aria-hidden="true"><path d="M398 2 V14 Q398 22 390 22 H10 Q2 22 2 14 V6" fill="none" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke"/><path d="M-3 9 L2 2 L7 9" fill="none" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg><span>↻ Opakování a růst – další měsíc znovu</span></div>
+      </div>
+
+      <div class="tl-skupiny">
+        {% for st in O.metoda.stopy %}
+        <div class="tl-skupina tl-sk-{{ st.id }}" data-reveal data-reveal-delay="{{ loop.index0 % 3 }}">
+          <h3 class="tl-skupina-h"><span class="tl-tecka" aria-hidden="true"></span>{{ st.nazev }}</h3>
+          <ol role="list">
+            {% for k in O.metoda.kroky %}{% if k.stopa == st.id %}
+            <li class="tl-krok">
+              <span class="tl-krok-n">{{ '%02d'|format(loop.index) }}</span>
+              <h4>{{ k.nazev }}</h4>
+              <p>{{ k.text }}</p>
+              {% if k.vy %}<p class="tl-krok-vy"><span class="rec" aria-hidden="true"></span>Tady jste potřeba vy. <span class="nw">2–3&nbsp;hodiny</span> měsíčně.</p>{% endif %}
+            </li>
+            {% endif %}{% endfor %}
+          </ol>
+        </div>
+        {% endfor %}
+      </div>
+      <p class="tl-zaver"><span aria-hidden="true">↻</span> {{ O.metoda.smycka }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="sekce odlisujeme" aria-labelledby="odl-h">
+  <div class="wrap">
+    <p class="stitek">Jak se odlišujeme</p>
+    <h2 id="odl-h" class="h-velky">{{ O.odlisujeme.nadpis }}</h2>
+    <ul class="odl-body" role="list">
+      {% for b in O.odlisujeme.body %}<li data-reveal data-reveal-delay="{{ loop.index0 % 3 }}"><h3>{{ b.nazev }}</h3><p>{{ b.text }}</p></li>{% endfor %}
+    </ul>
+    <div class="odl-hlavni" data-reveal>
+      <h3>{{ O.odlisujeme.hlavni.nazev }}</h3>
+      <p>{{ O.odlisujeme.hlavni.text }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="sekce vysledky" id="vysledky" aria-labelledby="vys-h">
+  <div class="wrap">
+    <div class="sekce-hlava">
+      <p class="stitek">Případové studie</p>
+      <h2 id="vys-h" class="h-velky">Reálné výsledky našich klientů.</h2>
+      <p class="perex">Tři příběhy, které ukazují, co znamená dlouhodobá a strategická práce s osobní značkou — od virálních videí po miliony v portfoliu.</p>
+    </div>
+    {% include "_studie.html" %}
+  </div>
+</section>
+
+{% include "_reels.html" %}
+
+{% include "_zakladatel.html" %}
+
+{% include "_proces.html" %}
+
+<section class="sekce otazky papir" id="otazky" aria-labelledby="faq-h">
+  <div class="wrap otazky-grid">
+    <div>
+      <p class="stitek">Nejčastější otázky</p>
+      <h2 id="faq-h" class="h-velky">Co se nás ptáte nejčastěji.</h2>
+      <p class="otazky-pozn">Nenašli jste odpověď? <a href="mailto:{{ site.kontakt.email }}">Napište nám</a>.</p>
+    </div>
+    {% set polozky = data.faq %}{% include "_faq.html" %}
+  </div>
+</section>
+
+{% include "_kontakt.html" %}
+{% endblock %}

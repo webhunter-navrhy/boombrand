@@ -1,0 +1,630 @@
+{
+ "slug": "boombrand",
+ "zdroj_url": "https://boom-brand.cz",
+ "firma": "BoomBrand s.r.o.",
+ "obor": [
+  "agentura pro sociální sítě",
+  "osobní a firemní značka (personal branding)",
+  "video obsah"
+ ],
+ "ico": "29604001",
+ "ares": {
+  "ico": "29604001",
+  "obchodni_jmeno": "BoomBrand s.r.o.",
+  "pravni_forma": "112",
+  "adresa": "Plachty 514/8, Nový Lískovec, 63400 Brno",
+  "obec": "Brno",
+  "dic": null,
+  "datum_vzniku": "2026-05-26",
+  "nace": [
+   "73110"
+  ]
+ },
+ "kontakty": {
+  "emaily": [
+   "barton@boom-brand.cz"
+  ],
+  "telefony": [
+   "+420 775 133 711"
+  ],
+  "adresa": "",
+  "socialni_site": [
+   "https://instagram.com/petrvojnar",
+   "https://instagram.com/zlatka.otavova",
+   "https://www.instagram.com/boombrand_socialmedia/",
+   "https://www.instagram.com/mirka_jungrova_reality/",
+   "https://www.instagram.com/vojta__barton/",
+   "https://youtube.com/playlist?list=PLkOQbECU51UsJ7UmKFzwvm_kb9gbNqt_6"
+  ]
+ },
+ "logo": {
+  "soubor": "podklady/logo.ico",
+  "zdroj": "https://boom-brand.cz/favicon.ico",
+  "rozmery": [
+   256,
+   256
+  ]
+ },
+ "barvy": {
+  "css_promenne": {
+   "primary": "#f46527",
+   "primary-foreground": "#040303",
+   "primary-light": "#ff8346",
+   "secondary": "#191514",
+   "secondary-foreground": "#fff",
+   "accent": "#f46527",
+   "accent-foreground": "#040303"
+  },
+  "z_css": [
+   "#f46527",
+   "#e40014",
+   "#43251a"
+  ],
+  "z_loga": [
+   "#005dde",
+   "#b6c7ca",
+   "#952f2f"
+  ],
+  "theme_color": "#0a0a0a",
+  "doporucene": [
+   "#005dde",
+   "#f46527",
+   "#e40014"
+  ]
+ },
+ "fotky": [
+  {
+   "soubor": "podklady/foto/foto-01.webp",
+   "url": "https://boom-brand.cz/__l5e/assets-v1/53e6f186-08c6-4150-903c-22fc75a4e0a8/vojta-cnn-prima.webp",
+   "sirka": 1920,
+   "vyska": 1088,
+   "alt": "Vojtěch Bartoň, zakladatel BoomBrand, v pořadu CNN Prima News"
+  },
+  {
+   "soubor": "podklady/foto/foto-02.jpg",
+   "url": "https://i.ytimg.com/vi/VVShS5jHxWQ/hqdefault.jpg",
+   "sirka": 480,
+   "vyska": 360,
+   "alt": "Rozhovor Vojtěch Bartoň — CNN Prima News: Jak nás ovlivňují sociální sítě"
+  },
+  {
+   "soubor": "podklady/foto/foto-03.webp",
+   "url": "https://boom-brand.cz/__l5e/assets-v1/d7519751-2ae1-4262-9bed-3e62d4b39bb4/nataceni-studio.webp",
+   "sirka": 1080,
+   "vyska": 1440,
+   "alt": "Natáčení ve studiu u podcastového mikrofonu"
+  },
+  {
+   "soubor": "podklady/foto/foto-04.webp",
+   "url": "https://boom-brand.cz/__l5e/assets-v1/3592cf7d-8abe-4ff2-9cfe-3fac7900260f/nataceni-rozhovor.webp",
+   "sirka": 1440,
+   "vyska": 1080,
+   "alt": "Zákulisí natáčení rozhovoru: klienti u stolu, kamera a studiová světla"
+  },
+  {
+   "soubor": "podklady/foto/foto-05.jpg",
+   "url": "https://boom-brand.cz/__l5e/assets-v1/0b66b7d1-d2be-4151-bcd2-356d319c27e5/michal-rajnoha.jpg",
+   "sirka": 480,
+   "vyska": 848,
+   "alt": "Michal Matocha"
+  },
+  {
+   "soubor": "podklady/foto/foto-06.jpg",
+   "url": "https://boom-brand.cz/__l5e/assets-v1/035fb4d6-23dd-4318-a66c-3589a4e2f0a3/miroslava-jungrova.jpg",
+   "sirka": 1091,
+   "vyska": 1920,
+   "alt": "Mirka Jungrová"
+  },
+  {
+   "soubor": "podklady/foto/foto-07.jpg",
+   "url": "https://boom-brand.cz/__l5e/assets-v1/6c4e84eb-3e8a-4cca-a205-d8e13b72db44/tomas-bubenik.jpg",
+   "sirka": 1085,
+   "vyska": 1920,
+   "alt": "Tomáš Bubeník"
+  },
+  {
+   "soubor": "podklady/foto/foto-08.jpg",
+   "url": "https://boom-brand.cz/__l5e/assets-v1/556c0cdb-9ddb-4c59-855c-590435f8d6f7/petr-vojnar.jpg",
+   "sirka": 1097,
+   "vyska": 1920,
+   "alt": "Petr Vojnar"
+  },
+  {
+   "soubor": "podklady/foto/foto-09.webp",
+   "url": "https://boom-brand.cz/assets/vojta-CfdPOahT.webp",
+   "sirka": 1000,
+   "vyska": 1504,
+   "alt": "Vojtěch Bartoň, zakladatel BoomBrand"
+  }
+ ],
+ "fakta": [
+  {
+   "typ": "h1",
+   "text": "Vaše jméno prodává. Zatím jen ve chvíli, kdy jste osobně na schůzce.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "h2",
+   "text": "Pozvali si mě do CNN Prima News ...",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "h2",
+   "text": "Doporučení fungují. Jen je neumíte zapnout, když je potřebujete.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "h2",
+   "text": "Nedostanete obsah. Dostanete systém BrandFormance™.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "h2",
+   "text": "Věci, které ostatní přeskočí.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "h3",
+   "text": "Full-service od strategie po reporting",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "h3",
+   "text": "Autenticita jako základ",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "h3",
+   "text": "Měřitelné výsledky",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "h3",
+   "text": "Osobní přístup",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "h3",
+   "text": "Pochopení psychologie",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "h3",
+   "text": "Strategie před produkcí",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "h3",
+   "text": "Řekneme vám, když to nedává smysl",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "h2",
+   "text": "Proces spolupráce.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "h3",
+   "text": "Úvodní konzultace",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "h3",
+   "text": "Strategie značky",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "h3",
+   "text": "Produkce obsahu",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "h3",
+   "text": "Růst & optimalizace",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "h2",
+   "text": "Reálné výsledky našich klientů.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "h3",
+   "text": "Z natáčení s klienty",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "h3",
+   "text": "Miroslava Jungrová",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "h3",
+   "text": "Zlatka Otavová",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "h3",
+   "text": "Petr Vojnar",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "h2",
+   "text": "Slyšte to přímo od klientů.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "h2",
+   "text": "Vojtěch Bartoň",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "h2",
+   "text": "Co se vás ptáme nejčastěji.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "h2",
+   "text": "Pojďme spolupracovat.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "h2",
+   "text": "Naše služby",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Naší metodou BrandFormance™ stavíme majitelům firem a expertům osobní značku, která přivádí klienty i tehdy, když zrovna neprodáváte. Vy do toho dáte 2–3 hodiny měsíčně. Zbytek řešíme my.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Většina obchodů u vás vzniká přes doporučení a osobní síť. To je nejkvalitnější kanál, jaký existuje — a zároveň jediný, který si nemůžete objednat.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Nemůžete si v pondělí říct, že tenhle měsíc potřebujete tři nové klienty. Buď přijdou, nebo nepřijdou.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Osobní značka doporučení nenahrazuje. Zesiluje je — a přidává druhý kanál, který běží i tehdy, když vy zrovna nepracujete.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Deset kroků metody BrandFormance™, které běží každý měsíc. Vy do toho vstupujete jednou — na natáčecí blok. Všechno ostatní, včetně rozhodování o tom, co se bude točit, je na nás.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Klient neřeší nic — celý proces je na nás. Potřebujeme ho jen 2–3 hodiny měsíčně.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Netvoříme generický obsah, ale skutečný příběh konkrétního člověka. Obsah, který funguje.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Každý měsíc víme, co funguje a proč. Nespoléháme na pocity — máme data.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Nepracujeme se stovkami klientů. Pracujeme s těmi správnými — do hloubky.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Rozumíme tomu, jak funguje psychologie lidí a podnikání. Proto tvoříme obsah, který prodává.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Nejdřív víme proč — účel. Pak teprve točíme a píšeme. Nikdy naopak.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Ne každý potřebuje osobní značku. Někdo má stabilní kontrakty a plnou kapacitu. Na první konzultaci zjistíme, jestli se vám investice vrátí — a když ne, řekneme vám to.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Žádný chaos, žádná improvizace. Jasné kroky od první schůzky až po dlouhodobý růst vaší značky.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "01 Úvodní konzultace Pochopíme váš byznys, cíle a publikum. Bezplatný 30minutový hovor, kde si řekneme, jestli si sedneme.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Pochopíme váš byznys, cíle a publikum. Bezplatný 30minutový hovor, kde si řekneme, jestli si sedneme.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "02 Strategie značky Postavíme positioning, sdělení a obsahový plán. Ne tipy z TikToku — strategie šitá na míru vašemu trhu.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Postavíme positioning, sdělení a obsahový plán. Ne tipy z TikToku — strategie šitá na míru vašemu trhu.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "03 Produkce obsahu Natáčíme, stříháme, píšeme texty. Ty se soustředíš na svůj byznys, my se staráme o všechno ostatní.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Natáčíme, stříháme, píšeme texty. Ty se soustředíš na svůj byznys, my se staráme o všechno ostatní.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "04 Růst & optimalizace Měříme, vyhodnocujeme, ladíme. Měsíční reporty s reálnými čísly — ne falešný dosah, ale leady a značka.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Měříme, vyhodnocujeme, ladíme. Měsíční reporty s reálnými čísly — ne falešný dosah, ale leady a značka.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Tři příběhy, které ukazují, co znamená dlouhodobá a strategická práce s osobní značkou — od virálních videí po miliony v portfoliu.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Mirka chtěla získávat kvalitní poptávky přímo ze sociálních sítí — bez závislosti na placené reklamě a portálech. Potřebovala obsah, který buduje důvěru a zároveň přivádí konkrétní klienty.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Nastavili jsme positioning ‚makléřka, které věříte‘ a obsahové pilíře okolo prémiových nemovitostí.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Pravidelně točíme reels z prohlídek, edukační obsah a story s reálnou prací v terénu.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Každý měsíc vyhodnocujeme, který typ obsahu generuje nejvíce poptávek.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Zlatka budovala komunitu žen-podnikatelek a potřebovala konzistentní obsah napříč třemi platformami současně — Instagram, TikTok a YouTube. Sama na to neměla kapacitu ani tým.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Připravili jsme jednotnou obsahovou strategii pro 3 platformy s respektem k jejich specifikům.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Z jednoho natáčecího dne vytváříme obsah na celý měsíc — dlouhá videa, reels i shorts.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Komplexně řídíme produkci, střih, publikaci i komunikaci s komunitou.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Petr měl silnou osobnost a know-how, ale obsah na sítích nedosahoval potenciálu, který by odpovídal jeho expertize. Chyběla jednotná strategie a formát, který by zaujal masu lidí.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Postavili jsme dlouhodobou obsahovou strategii a formát krátkých videí s jasným hookem.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Převzali jsme kompletní produkci — scénáře, natáčení, střih i publikaci.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Optimalizovali jsme každé video na základě dat z předchozích výstupů.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "„ Jedno video s Vojtou nám překonalo 20 milionů zhlédnutí. Spolupráce je dlouhodobá, profesionální a hlavně funguje. “",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Krátká videa od lidí, se kterými dlouhodobě spolupracujeme. Klikněte na video pro přehrání.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Za tři roky jsme klientům pomohli vydělat přes 20 milionů korun a postavili jsme značky realitním makléřům, finančním poradcům, majitelům firem i korporacím. BoomBrand stojí na jednoduché myšlence — většina agentur dělá obsah, my stavíme značky, které vydělávají .",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Kromě agentury vedu podcast TalkToWin, spolupracuji s firmami jako T-Mobile ČR a osobně vystupuji v jejich obsahu. Věřím, že podnikání je hra — a chci, aby ji hráli co nejlépe.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Pro majitele firem a experty, kteří už mají fungující byznys a klienty, ale obchod stále visí na jejich osobě a doporučeních. Typicky obrat od 250 tisíc měsíčně výše. Nepracujeme se začátečníky bez klientů ani s lidmi, kteří chtějí budovat obsahový kanál místo byznysu.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Legitimní obava a je dobře, že ji řešíte. Špatně postavená osobní značka závislost firmy na majiteli skutečně zvětší.\n\nProto stavíme proces v tomto pořadí: osobní značka majitele → přenos důvěry na firmu → viditelnost expertů v týmu → obchodní systém, který funguje i bez vás. Cílem není udělat z vás celebritu, ale přenést vaši reputaci do něčeho, co je přenositelné.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Neměříme lajky a zhlédnutí. Měříme počet příchozích poptávek, jejich zdroj, počet kvalifikovaných hovorů a obchodní příležitosti. Zavedeme také jednoduchou věc — na každé schůzce se klienta ptáte, kde vás poprvé zaznamenal. Po třech měsících máte data, která vám řeknou víc než jakýkoli marketingový report.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Spolupráce začíná na 35 000 Kč měsíčně a cena se odvíjí od rozsahu — počet platforem, frekvence obsahu, zahrnutí placené reklamy. Přesnou nabídku dostanete po nezávazné konzultaci. Pokud hledáte levnější řešení na jednu platformu, rádi vás nasměrujeme jinam.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Jen 2–3 hodiny měsíčně. Připravíme vše dopředu — scénáře, lokaci, techniku. Vy přijdete a natočíte obsah na celý měsíc. Zbytek řešíme my.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "První viditelné výsledky přicházejí během 2–3 měsíců. Konkrétní byznysové výsledky (poptávky, klienti) typicky 4–6 měsíců.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Doporučujeme minimálně 6 měsíců. Personal branding je dlouhodobá hra — krátkodobé kampaně nedávají smysl.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Většina našich klientů na začátku tvrdila to samé. Máme zkušenost, jak vás před kamerou uvolnit. Po 2–3 natáčeních je to přirozené.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "To je naše práce. Připravíme kompletní obsahový plán, scénáře a otázky. Vy jen mluvíte o tom, čemu rozumíte — my z toho uděláme obsah, který funguje.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Třicet minut, kde projdeme váš byznys, odkud dnes chodí zakázky a jestli pro vás osobní značka vůbec dává ekonomický smysl. Když ne, řekneme vám to.",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Marketing, sociální sítě a budování značky pro firmy v Brně i po celé České republice.",
+   "zdroj": "https://boom-brand.cz/"
+  }
+ ],
+ "chybi": [
+  "adresa provozovny / studia (na webu chybí, v návrhu jen „Brno“)",
+  "logo v křivkách (SVG) – wordmark jsme převedli z písma Syne 800 podle webu",
+  "loga klientů (T-Mobile, Sirius Finance…) se souhlasem – v návrhu jen názvy textem",
+  "fotka Zlatky Otavové (case study 02 je zatím bez fotky)",
+  "víc fotek z natáčení (zákulisí, technika, tým) a krátké ukázky reels v nejvyšší kvalitě",
+  "souhlas klientů se zveřejněním videí (na současném webu už jsou)",
+  "ostrý cíl formuláře (v návrhu ukázkový režim)"
+ ],
+ "popis_webu": "Metodou BrandFormance™ stavíme majitelům firem osobní značku, která přivádí klienty i tehdy, když neprodáváte. Od klienta stačí 2–3 hodiny měsíčně.",
+ "mesto": "Brno (natáčí osobně v Brně a okolí, online celá ČR)",
+ "cilova_skupina": "majitelé firem a experti (makléři, finanční poradci, majitelé firem, korporace), typicky obrat od 250 tis. Kč měsíčně, obchod stojí na osobě majitele a doporučeních",
+ "ton": "sebevědomý, přímý, tykání/vykání: vyká; „Řekneme vám, když to nedává smysl“; neměří lajky, ale poptávky",
+ "brand": {
+  "logo": "textový wordmark BOOMBRAND v Syne 800 (BOOM #F46527, BRAND bílá) – převeden do SVG static/logo-boombrand*.svg z glyfů Syne 800",
+  "barvy": {
+   "pozadi": "#0a0a0a / #090706",
+   "karta": "#0f0c0c",
+   "karta2": "#191514",
+   "primarni": "#F46527",
+   "hover": "#FF8346",
+   "tmavsi": "#B74B21",
+   "text": "#fff",
+   "muted": "#8f8f8f"
+  },
+  "pisma": "Syne (logo), Inter (vše ostatní), Poppins (formulář)",
+  "zdroj": "https://boom-brand.cz/assets/styles-Bc3kGqQq.css"
+ },
+ "videa": [
+  {
+   "soubor": "static/video/rajnoha.mp4",
+   "zdroj": "https://boom-brand.cz/videos/rajnoha.mp4",
+   "kdo": "Michal Matocha – majitel GRASSolutions"
+  },
+  {
+   "soubor": "static/video/jungova.mp4",
+   "zdroj": "https://boom-brand.cz/videos/jungova.mp4",
+   "kdo": "Mirka Jungrová – realitní makléřka"
+  },
+  {
+   "soubor": "static/video/bubenik.mp4",
+   "zdroj": "https://boom-brand.cz/videos/bubenik.mp4",
+   "kdo": "Tomáš Bubeník – ředitel Sirius Finance"
+  },
+  {
+   "soubor": "static/video/vojnar.mp4",
+   "zdroj": "https://boom-brand.cz/videos/vojnar.mp4",
+   "kdo": "Petr Vojnar – moderátor"
+  }
+ ],
+ "youtube": {
+  "cnn": "VVShS5jHxWQ (CNN Prima News – Jak nás ovlivňují sociální sítě)",
+  "playlist_talktowin": "PLkOQbECU51UsJ7UmKFzwvm_kb9gbNqt_6 – 6 epizod podcastu TalkToWin (Rosskohl, Petráš, Hoang, Opava, Filip, Vašourek)"
+ },
+ "fakta_klicova": [
+  {
+   "text": "Metoda BrandFormance™, 11 kroků každý měsíc (průzkum trhu … psaní přímých zpráv)",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "text": "60 mil. Kč nemovitostí do portfolia jedné makléřky (M. Jungrová) za první 3 měsíce",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "text": "20M+ Kč vydělali klientům (za tři roky)",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "text": "100M+ zhlédnutí pro klienty; 3+ let v oboru",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "text": "2–3 hodiny měsíčně od klienta",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "text": "Zlatka Otavová: 3 platformy, 1 den natáčení = měsíc obsahu, 5 nových lidí v týmu za 1 měsíc",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "text": "Petr Vojnar: 20M+ zhlédnutí na jednom videu, +30 000 sledujících za 1 rok, 100 % produkce na straně BoomBrand, citace",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "text": "Cena od 35 000 Kč měsíčně, doporučeno min. 6 měsíců",
+   "zdroj": "https://boom-brand.cz/#faq"
+  },
+  {
+   "text": "Důvěřují nám: T-Mobile ČR, Sirius Finance, Petr Vojnar, Josef Hoang, Soňa Sedláčková, Zlatka Otavová, TalkToWin, LILI Business",
+   "zdroj": "https://boom-brand.cz/"
+  },
+  {
+   "text": "CNN Prima News rozhovor + článek",
+   "zdroj": "https://boom-brand.cz/o-nas"
+  },
+  {
+   "text": "Sídlo Plachty 514/8, Brno (ARES); na webu klienta adresa není uvedena",
+   "zdroj": "ARES 29604001"
+  },
+  {
+   "text": "U formuláře: „Odpovídáme do 24 hodin.“",
+   "zdroj": "https://boom-brand.cz/#kontakt"
+  },
+  {
+   "text": "FAQ: „Pozvali si mě do CNN Prima News“, rozhovor Nový den – Jak nás ovlivňují sociální sítě (YouTube VVShS5jHxWQ)",
+   "zdroj": "https://boom-brand.cz/o-nas"
+  }
+ ]
+}

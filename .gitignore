@@ -1,0 +1,9 @@
+dist/
+.cache/
+qa/
+__pycache__/
+podklady/video/
+qa/_snimky/
+kolaz_pc.png
+kolaz_mobil.png
+qa.json

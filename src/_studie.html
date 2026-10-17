@@ -1,0 +1,34 @@
+{# Případové studie – každá jiný layout. #}
+<div class="studie">
+{% for s in data.studie %}
+  <article class="studie-1 studie-{{ s.id }}{% if not s.foto %} studie-bez{% endif %}" id="studie-{{ s.id }}">
+    {% if s.foto %}
+    <figure class="studie-foto" data-reveal>
+      {{ img(s.foto, s.foto_alt, sizes='(min-width: 64rem) 30vw, 80vw', cls='foto') }}
+      <figcaption class="tc">{{ s.stitek }}</figcaption>
+    </figure>
+    {% endif %}
+    <div class="studie-txt">
+      {% if not s.foto %}<p class="tc">{{ s.stitek }}</p>{% endif %}
+      <h3 class="studie-jmeno">{{ s.jmeno }}</h3>
+      <p class="studie-role">{{ s.role }}</p>
+      <p class="studie-cislo" data-reveal><span>{{ s.hlavni.cislo }}</span><small>{{ s.hlavni.text }}</small></p>
+      <dl class="studie-dalsi">
+        {% for d in s.dalsi %}<div><dt>{{ d.cislo }}</dt><dd>{{ d.text }}</dd></div>{% endfor %}
+      </dl>
+      <div class="studie-pribeh">
+        <div>
+          <h4>Výzva</h4>
+          <p>{{ s.vyzva }}</p>
+        </div>
+        <div>
+          <h4>Co jsme udělali</h4>
+          <ul role="list">{% for u in s.udelali %}<li>{{ u }}</li>{% endfor %}</ul>
+        </div>
+      </div>
+      {% if s.citace %}<blockquote class="studie-citace"><p>„{{ s.citace }}“</p><footer>— {{ s.jmeno }}</footer></blockquote>{% endif %}
+      <a class="link-sipka" href="{{ s.ig.href }}" target="_blank" rel="noopener">{{ s.ig.text }}<span aria-hidden="true"> ↗</span></a>
+    </div>
+  </article>
+{% endfor %}
+</div>

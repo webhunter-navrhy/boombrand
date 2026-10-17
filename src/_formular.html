@@ -1,0 +1,15 @@
+<form class="formular" method="post" {% if site.formular.endpoint and not site.formular.demo %}action="{{ site.formular.endpoint }}"{% endif %} data-endpoint="{{ site.formular.endpoint }}" data-demo="{{ 1 if site.formular.demo or not site.formular.endpoint else 0 }}">
+  <div class="pole-2">
+    <label class="pole"><span>Jméno</span><input name="jmeno" autocomplete="name" required></label>
+    <label class="pole"><span>Telefon</span><input name="telefon" type="tel" autocomplete="tel"></label>
+  </div>
+  <label class="pole"><span>E-mail</span><input name="email" type="email" autocomplete="email" required></label>
+  <label class="pole"><span>Čím se zabýváte a odkud dnes chodí zakázky?</span><textarea name="zprava" rows="4" maxlength="1000" required></textarea></label>
+  <div class="past" aria-hidden="true"><label>Nevyplňovat <input name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+  <input type="hidden" name="_subject" value="{{ site.formular.predmet }}">
+  <div class="formular-spod">
+    <button type="submit" class="btn">Odeslat poptávku</button>
+    <p class="formular-pozn">{{ data.obsah.kontakt.pozn }}</p>
+  </div>
+  <p class="formular-stav" role="status" aria-live="polite"></p>
+</form>

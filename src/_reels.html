@@ -1,0 +1,23 @@
+<section class="sekce reels" id="reference" aria-labelledby="reels-h">
+  <div class="wrap">
+    <div class="sekce-hlava">
+      <p class="stitek">Video reference</p>
+      <h2 id="reels-h" class="h2">Slyšte to přímo od klientů.</h2>
+      <p class="perex">Krátká videa od lidí, se kterými dlouhodobě spolupracujeme. Natočená a sestříhaná tak, jak to děláme pro klienty.</p>
+    </div>
+    <ul class="reels-rada" role="list">
+      {% for v in data.videa %}
+      <li class="reel" data-reveal data-reveal-delay="{{ loop.index0 % 3 }}">
+        <div class="reel-ram" data-reel data-src="{{ base }}{{ v.video }}">
+          {{ img(v.poster, '', sizes='(min-width: 64rem) 22vw, 70vw', cls='reel-poster') }}
+          <button type="button" class="reel-play" aria-label="Přehrát video: {{ v.jmeno }}, {{ v.role }}">
+            <span class="play-ikona" aria-hidden="true"></span><span class="tc">{{ v.delka }}</span>
+          </button>
+        </div>
+        <p class="reel-jmeno">{{ v.jmeno }}</p>
+        <p class="reel-role">{{ v.role }}</p>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,37 @@
+{% set Z = data.obsah.zakladatel %}{% set M = data.podcast %}
+<section class="sekce zakladatel papir" id="o-nas" aria-labelledby="zakl-h">
+  <div class="wrap zakl-grid">
+    <figure class="zakl-foto" data-reveal>
+      {{ img('vojtech-barton.webp', 'Vojtěch Bartoň, zakladatel a CEO BoomBrand', sizes='(min-width: 64rem) 34vw, 90vw', cls='foto') }}
+    </figure>
+    <div class="zakl-txt">
+      <p class="stitek">{{ Z.role }}</p>
+      <h2 id="zakl-h" class="h-velky">{{ Z.jmeno }}</h2>
+      <p class="perex">Tři roky v&nbsp;oboru a&nbsp;přes 100&nbsp;milionů zhlédnutí pro klienty.</p>
+      {% for t in Z.text %}<p>{{ t }}</p>{% endfor %}
+      <ul class="zakl-odkazy" role="list">
+        {% for s in site.socialni %}<li><a class="link-sipka" href="{{ s.href }}" target="_blank" rel="noopener">{{ s.text }}<span aria-hidden="true"> ↗</span></a></li>{% endfor %}
+      </ul>
+    </div>
+  </div>
+  <div class="wrap media" id="podcast">
+    <div class="media-hlava">
+      <h3 class="h2">Před kamerou stojí i&nbsp;sám.</h3>
+      <p>Vojta vede podcast TalkToWin, kde se ptá podnikatelů a&nbsp;expertů, jak vyhrávat v&nbsp;byznysu i&nbsp;v&nbsp;komunikaci. A&nbsp;v&nbsp;pořadu Nový den na CNN Prima News mluvil o&nbsp;tom, jak nás ovlivňují sociální sítě.</p>
+      <p><a class="link-sipka" href="{{ M.cnn.clanek.href }}" target="_blank" rel="noopener">Článek na CNN Prima News: {{ M.cnn.clanek.text }}<span aria-hidden="true"> ↗</span></a></p>
+    </div>
+    <ul class="epizody" role="list">
+      {% for e in M.epizody %}
+      <li class="epizoda" data-reveal data-reveal-delay="{{ loop.index0 % 3 }}">
+        <div class="yt" data-yt="{{ e.id }}">
+          {{ img('yt/' ~ e.id ~ '.jpg', '', sizes='(min-width: 64rem) 30vw, 90vw', cls='yt-nahled') }}
+          <button type="button" class="yt-play" aria-label="Přehrát epizodu TalkToWin: {{ e.nazev }} (host {{ e.host }})"><span class="play-ikona" aria-hidden="true"></span></button>
+        </div>
+        <p class="epizoda-meta"><span>TalkToWin · {{ e.host }}</span><span class="tc">{{ e.delka }}</span></p>
+        <p class="epizoda-nazev">{{ e.nazev }}</p>
+      </li>
+      {% endfor %}
+    </ul>
+    <p class="media-vse"><a class="link-sipka" href="{{ M.playlist }}" target="_blank" rel="noopener">Celý podcast na YouTube<span aria-hidden="true"> ↗</span></a></p>
+  </div>
+</section>

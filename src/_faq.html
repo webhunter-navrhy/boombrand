@@ -1,0 +1,8 @@
+<div class="faq">
+  {% for f in polozky %}
+  <details class="faq-1"{% if loop.first %} open{% endif %}>
+    <summary><span>{{ f.q }}</span><span class="faq-znak" aria-hidden="true"></span></summary>
+    <div class="faq-odp"><p>{{ f.a }}</p></div>
+  </details>
+  {% endfor %}
+</div>

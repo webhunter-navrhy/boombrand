@@ -1,0 +1,20 @@
+{% extends "_base.html" %}
+{% set titulek = 'Případové studie – výsledky klientů BoomBrand' %}
+{% set popis = 'Výsledky klientů BoomBrand: 60 mil. Kč v portfoliu makléřky za 3 měsíce, 20M+ zhlédnutí jednoho videa, měsíc obsahu z jednoho natáčecího dne.' %}
+{% set cesta = 'pripadove-studie/' %}
+{% block body_class %}podstranka{% endblock %}
+{% block obsah %}
+<section class="sekce vysledky sub-studie" aria-labelledby="ps-h">
+  <div class="wrap">
+    <nav class="drobky tc" aria-label="Drobečková navigace"><a href="{{ url('') }}">BoomBrand</a> / <span>Případové studie</span></nav>
+    <div class="sekce-hlava">
+      <p class="hero-nad"><span class="rec" aria-hidden="true"></span>Případové studie</p>
+      <h1 id="ps-h" class="sub-h1">Reálné výsledky našich klientů.</h1>
+      <p class="perex">Tři příběhy, které ukazují, co znamená dlouhodobá a strategická práce s osobní značkou — od virálních videí po miliony v portfoliu.</p>
+    </div>
+    {% include "_studie.html" %}
+  </div>
+</section>
+{% include "_reels.html" %}
+{% include "_kontakt.html" %}
+{% endblock %}

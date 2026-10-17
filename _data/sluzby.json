@@ -1,0 +1,280 @@
+{
+ "osobni-znacka": {
+  "menu": "Osobní značka",
+  "stitek": "Osobní a firemní značka",
+  "h1": "Osobní značka, která prodává, i když spíte.",
+  "titulek": "Osobní značka pro majitele firem a experty – Brno | BoomBrand",
+  "popis": "Budování osobní značky na sociálních sítích pro majitele firem a experty. Metoda BrandFormance™, od 35 000 Kč měsíčně, Brno a celá ČR.",
+  "perex": "Stavíme majitelům firem a expertům osobní i firemní značku na sociálních sítích. Metodou BrandFormance™ propojujeme důvěryhodný obsah s obchodními výsledky — cílem není sledovanost, ale poptávky od lidí, kteří vás už znají.",
+  "foto": "nataceni-studio.webp",
+  "foto_alt": "Natáčení ve studiu u podcastového mikrofonu",
+  "fakta": [
+   {
+    "k": "Pro koho",
+    "v": "Majitelé firem, experti a živnostníci, kteří dnes prodávají hlavně osobně na schůzkách."
+   },
+   {
+    "k": "Co získáte",
+    "v": "Pozicování, obsahovou strategii, pravidelná videa a značku, kterou trh zná dřív, než poptává."
+   },
+   {
+    "k": "Cena",
+    "v": "Od 35 000 Kč měsíčně."
+   },
+   {
+    "k": "Kde",
+    "v": "Brno, Jihomoravský kraj a celá Česká republika."
+   }
+  ],
+  "pilire": [
+   {
+    "nazev": "Pozicování a příběh",
+    "text": "Určíme, za co vás má trh znát, komu mluvíte a čím se lišíte od konkurence v oboru."
+   },
+   {
+    "nazev": "Obsah, který staví důvěru",
+    "text": "Videa, ve kterých ukazujete know-how, zakázky a způsob práce. Přesně to, co lidé potřebují slyšet před nákupem."
+   },
+   {
+    "nazev": "Firemní značka v souladu",
+    "text": "Osobní značku majitele propojíme s firemní komunikací, aby značka působila jednotně napříč kanály."
+   },
+   {
+    "nazev": "Z důvěry poptávky",
+    "text": "Každý měsíc měříme, kolik poptávek přišlo přes sítě, a podle toho ladíme obsah."
+   }
+  ],
+  "postup": [
+   {
+    "nazev": "Konzultace zdarma",
+    "text": "Zjistíme, jestli je osobní značka pro váš byznys nejrychlejší cesta k zakázkám."
+   },
+   {
+    "nazev": "Pozicování a strategie",
+    "text": "Do 30 dnů máte hotové pozicování a obsahový plán."
+   },
+   {
+    "nazev": "Produkce obsahu",
+    "text": "Jedno natáčení měsíčně, scénáře a režie od nás."
+   },
+   {
+    "nazev": "Růst a vyhodnocení",
+    "text": "Reporty poptávek a čtvrtletní revize směru."
+   }
+  ],
+  "faq": [
+   {
+    "q": "Co je osobní značka a k čemu je podnikateli?",
+    "a": "Osobní značka je pověst, kterou máte u lidí mimo vaši kancelář. Když vás trh zná dřív, než potřebuje poptat, přicházejí zakázky samy a s vyšší uzavíratelností i marží."
+   },
+   {
+    "q": "Jaký je rozdíl mezi osobní a firemní značkou?",
+    "a": "Firemní značka staví důvěru ke společnosti, osobní značka k člověku. V malých a středních firmách funguje nejrychleji osobní značka majitele — lidé věří lidem. Obojí propojujeme do jednoho systému."
+   },
+   {
+    "q": "Jak budování osobní značky probíhá?",
+    "a": "Nejprve pozicování a příběh, pak obsahová strategie, natáčení videí, publikace na sítě a průběžné vyhodnocování podle příchozích poptávek."
+   },
+   {
+    "q": "Kolik stojí budování osobní značky?",
+    "a": "Spolupráce začíná na 35 000 Kč měsíčně a zahrnuje strategii, produkci obsahu i správu sítí."
+   },
+   {
+    "q": "Musím být na kameře?",
+    "a": "U osobní značky ano — právě obličej a hlas majitele tvoří důvěru. Připravíme scénáře i režii, takže i lidé bez zkušeností natočí použitelný obsah hned první den."
+   }
+  ],
+  "cta": {
+   "nadpis": "Chcete značku, kterou trh zná?",
+   "text": "Domluvte si nezávaznou konzultaci zdarma. Do pár hodin voláme a probereme první kroky."
+  }
+ },
+ "firemni-znacka": {
+  "menu": "Firemní značka",
+  "stitek": "Firemní značka",
+  "h1": "Firemní značka, kterou si trh pamatuje.",
+  "titulek": "Firemní značka a branding na sociálních sítích – Brno | BoomBrand",
+  "popis": "Budování firemní značky od pozice na trhu po pravidelný obsah na sociálních sítích. Metoda BrandFormance™, od 35 000 Kč měsíčně, Brno a celá ČR.",
+  "perex": "Značka není logo. Je to důvod, proč si zákazník vybere vás a ne levnější konkurenci. Stavíme firemní značku od pozice na trhu až po obsah, který ji každý týden připomíná — metodou BrandFormance™.",
+  "foto": "nataceni-rozhovor.webp",
+  "foto_alt": "Zákulisí natáčení rozhovoru: klienti u stolu, kamera a studiová světla",
+  "fakta": [
+   {
+    "k": "Co dodáváme",
+    "v": "Pozice na trhu, sdělení, vizuální styl a obsahový systém na sociální sítě."
+   },
+   {
+    "k": "Pro koho",
+    "v": "Firmy a podnikatele, kteří chtějí být první volbou, ne nejlevnější nabídkou."
+   },
+   {
+    "k": "Cena",
+    "v": "Od 35 000 Kč měsíčně včetně tvorby obsahu."
+   },
+   {
+    "k": "Kde působíme",
+    "v": "Brno a Jihomoravský kraj osobně, celá ČR online."
+   }
+  ],
+  "pilire": [
+   {
+    "nazev": "Pozice na trhu",
+    "text": "Definujeme, v čem jste jiní a komu to říkáte. Bez toho je každý příspěvek jen šum."
+   },
+   {
+    "nazev": "Sdělení a tón",
+    "text": "Sjednotíme, jak firma mluví — na webu, v nabídkách i na sociálních sítích."
+   },
+   {
+    "nazev": "Vizuální styl",
+    "text": "Logo, barvy, typografie a šablony, aby byl obsah rozpoznatelný na první pohled."
+   },
+   {
+    "nazev": "Značka majitele",
+    "text": "Tvář majitele je nejrychlejší cesta k důvěře. Propojíme ji s firemní značkou, aby si pomáhaly."
+   },
+   {
+    "nazev": "Obsah, který značku živí",
+    "text": "Natáčíme a publikujeme pravidelně. Značka existuje jen tehdy, když je vidět."
+   },
+   {
+    "nazev": "Měření dopadu",
+    "text": "Sledujeme poptávky, jejich kvalitu a délku obchodu — ne počet fanoušků."
+   }
+  ],
+  "postup": [
+   {
+    "nazev": "Analýza a konzultace",
+    "text": "Projdeme trh, konkurenci a vaši dnešní komunikaci."
+   },
+   {
+    "nazev": "Strategie značky do 30 dnů",
+    "text": "Pozice, sdělení, vizuální směr a plán obsahu."
+   },
+   {
+    "nazev": "Nasazení",
+    "text": "Natočíme obsah, sjednotíme profily a spustíme komunikaci."
+   },
+   {
+    "nazev": "Revize po 3 měsících",
+    "text": "Vyhodnotíme dopad na poptávky a doladíme směr."
+   }
+  ],
+  "faq": [
+   {
+    "q": "Co všechno spadá do budování firemní značky?",
+    "a": "Pozice na trhu, hlavní sdělení, tón komunikace, vizuální styl a hlavně obsah, kterým značku každý týden dostáváte před lidi. Bez pravidelného obsahu zůstane značka jen dokumentem v šuplíku."
+   },
+   {
+    "q": "Jaký je rozdíl mezi firemní a osobní značkou?",
+    "a": "Firemní značka stojí na firmě jako celku, osobní na tváři majitele. Nejlépe fungují společně: majitel vytváří důvěru, firma ji proměňuje v systém a hodnotu."
+   },
+   {
+    "q": "Kolik stojí budování firemní značky?",
+    "a": "Spolupráce začíná na 35 000 Kč měsíčně a zahrnuje strategii, obsah, natáčení i správu sociálních sítí."
+   },
+   {
+    "q": "Jak poznám, že značka funguje?",
+    "a": "Podle počtu poptávek, které přijdou samy, kratšího obchodního jednání a menší citlivosti zákazníků na cenu. To reportujeme každý měsíc."
+   },
+   {
+    "q": "Děláte i vizuální identitu a logo?",
+    "a": "Ano, vizuální styl řešíme v rozsahu potřebném pro komunikaci — logo, barvy, typografie a šablony pro obsah na sociálních sítích."
+   }
+  ],
+  "cta": {
+   "nadpis": "Chcete značku, která prodává i bez vás?",
+   "text": "Domluvte si nezávaznou konzultaci zdarma. Řekneme vám, kde vaše značka dnes ztrácí zakázky."
+  }
+ },
+ "sprava-socialnich-siti": {
+  "menu": "Správa sociálních sítí",
+  "stitek": "Sociální sítě · Brno a celá ČR",
+  "h1": "Správa sociálních sítí, která přivádí poptávky, ne jen lajky.",
+  "titulek": "Správa sociálních sítí Brno – Instagram, TikTok, LinkedIn | BoomBrand",
+  "popis": "Kompletní správa sociálních sítí z Brna: strategie, natáčení, střih, publikace a měsíční reporty poptávek. Od 35 000 Kč měsíčně.",
+  "perex": "BoomBrand je marketingová agentura z Brna. Přebíráme kompletní správu sociálních sítí firem a podnikatelů — od strategie a natáčení až po publikaci a měsíční reporty poptávek. Metoda BrandFormance™ propojuje osobní značku majitele s výkonnostním marketingem.",
+  "foto": "vojta-cnn-prima.webp",
+  "foto_alt": "Vojtěch Bartoň v pořadu CNN Prima News o sociálních sítích",
+  "fakta": [
+   {
+    "k": "Co děláme",
+    "v": "Strategie, scénáře, natáčení, střih, publikace, komunita a reporty pro Instagram, TikTok, Facebook, LinkedIn a YouTube."
+   },
+   {
+    "k": "Cena",
+    "v": "Od 35 000 Kč měsíčně podle rozsahu spolupráce."
+   },
+   {
+    "k": "Kde působíme",
+    "v": "Sídlíme v Brně, natáčíme osobně v Brně a okolí, online spolupracujeme po celé ČR."
+   },
+   {
+    "k": "Váš čas",
+    "v": "2–3 hodiny měsíčně — jedno natáčecí dopoledne."
+   }
+  ],
+  "pilire": [
+   {
+    "nazev": "Obsahová strategie na míru",
+    "text": "Analyzujeme trh, konkurenci a vaše zakázky. Vzniká obsahový plán, který cílí na lidi, kteří u vás reálně nakupují."
+   },
+   {
+    "nazev": "Natáčení a střih na klíč",
+    "text": "Přijedeme s technikou i scénáři. Za jedno dopoledne natočíme obsah na celý měsíc, střih a titulky řešíme my."
+   },
+   {
+    "nazev": "Publikace a komunita",
+    "text": "Publikujeme podle plánu, odpovídáme na komentáře a zprávy a hlídáme, aby se z fanoušků stávali klienti."
+   },
+   {
+    "nazev": "Reporty poptávek",
+    "text": "Každý měsíc vidíte, kolik poptávek a hovorů vám sítě přinesly. Reportujeme obchodní čísla, ne dosahy."
+   }
+  ],
+  "postup": [
+   {
+    "nazev": "Nezávazná konzultace",
+    "text": "Krátký hovor, kde zjistíme, jestli vám sítě reálně přinesou zakázky."
+   },
+   {
+    "nazev": "Strategie do 30 dnů",
+    "text": "Kompletní obsahová a kanálová strategie pro váš obor."
+   },
+   {
+    "nazev": "Natáčení a publikace",
+    "text": "Jedno natáčení měsíčně, my se staráme o zbytek."
+   },
+   {
+    "nazev": "Vyhodnocení a škálování",
+    "text": "Měsíční report poptávek a úprava strategie podle čísel."
+   }
+  ],
+  "faq": [
+   {
+    "q": "Co obsahuje správa sociálních sítí u BoomBrand?",
+    "a": "Obsahovou strategii, scénáře, natáčení videí, střih a titulky, publikaci na Instagram, TikTok, Facebook, LinkedIn i YouTube, správu komentářů a zpráv, budování komunity a měsíční report příchozích poptávek."
+   },
+   {
+    "q": "Kolik stojí správa sociálních sítí?",
+    "a": "Spolupráce začíná na 35 000 Kč měsíčně. Cena se odvíjí od počtu platforem, frekvence obsahu a toho, jestli řešíme i placenou reklamu. Přesnou nabídku dostanete po nezávazné konzultaci zdarma."
+   },
+   {
+    "q": "Kolik času musím správě sociálních sítí věnovat?",
+    "a": "Přibližně 2–3 hodiny měsíčně. Za jedno dopoledne natočíme obsah na celý měsíc, zbytek řešíme my."
+   },
+   {
+    "q": "Které sociální sítě spravujete?",
+    "a": "Instagram, TikTok, Facebook, LinkedIn a YouTube. Konkrétní mix vybíráme podle toho, kde jsou vaši klienti."
+   },
+   {
+    "q": "Za jak dlouho uvidím výsledky ze sociálních sítí?",
+    "a": "První růst dosahu a první poptávky obvykle za 2–3 měsíce, stabilní obchodní výsledky za 4–6 měsíců. Proto doporučujeme spolupráci minimálně na 6 měsíců."
+   }
+  ],
+  "cta": {
+   "nadpis": "Chcete správu sítí pod jednou střechou?",
+   "text": "Domluvte si nezávaznou konzultaci zdarma. Ozveme se telefonicky do pár hodin a řekneme si, co dává pro vaši firmu smysl."
+  }
+ }
+}

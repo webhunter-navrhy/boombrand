@@ -1,0 +1,50 @@
+{
+ "cnn": {
+  "id": "VVShS5jHxWQ",
+  "nazev": "Jak nás ovlivňují sociální sítě",
+  "porad": "CNN Prima News · Nový den",
+  "clanek": {
+   "text": "Na sociálních sítích se dnes neprodává jen výrobek. Prodává se i důvod, proč mu věřit",
+   "href": "https://cnn.iprima.cz/rano-otevrete-mobil-a-uz-se-porovnavate-s-ostatnimi-expert-radi-jak-vycvicit-algoritmus-521744"
+  }
+ },
+ "playlist": "https://youtube.com/playlist?list=PLkOQbECU51UsJ7UmKFzwvm_kb9gbNqt_6",
+ "epizody": [
+  {
+   "id": "b5vrTFtoz2U",
+   "host": "David Rosskohl",
+   "nazev": "Jak přeprogramovat svůj mozek k vítězství?",
+   "delka": "33:01"
+  },
+  {
+   "id": "Jx8oa-_Ijhc",
+   "host": "Radek Petráš",
+   "nazev": "Jak ovládnout strach z mluvení: Umění sebevědomé komunikace",
+   "delka": "40:03"
+  },
+  {
+   "id": "ig8-buC5ovQ",
+   "host": "Josef Hoang",
+   "nazev": "Proč ženy opouštějí „hodné kluky“?",
+   "delka": "1:03:41"
+  },
+  {
+   "id": "qZv4jh3jI34",
+   "host": "Petr Opava",
+   "nazev": "Škola z nás dělá poslušné ovce. Jak získat zpět své sebevědomí?",
+   "delka": "53:00"
+  },
+  {
+   "id": "1qCoYD09f54",
+   "host": "Jiří Filip",
+   "nazev": "80 % úspěchu je váš vzhled a projev, ne to, co víte!",
+   "delka": "47:16"
+  },
+  {
+   "id": "lCa8ZlDa4dI",
+   "host": "Jan „Johny“ Vašourek",
+   "nazev": "Z 0 na 100 milionů: 9 kroků, jak uzavřít každý obchod",
+   "delka": "43:40"
+  }
+ ]
+}

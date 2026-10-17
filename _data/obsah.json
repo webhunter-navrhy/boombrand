@@ -1,0 +1,222 @@
+{
+ "hero": {
+  "nadtitul": "Osobní a firemní značka na sociálních sítích · Brno a celá ČR",
+  "h1": "Vaše jméno prodává.",
+  "h1b": "Zatím jen ve chvíli, kdy jste osobně na schůzce.",
+  "perex": "Naší metodou BrandFormance™ stavíme majitelům firem a expertům osobní značku, která přivádí klienty i tehdy, když zrovna neprodáváte. Vy do toho dáte 2–3 hodiny měsíčně. Zbytek řešíme my.",
+  "popisek": "Vojtěch Bartoň, zakladatel BoomBrand, v pořadu Nový den na CNN Prima News"
+ },
+ "duveruji": [
+  "T-Mobile ČR",
+  "Sirius Finance",
+  "Petr Vojnar",
+  "Josef Hoang",
+  "Soňa Sedláčková",
+  "Zlatka Otavová",
+  "TalkToWin",
+  "LILI Business"
+ ],
+ "proc": {
+  "nadpis": "Doporučení fungují. Jen je neumíte zapnout, když je potřebujete.",
+  "odstavce": [
+   "Většina obchodů u vás vzniká přes doporučení a osobní síť. To je nejkvalitnější kanál, jaký existuje — a zároveň jediný, který si nemůžete objednat.",
+   "Nemůžete si v pondělí říct, že tenhle měsíc potřebujete tři nové klienty. Buď přijdou, nebo nepřijdou.",
+   "Osobní značka doporučení nenahrazuje. Zesiluje je — a přidává druhý kanál, který běží i tehdy, když vy zrovna nepracujete. Od vás to chce 2–3 hodiny měsíčně."
+  ],
+  "cisla": [
+   {
+    "cislo": "2–3 h",
+    "text": "měsíčně potřebujeme od vás. Jedno natáčecí dopoledne, zbytek je na nás."
+   }
+  ]
+ },
+ "metoda": {
+  "nadpis": "Nedostanete obsah. Dostanete systém.",
+  "perex": "Jedenáct kroků metody BrandFormance™, které běží každý měsíc. Vy do toho vstupujete jednou — na natáčecí blok. Všechno ostatní, včetně rozhodování o tom, co se bude točit, je na nás.",
+  "stopy": [
+   {
+    "id": "S",
+    "nazev": "Strategie"
+   },
+   {
+    "id": "P",
+    "nazev": "Produkce"
+   },
+   {
+    "id": "D",
+    "nazev": "Distribuce"
+   },
+   {
+    "id": "M",
+    "nazev": "Měření a obchod"
+   }
+  ],
+  "kroky": [
+   {
+    "stopa": "S",
+    "nazev": "Průzkum trhu",
+    "text": "Víme přesně, co ve vašem oboru nejvíce funguje.",
+    "vy": false
+   },
+   {
+    "stopa": "S",
+    "nazev": "Stanovení cílů",
+    "text": "Nastavíme si cíle a představy, abychom tahali za jeden provaz.",
+    "vy": false
+   },
+   {
+    "stopa": "S",
+    "nazev": "Strategie a optimalizace profilů",
+    "text": "Na základě cílů vytvoříme dlouhodobou strategii a připravíme sociální sítě na expanzi.",
+    "vy": false
+   },
+   {
+    "stopa": "S",
+    "nazev": "Obsahový plán",
+    "text": "Příprava nápadů a scénářů na natáčení.",
+    "vy": false
+   },
+   {
+    "stopa": "P",
+    "nazev": "Profi produkce",
+    "text": "Natáčení s kameramanem a veškerou technikou. Tady jste u toho vy — jednou za měsíc.",
+    "vy": true
+   },
+   {
+    "stopa": "P",
+    "nazev": "Profi zpracování",
+    "text": "Střih, titulky, hudba, grafika.",
+    "vy": false
+   },
+   {
+    "stopa": "D",
+    "nazev": "Publikace na sítě",
+    "text": "Podle harmonogramu, včetně náhledového obrázku i popisku.",
+    "vy": false
+   },
+   {
+    "stopa": "D",
+    "nazev": "Placená distribuce",
+    "text": "Kampaně Meta Ads na Facebooku a Instagramu, cílení na vaši cílovou skupinu, kreativy a průběžná optimalizace.",
+    "vy": false
+   },
+   {
+    "stopa": "M",
+    "nazev": "Systémy a automatizace",
+    "text": "Napojení na přistávací stránku, automatické posílání zpráv a podobně.",
+    "vy": false
+   },
+   {
+    "stopa": "M",
+    "nazev": "Reporting a vyhodnocování",
+    "text": "Neměříme dosah a lajky — měříme poptávky, jejich zdroj a obchodní příležitosti.",
+    "vy": false
+   },
+   {
+    "stopa": "M",
+    "nazev": "Přímé zprávy potenciálním klientům",
+    "text": "Aktivní oslovování potenciálních klientů a zákazníků skrz sociální sítě.",
+    "vy": false
+   }
+  ],
+  "smycka": "Další měsíc znovu, chytřeji o data z toho minulého."
+ },
+ "odlisujeme": {
+  "nadpis": "Věci, které ostatní přeskočí.",
+  "body": [
+   {
+    "nazev": "Full-service od strategie po reporting",
+    "text": "Neřešíte nic — celý proces je na nás. Potřebujeme vás jen 2–3 hodiny měsíčně."
+   },
+   {
+    "nazev": "Autenticita jako základ",
+    "text": "Netvoříme generický obsah, ale skutečný příběh konkrétního člověka. Obsah, který funguje."
+   },
+   {
+    "nazev": "Měřitelné výsledky",
+    "text": "Každý měsíc víme, co funguje a proč. Nespoléháme na pocity — máme data."
+   },
+   {
+    "nazev": "Osobní přístup",
+    "text": "Nepracujeme se stovkami klientů. Pracujeme s těmi správnými — do hloubky."
+   },
+   {
+    "nazev": "Pochopení psychologie",
+    "text": "Rozumíme tomu, jak funguje psychologie lidí a podnikání. Proto tvoříme obsah, který prodává."
+   },
+   {
+    "nazev": "Strategie před produkcí",
+    "text": "Nejdřív víme proč — účel. Pak teprve točíme a píšeme. Nikdy naopak."
+   }
+  ],
+  "hlavni": {
+   "nazev": "Řekneme vám, když to nedává smysl.",
+   "text": "Ne každý potřebuje osobní značku. Někdo má stabilní kontrakty a plnou kapacitu. Na první konzultaci zjistíme, jestli se vám investice vrátí — a když ne, řekneme vám to."
+  }
+ },
+ "proces": {
+  "nadpis": "Žádný chaos, žádná improvizace.",
+  "perex": "Jasné kroky od první schůzky až po dlouhodobý růst vaší značky.",
+  "kroky": [
+   {
+    "nazev": "Úvodní konzultace",
+    "text": "Pochopíme váš byznys, cíle a publikum. Bezplatný 30minutový hovor, kde si řekneme, jestli si sedneme."
+   },
+   {
+    "nazev": "Strategie značky",
+    "text": "Postavíme positioning, sdělení a obsahový plán. Ne tipy z TikToku — strategie pro váš trh."
+   },
+   {
+    "nazev": "Produkce obsahu",
+    "text": "Natáčíme, stříháme, píšeme texty. Vy se soustředíte na svůj byznys, my se staráme o všechno ostatní."
+   },
+   {
+    "nazev": "Růst a optimalizace",
+    "text": "Měříme, vyhodnocujeme, ladíme. Měsíční reporty s reálnými čísly — ne dosah, ale poptávky a značka."
+   }
+  ],
+  "cena": "od 35 000 Kč",
+  "cena_pozn": "měsíčně, podle počtu platforem, frekvence obsahu a placené reklamy. Přesnou nabídku dostanete po konzultaci.",
+  "podminky": [
+   {
+    "k": "Váš čas",
+    "v": "2–3 hodiny měsíčně"
+   },
+   {
+    "k": "Délka",
+    "v": "doporučujeme min. 6 měsíců"
+   },
+   {
+    "k": "První výsledky",
+    "v": "za 2–3 měsíce"
+   }
+  ]
+ },
+ "zakladatel": {
+  "jmeno": "Vojtěch Bartoň",
+  "role": "Zakladatel a CEO BoomBrand",
+  "text": [
+   "Za tři roky jsme klientům pomohli vydělat přes 20 milionů korun a postavili jsme značky realitním makléřům, finančním poradcům, majitelům firem i korporacím. BoomBrand stojí na jednoduché myšlence — většina agentur dělá obsah, my stavíme značky, které vydělávají.",
+   "Kromě agentury vedu podcast TalkToWin, spolupracuji s firmami jako T-Mobile ČR a osobně vystupuji v jejich obsahu. Věřím, že podnikání je hra — a chci, aby ji hráli co nejlépe."
+  ],
+  "cisla": [
+   {
+    "cislo": "3+",
+    "text": "let v oboru"
+   },
+   {
+    "cislo": "100M+",
+    "text": "zhlédnutí pro klienty"
+   },
+   {
+    "cislo": "20M+ Kč",
+    "text": "jsme vydělali klientům"
+   }
+  ]
+ },
+ "kontakt": {
+  "nadpis": "Pojďme spolupracovat.",
+  "text": "Třicet minut, kde projdeme váš byznys, odkud dnes chodí zakázky a jestli pro vás osobní značka vůbec dává ekonomický smysl. Když ne, řekneme vám to.",
+  "pozn": "Odpovídáme do 24 hodin."
+ }
+}

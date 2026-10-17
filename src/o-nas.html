@@ -1,0 +1,20 @@
+{% extends "_base.html" %}
+{% set titulek = 'O nás – Vojtěch Bartoň, zakladatel BoomBrand' %}
+{% set popis = 'Vojtěch Bartoň, zakladatel a CEO BoomBrand: osobní a firemní značky pro majitele firem, podcast TalkToWin, rozhovor na CNN Prima News.' %}
+{% set cesta = 'o-nas/' %}
+{% block body_class %}podstranka{% endblock %}
+{% block obsah %}
+<section class="sub-hero sub-onas" aria-labelledby="on-h">
+  <div class="wrap">
+    <nav class="drobky tc" aria-label="Drobečková navigace"><a href="{{ url('') }}">BoomBrand</a> / <span>O nás</span></nav>
+    <p class="hero-nad"><span class="rec" aria-hidden="true"></span>O nás · BoomBrand</p>
+    <h1 id="on-h" class="sub-h1">Nezačínáme příspěvky. Začínáme vaším podnikáním.</h1>
+    <div class="onas-sloupce">
+      <p class="perex">Pomáháme majitelům firem budovat osobní a firemní značky, které přivádějí klienty. Propojujeme strategii, tvorbu obsahu a placenou reklamu metodou BrandFormance™.</p>
+      <p>Začínáme vaším podnikáním, klienty a cílem spolupráce. Připravíme strategii, scénáře, natáčení, střih a publikaci. Výsledky sledujeme podle příchozích poptávek a obchodních příležitostí. Budujeme nejprve důvěru v majitele, poté ji přenášíme na firmu a její tým. Vy věnujete natáčení 2–3&nbsp;hodiny měsíčně, ostatní řešíme my.</p>
+    </div>
+  </div>
+</section>
+{% include "_zakladatel.html" %}
+{% include "_kontakt.html" %}
+{% endblock %}

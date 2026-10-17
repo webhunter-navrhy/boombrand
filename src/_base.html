@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{ titulek or site.nazev }}</title>
+<meta name="description" content="{{ popis or site.popis }}">
+{% if site.navrh or noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
+<meta name="theme-color" content="{{ site.theme_color }}">
+<link rel="canonical" href="{{ site.url }}{{ cesta or '' }}">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:site_name" content="BoomBrand">
+<meta property="og:title" content="{{ titulek or site.nazev }}">
+<meta property="og:description" content="{{ popis or site.popis }}">
+<meta property="og:url" content="{{ site.url }}{{ cesta or '' }}">
+{% if og_url %}<meta property="og:image" content="{{ og_url }}">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">{% endif %}
+<link rel="icon" href="{{ base }}favicon.svg" type="image/svg+xml">
+<link rel="preload" href="{{ base }}fonts/syne-400-800-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ base }}fonts/syne-400-800-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{{ asset('fonts/fonts.css') }}">
+<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+<script>document.documentElement.classList.add('js')</script>
+{% block head %}{% endblock %}
+{% if jsonld %}<script type="application/ld+json">{{ jsonld|safe }}</script>{% endif %}
+</head>
+<body class="{% block body_class %}{% endblock %}">
+<a class="skip" href="#obsah">Přeskočit na obsah</a>
+{% set doma = (cesta or '') == '' %}
+{% macro odkaz(h) -%}
+{%- if h.startswith('#') -%}{{ '' if doma else url('') }}{{ h }}{%- elif h.startswith('http') -%}{{ h }}{%- else -%}{{ url(h) }}{%- endif -%}
+{%- endmacro %}
+<header class="hlavicka" data-hlavicka>
+  <div class="hlavicka-in">
+    <a href="{{ url('') }}" class="logo" aria-label="BoomBrand – úvodní stránka">
+      <img src="{{ base }}{{ site.logo }}" alt="BoomBrand" width="226" height="13">
+    </a>
+    <nav class="nav" aria-label="Hlavní">
+      {% for n in site.nav %}
+        {% if n.menu is defined %}
+        <div class="nav-sub">
+          <a href="{{ odkaz(n.href) }}" class="nav-a" aria-haspopup="true">{{ n.text }}</a>
+          <div class="nav-panel">
+            {% for m in n.menu %}<a href="{{ odkaz(m.href) }}">{{ m.text }}</a>{% endfor %}
+          </div>
+        </div>
+        {% else %}
+        <a href="{{ odkaz(n.href) }}" class="nav-a">{{ n.text }}</a>
+        {% endif %}
+      {% endfor %}
+    </nav>
+    <a href="{{ odkaz('#kontakt') }}" class="btn btn-sm hlavicka-cta">Konzultace zdarma</a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="menu" data-burger>
+      <span class="burger-car"></span><span class="burger-car"></span><span class="sr">Menu</span>
+    </button>
+  </div>
+  <div class="menu" id="menu" hidden data-menu>
+    <nav aria-label="Mobilní">
+      {% for n in site.nav %}
+        <a href="{{ odkaz(n.href) }}">{{ n.text }}</a>
+        {% if n.menu is defined %}{% for m in n.menu %}<a href="{{ odkaz(m.href) }}" class="menu-sub">{{ m.text }}</a>{% endfor %}{% endif %}
+      {% endfor %}
+    </nav>
+    <div class="menu-kontakt">
+      <a href="tel:{{ site.kontakt.telefon|replace(' ', '') }}">{{ site.kontakt.telefon }}</a>
+      <a href="mailto:{{ site.kontakt.email }}">{{ site.kontakt.email }}</a>
+      <a href="{{ odkaz('#kontakt') }}" class="btn">Domluvit konzultaci zdarma</a>
+    </div>
+  </div>
+</header>
+<main id="obsah">
+{% block obsah %}{% endblock %}
+</main>
+<footer class="paticka">
+  <div class="wrap paticka-grid">
+    <div class="paticka-brand">
+      <img src="{{ base }}{{ site.logo }}" alt="BoomBrand" width="226" height="13" loading="lazy">
+      <p>Osobní a firemní značka na sociálních sítích. Metoda BrandFormance™. Brno a celá Česká republika.</p>
+    </div>
+    <div>
+      <h2 class="paticka-h">Služby</h2>
+      <ul role="list">
+        {% for k, s in data.sluzby.items() %}<li><a href="{{ url(k) }}">{{ s.menu }}</a></li>{% endfor %}
+        <li><a href="{{ url('pripadove-studie') }}">Případové studie</a></li>
+        <li><a href="{{ url('o-nas') }}">O nás – Vojtěch Bartoň</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="paticka-h">Kontakt</h2>
+      <ul role="list">
+        <li><a href="tel:{{ site.kontakt.telefon|replace(' ', '') }}">{{ site.kontakt.telefon }}</a></li>
+        <li><a href="mailto:{{ site.kontakt.email }}">{{ site.kontakt.email }}</a></li>
+        {% for s in site.socialni %}<li><a href="{{ s.href }}" rel="noopener" target="_blank">{{ s.text }}</a></li>{% endfor %}
+      </ul>
+    </div>
+  </div>
+  <div class="wrap paticka-spod">
+    <p>© 2026 {{ site.firma }} · IČO {{ site.ico }} · Brno</p>
+    <p>BrandFormance™ je metoda BoomBrand.</p>
+  </div>
+</footer>
+<script src="{{ asset('js/main.js') }}" defer></script>
+</body>
+</html>

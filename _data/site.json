@@ -1,0 +1,92 @@
+{
+  "slug": "boombrand",
+  "nazev": "BoomBrand",
+  "url": "https://webhunter-navrhy.github.io/boombrand/",
+  "base": "/boombrand/",
+  "lang": "cs",
+  "popis": "BoomBrand z Brna staví majitelům firem a expertům osobní a firemní značku na sociálních sítích metodou BrandFormance™. Od vás jen 2–3 hodiny měsíčně.",
+  "navrh": true,
+  "domena": "",
+  "og_image": "vojta-cnn-prima.webp",
+  "logo": "logo-boombrand.svg",
+  "theme_color": "#0a0a0a",
+  "typ": "ProfessionalService",
+  "ico": "29604001",
+  "kontakt": {
+    "email": "barton@boom-brand.cz",
+    "telefon": "+420 775 133 711",
+    "adresa": {
+      "ulice": "",
+      "psc": "",
+      "mesto": "Brno",
+      "zeme": "CZ"
+    }
+  },
+  "oteviraci_doba": [],
+  "sameas": [
+    "https://www.instagram.com/boombrand_socialmedia/",
+    "https://www.instagram.com/vojta__barton/",
+    "https://linkedin.com/in/vojtabarton"
+  ],
+  "cenove_rozpeti": "od 35 000 Kč měsíčně",
+  "formular": {
+    "endpoint": "",
+    "demo": true,
+    "predmet": "Poptávka z webu BoomBrand"
+  },
+  "nav": [
+    {
+      "text": "Metoda",
+      "href": "#metoda"
+    },
+    {
+      "text": "Výsledky",
+      "href": "#vysledky"
+    },
+    {
+      "text": "Služby",
+      "href": "#sluzby",
+      "menu": [
+        {
+          "text": "Osobní značka",
+          "href": "osobni-znacka"
+        },
+        {
+          "text": "Firemní značka",
+          "href": "firemni-znacka"
+        },
+        {
+          "text": "Správa sociálních sítí",
+          "href": "sprava-socialnich-siti"
+        }
+      ]
+    },
+    {
+      "text": "O nás",
+      "href": "o-nas"
+    },
+    {
+      "text": "Otázky",
+      "href": "#otazky"
+    }
+  ],
+  "firma": "BoomBrand s.r.o.",
+  "socialni": [
+    {
+      "text": "Instagram BoomBrand",
+      "href": "https://www.instagram.com/boombrand_socialmedia/"
+    },
+    {
+      "text": "Instagram Vojty",
+      "href": "https://www.instagram.com/vojta__barton/"
+    },
+    {
+      "text": "LinkedIn",
+      "href": "https://linkedin.com/in/vojtabarton"
+    },
+    {
+      "text": "Podcast TalkToWin",
+      "href": "https://youtube.com/playlist?list=PLkOQbECU51UsJ7UmKFzwvm_kb9gbNqt_6"
+    }
+  ]
+}

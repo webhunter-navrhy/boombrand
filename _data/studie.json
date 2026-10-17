@@ -1,0 +1,101 @@
+[
+ {
+  "id": "jungrova",
+  "stitek": "Obsah, který přivádí zakázky",
+  "jmeno": "Miroslava Jungrová",
+  "role": "Realitní makléřka, Praha",
+  "foto": "miroslava-jungrova.jpg",
+  "foto_alt": "Miroslava Jungrová v reels videu o 60 milionech v portfoliu",
+  "hlavni": {
+   "cislo": "60 mil. Kč",
+   "text": "v portfoliu za první 3 měsíce spolupráce"
+  },
+  "dalsi": [
+   {
+    "cislo": "Placená reklama",
+    "text": "cílená na její klienty"
+   },
+   {
+    "cislo": "Růst",
+    "text": "důvěry a brandu makléřky"
+   }
+  ],
+  "vyzva": "Mirka chtěla získávat kvalitní poptávky přímo ze sociálních sítí — bez závislosti na placené reklamě a portálech. Potřebovala obsah, který buduje důvěru a zároveň přivádí konkrétní klienty.",
+  "udelali": [
+   "Nastavili jsme positioning ‚makléřka, které věříte‘ a obsahové pilíře okolo prémiových nemovitostí.",
+   "Pravidelně točíme reels z prohlídek, edukační obsah a story s reálnou prací v terénu.",
+   "Každý měsíc vyhodnocujeme, který typ obsahu generuje nejvíce poptávek."
+  ],
+  "ig": {
+   "text": "Instagram Miroslavy Jungrové",
+   "href": "https://www.instagram.com/mirka_jungrova_reality/"
+  },
+  "citace": ""
+ },
+ {
+  "id": "otavova",
+  "stitek": "Jedna značka, tři platformy",
+  "jmeno": "Zlatka Otavová",
+  "role": "Podnikatelka a LILI Business",
+  "foto": "",
+  "hlavni": {
+   "cislo": "1 den",
+   "text": "natáčení = měsíc obsahu"
+  },
+  "dalsi": [
+   {
+    "cislo": "3",
+    "text": "platformy pod jednou střechou"
+   },
+   {
+    "cislo": "5",
+    "text": "nových lidí v týmu za 1 měsíc"
+   }
+  ],
+  "vyzva": "Zlatka budovala komunitu žen-podnikatelek a potřebovala konzistentní obsah napříč třemi platformami současně — Instagram, TikTok a YouTube. Sama na to neměla kapacitu ani tým.",
+  "udelali": [
+   "Připravili jsme jednotnou obsahovou strategii pro 3 platformy s respektem k jejich specifikům.",
+   "Z jednoho natáčecího dne vytváříme obsah na celý měsíc — dlouhá videa, reels i shorts.",
+   "Řídíme produkci, střih, publikaci i komunikaci s komunitou."
+  ],
+  "ig": {
+   "text": "Instagram Zlatky Otavové",
+   "href": "https://instagram.com/zlatka.otavova"
+  },
+  "citace": "",
+  "foto_alt": ""
+ },
+ {
+  "id": "vojnar",
+  "stitek": "Virální dosah",
+  "jmeno": "Petr Vojnar",
+  "role": "Moderátor a komunikační expert",
+  "foto": "petr-vojnar.jpg",
+  "foto_alt": "Petr Vojnar ve videu o 10 milionech zhlédnutí",
+  "hlavni": {
+   "cislo": "20M+",
+   "text": "zhlédnutí na jednom videu"
+  },
+  "dalsi": [
+   {
+    "cislo": "+30 000",
+    "text": "sledujících za 1 rok"
+   },
+   {
+    "cislo": "100 %",
+    "text": "produkce na naší straně"
+   }
+  ],
+  "vyzva": "Petr měl silnou osobnost a know-how, ale obsah na sítích nedosahoval potenciálu, který by odpovídal jeho expertize. Chyběla jednotná strategie a formát, který by zaujal masu lidí.",
+  "udelali": [
+   "Postavili jsme dlouhodobou obsahovou strategii a formát krátkých videí s jasným hookem.",
+   "Převzali jsme kompletní produkci — scénáře, natáčení, střih i publikaci.",
+   "Optimalizovali jsme každé video na základě dat z předchozích výstupů."
+  ],
+  "citace": "Jedno video s Vojtou nám překonalo 20 milionů zhlédnutí. Spolupráce je dlouhodobá, profesionální a hlavně funguje.",
+  "ig": {
+   "text": "Instagram Petra Vojnara",
+   "href": "https://instagram.com/petrvojnar"
+  }
+ }
+]

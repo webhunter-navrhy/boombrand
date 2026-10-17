@@ -1,0 +1,17 @@
+<section class="sekce kontakt" id="kontakt" aria-labelledby="kontakt-h">
+  <div class="wrap kontakt-grid">
+    <div class="kontakt-txt">
+      <p class="stitek"><span class="rec" aria-hidden="true"></span>Nezávazná konzultace zdarma</p>
+      <h2 id="kontakt-h" class="h-velky">{{ data.obsah.kontakt.nadpis }}</h2>
+      <p class="perex">{{ data.obsah.kontakt.text }}</p>
+      <ul class="kontakt-prima" role="list">
+        <li><span>Telefon</span><a href="tel:{{ site.kontakt.telefon|replace(' ', '') }}">{{ site.kontakt.telefon }}</a></li>
+        <li><span>E-mail</span><a href="mailto:{{ site.kontakt.email }}">{{ site.kontakt.email }}</a></li>
+        <li><span>Instagram</span><a href="https://www.instagram.com/boombrand_socialmedia/" target="_blank" rel="noopener">@boombrand_socialmedia</a></li>
+      </ul>
+    </div>
+    <div class="kontakt-form">
+      {% include "_formular.html" %}
+    </div>
+  </div>
+</section>

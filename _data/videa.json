@@ -1,0 +1,30 @@
+[
+ {
+  "video": "video/jungova.mp4",
+  "poster": "miroslava-jungrova.jpg",
+  "jmeno": "Mirka Jungrová",
+  "role": "Realitní makléřka",
+  "delka": "1:47"
+ },
+ {
+  "video": "video/rajnoha.mp4",
+  "poster": "michal-matocha.jpg",
+  "jmeno": "Michal Matocha",
+  "role": "Majitel GRASSolutions — zahradní firma",
+  "delka": "0:52"
+ },
+ {
+  "video": "video/bubenik.mp4",
+  "poster": "tomas-bubenik.jpg",
+  "jmeno": "Tomáš Bubeník",
+  "role": "Ředitel Sirius Finance",
+  "delka": "0:44"
+ },
+ {
+  "video": "video/vojnar.mp4",
+  "poster": "petr-vojnar.jpg",
+  "jmeno": "Petr Vojnar",
+  "role": "Moderátor a komunikační expert",
+  "delka": "0:50"
+ }
+]

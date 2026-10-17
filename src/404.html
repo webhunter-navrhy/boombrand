@@ -1,0 +1,14 @@
+{% extends "_base.html" %}
+{% set titulek = 'Stránka nenalezena – BoomBrand' %}
+{% set cesta = '404.html' %}
+{% set noindex = True %}
+{% block obsah %}
+<section class="sub-hero" aria-labelledby="e-h">
+  <div class="wrap">
+    <p class="hero-nad"><span class="rec" aria-hidden="true"></span>404</p>
+    <h1 id="e-h" class="sub-h1">Tenhle záběr ve střihu není.</h1>
+    <p class="perex">Stránka neexistuje nebo se přesunula.</p>
+    <div class="tlacitka"><a href="{{ url('') }}" class="btn">Zpět na úvod</a></div>
+  </div>
+</section>
+{% endblock %}

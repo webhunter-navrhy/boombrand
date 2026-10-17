@@ -1,0 +1,81 @@
+{% extends "_base.html" %}
+{% set S = data.sluzby[klic] %}
+{% set titulek = S.titulek %}
+{% set popis = S.popis %}
+{% set cesta = klic ~ '/' %}
+{% block head %}
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{% for f in S.faq %}{"@type":"Question","name":{{ f.q|replace(' ',' ')|tojson }},"acceptedAnswer":{"@type":"Answer","text":{{ f.a|replace(' ',' ')|tojson }}}}{{ ',' if not loop.last }}{% endfor %}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":{{ S.menu|tojson }},"provider":{"@type":"ProfessionalService","name":"BoomBrand s.r.o.","url":{{ site.url|tojson }}},"areaServed":"CZ","offers":{"@type":"Offer","priceSpecification":{"@type":"UnitPriceSpecification","minPrice":35000,"priceCurrency":"CZK","unitText":"měsíc"}}}</script>
+{% endblock %}
+{% block body_class %}podstranka{% endblock %}
+{% block obsah %}
+<section class="sub-hero" aria-labelledby="sub-h">
+  <div class="wrap sub-hero-grid">
+    <div class="sub-hero-txt">
+      <nav class="drobky tc" aria-label="Drobečková navigace"><a href="{{ url('') }}">BoomBrand</a> / <span>{{ S.menu }}</span></nav>
+      <p class="hero-nad"><span class="rec" aria-hidden="true"></span>{{ S.stitek }}</p>
+      <h1 id="sub-h" class="sub-h1">{{ S.h1 }}</h1>
+      <p class="perex">{{ S.perex }}</p>
+      <div class="tlacitka">
+        <a href="#kontakt" class="btn">Domluvit konzultaci zdarma</a>
+        <a href="{{ url('pripadove-studie') }}" class="btn btn-obrys">Výsledky klientů</a>
+      </div>
+    </div>
+    <figure class="sub-hero-foto">
+      {{ img(S.foto, S.foto_alt, sizes='(min-width: 64rem) 40vw, 92vw', cls='foto') }}
+      <span class="monitor-roh monitor-roh-a" aria-hidden="true"></span><span class="monitor-roh monitor-roh-b" aria-hidden="true"></span>
+    </figure>
+  </div>
+  <div class="wrap">
+    <dl class="sub-fakta">
+      {% for f in S.fakta %}<div><dt>{{ f.k }}</dt><dd>{{ f.v }}</dd></div>{% endfor %}
+    </dl>
+  </div>
+</section>
+
+<section class="sekce papir pilire" aria-labelledby="pil-h">
+  <div class="wrap">
+    <p class="stitek">Co pro vás uděláme</p>
+    <h2 id="pil-h" class="h-velky">{{ S.menu }} metodou BrandFormance™.</h2>
+    <ul class="pilire-rady" role="list">
+      {% for p in S.pilire %}<li data-reveal><h3>{{ p.nazev }}</h3><p>{{ p.text }}</p></li>{% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="sekce vysledky-kratce" aria-labelledby="vk-h">
+  <div class="wrap">
+    <div class="sekce-hlava">
+      <p class="stitek">Výsledky klientů</p>
+      <h2 id="vk-h" class="h2">Reálné výsledky našich klientů.</h2>
+    </div>
+    <ul class="vk-rada" role="list">
+      {% for s in data.studie %}
+      <li data-reveal data-reveal-delay="{{ loop.index0 }}"><a href="{{ url('pripadove-studie') }}#studie-{{ s.id }}">
+        <span class="vk-cislo">{{ s.hlavni.cislo }}</span>
+        <span class="vk-text">{{ s.hlavni.text }}</span>
+        <span class="vk-kdo">{{ s.jmeno }} · {{ s.role }} <span aria-hidden="true">→</span></span>
+      </a></li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+{% include "_reels.html" %}
+
+{% set kroky = S.postup %}{% set kroky_nadpis = 'Od konzultace k poptávkám.' %}
+{% include "_proces.html" %}
+
+<section class="sekce otazky papir" id="otazky" aria-labelledby="faq-h">
+  <div class="wrap otazky-grid">
+    <div>
+      <p class="stitek">Časté otázky</p>
+      <h2 id="faq-h" class="h-velky">{{ S.cta.nadpis }}</h2>
+      <p class="otazky-pozn">{{ S.cta.text }}</p>
+    </div>
+    {% set polozky = S.faq %}{% include "_faq.html" %}
+  </div>
+</section>
+
+{% include "_kontakt.html" %}
+{% endblock %}
