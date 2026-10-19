@@ -46,3 +46,4 @@ Po přepnutí odpojit doménu v Lovable (pozor: neodpojovat dřív, než DNS bě
 - Obsah: `_data/*.json` (sluzby = 9 landingů, blog = články, recenze, obsah = úvod/ceník/formuláře, site = kontakty a nastavení)
 - Formuláře: `https://webhunter-admin.webhunter.workers.dev/api/boombrand/form` (KV `site:boombrand`: formStore, formLang cs, formTo = barton@boom-brand.cz + vojtechbarton2004@gmail.com, formOrigins)
 - Nový článek: přidat objekt do `_data/blog.json` (slug, titulek, popis, h1, datum, cteni, kategorie, telo v HTML, sluzba)
+- Rychlost: písma jsou zúžená na české znaky (`static/fonts/*-cs-*.woff2`, @font-face v `_base.html`) – při přidání textu v jiném jazyce je potřeba je vygenerovat znovu (pyftsubset). CSS/JS minifikuje build přes esbuild (`ESBUILD` nebo ~/webhunter-admin/node_modules/.bin/esbuild).
