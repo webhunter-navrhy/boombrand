@@ -34,7 +34,7 @@
       <p>Vojta v&nbsp;něm vede rozhovory s&nbsp;podnikateli a&nbsp;experty o&nbsp;tom, jak vyhrávat v&nbsp;byznysu i&nbsp;v&nbsp;komunikaci.</p>
     </div>
     <ul class="epizody" role="list">
-      {% for e in M.epizody %}
+      {% for e in M.epizody[:pocet_epizod if pocet_epizod is defined else M.epizody|length] %}
       <li class="epizoda" data-reveal data-reveal-delay="{{ loop.index0 % 3 }}">
         <div class="yt" data-yt="{{ e.id }}">
           {{ img('yt/' ~ e.id ~ '.jpg', '', sizes='(min-width: 64rem) 30vw, 90vw', cls='yt-nahled') }}

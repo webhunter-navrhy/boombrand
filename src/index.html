@@ -9,7 +9,7 @@
 {% block body_class %}doma{% endblock %}
 {% block obsah %}
 
-{# ================= HERO: vrstvená scéna jako hledáček kamery ================= #}
+{# ================= HERO: titulek + dvě reels klientů ================= #}
 <section class="hero zrno" aria-labelledby="hero-h">
   <div class="hero-svetlo" aria-hidden="true"></div>
   <div class="wrap hero-grid">
@@ -25,29 +25,30 @@
       <a class="hero-hodnoceni" href="#recenze"><span class="hvezdy" aria-hidden="true">★★★★★</span><span><strong>{{ data.recenze.hodnoceni }}</strong> z&nbsp;{{ data.recenze.pocet }} recenzí na Googlu</span></a>
     </div>
 
-    <div class="scena" data-scena>
-      <figure class="hledacek vrstva-1" data-yt="{{ data.podcast.cnn.id }}">
-        {{ img('vojta-cnn-prima.webp', O.hero.popisek, sizes='(min-width: 64rem) 46vw, 92vw', cls='hledacek-img') }}
-        <span class="roh roh-tl" aria-hidden="true"></span><span class="roh roh-tr" aria-hidden="true"></span>
-        <span class="roh roh-bl" aria-hidden="true"></span><span class="roh roh-br" aria-hidden="true"></span>
-        <button type="button" class="monitor-play" aria-label="Přehrát rozhovor: {{ data.podcast.cnn.nazev }} (CNN Prima News)">
-          <span class="play-ikona" aria-hidden="true"></span><span class="monitor-play-txt">Pustit rozhovor<small>CNN Prima News</small></span>
-        </button>
+    {# Dvě skutečná reels klientů: smyčka bez zvuku, po kliknutí celé video se zvukem. #}
+    <div class="feed" data-scena>
+      <figure class="feed-1">
+        <div class="reel-ram" data-reel data-src="{{ base }}video/bubenik.mp4">
+          <video data-autoplay muted loop playsinline preload="none" width="360" height="640" poster="{{ img_url('hero-bubenik-poster.jpg', 640) }}" aria-hidden="true">
+            <source src="{{ base }}video/hero-bubenik.mp4" type="video/mp4">
+          </video>
+          <button type="button" class="reel-play" aria-label="Přehrát video se zvukem: Tomáš Bubeník, ředitel Sirius Finance">
+            <span class="play-ikona" aria-hidden="true"></span><span class="tc">0:44</span>
+          </button>
+        </div>
+        <figcaption><q>Přinesly nám desítky klientů do naší poradenské služby.</q><span><strong>Tomáš Bubeník</strong> · ředitel Sirius Finance</span></figcaption>
       </figure>
-
-      <figure class="hero-reel vrstva-2">
-        <video data-autoplay muted loop playsinline preload="none" width="360" height="640" poster="{{ img_url('hero-reel-poster.jpg', 640) }}" aria-label="Ukázka reels videa s Petrem Vojnarem">
-          <source src="{{ base }}video/hero-reel.mp4" type="video/mp4">
-        </video>
-        <figcaption class="tc">Reels · Petr Vojnar</figcaption>
+      <figure class="feed-2">
+        <div class="reel-ram" data-reel data-src="{{ base }}video/rajnoha.mp4">
+          <video data-autoplay muted loop playsinline preload="none" width="360" height="640" poster="{{ img_url('hero-matocha-poster.jpg', 640) }}" aria-hidden="true">
+            <source src="{{ base }}video/hero-matocha.mp4" type="video/mp4">
+          </video>
+          <button type="button" class="reel-play" aria-label="Přehrát video se zvukem: Michal Matocha, majitel zahradní firmy GRASSolutions">
+            <span class="play-ikona" aria-hidden="true"></span><span class="tc">0:52</span>
+          </button>
+        </div>
+        <figcaption><q>Leadů je neskutečně, nestíháme to zpracovávat.</q><span><strong>Michal Matocha</strong> · majitel GRASSolutions</span></figcaption>
       </figure>
-
-      <figure class="hero-studio vrstva-3">
-        {{ img('nataceni-studio.webp', 'Natáčení ve studiu u podcastového mikrofonu', sizes='14rem', cls='') }}
-      </figure>
-
-      <p class="chip chip-a vrstva-4"><strong>60 mil. Kč</strong><span>v portfoliu makléřky za první 3 měsíce</span></p>
-      <p class="chip chip-b vrstva-5"><strong>20M+</strong><span>zhlédnutí jednoho videa Petra Vojnara</span></p>
     </div>
   </div>
 
@@ -58,6 +59,88 @@
       {% for j in O.duveruji %}<li class="hero-jmeno">{{ j }}</li>{% endfor %}
     </ul>
     <p class="hero-media"><span>Vystoupili jsme v</span>{{ img('loga/cnn-prima-bila.png', 'CNN Prima News', sizes='7rem', cls='logo-cnn', eager=False) }}</p>
+  </div>
+</section>
+
+{# ================= VÝSLEDKY: Mirka před a po + karty ================= #}
+{% set M = data.studie[0] %}{% set Z = data.studie[1] %}{% set P = data.studie[2] %}
+<section class="sekce vysledky" id="vysledky" aria-labelledby="vys-h">
+  <div class="vysledky-svetlo" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="sekce-hlava">
+      <p class="stitek">Případové studie</p>
+      <h2 id="vys-h" class="h-velky">Reálné výsledky našich klientů.</h2>
+    </div>
+
+    <article class="mirka" id="studie-jungrova" aria-labelledby="mirka-h">
+      <div class="mirka-reel" data-reveal>
+        <div class="reel-ram" data-reel data-src="{{ base }}video/jungova.mp4">
+          {{ img(M.foto, M.foto_alt, sizes='(min-width: 64rem) 24vw, 70vw', cls='reel-poster') }}
+          <button type="button" class="reel-play" aria-label="Přehrát video: Mirka Jungrová o spolupráci">
+            <span class="play-ikona" aria-hidden="true"></span><span class="tc">1:47</span>
+          </button>
+        </div>
+        <p class="mirka-reel-pozn tc">Mirka vlastními slovy, natočeno a sestříháno u nás</p>
+      </div>
+      <div class="mirka-txt">
+        <p class="tc mirka-stitek">{{ M.stitek }}</p>
+        <h3 id="mirka-h" class="mirka-jmeno">{{ M.jmeno }}</h3>
+        <p class="studie-role">{{ M.role }}</p>
+
+        <div class="pred-po" data-predpo>
+          <div class="pred-po-sloupce">
+            <div class="pred">
+              <p class="tc">Před</p>
+              <p class="pred-po-cislo">Den&nbsp;1</p>
+              <p class="pred-po-pozn">start spolupráce</p>
+            </div>
+            <div class="po">
+              <p class="tc">Po 3 měsících</p>
+              <p class="pred-po-cislo po-cislo"><span class="sr">60 mil. Kč</span><span aria-hidden="true"><span class="pocitadlo"><span class="pocitadlo-txt">60</span></span>&nbsp;mil.&nbsp;Kč</span></p>
+              <p class="pred-po-pozn">nemovitostí přibylo do portfolia</p>
+            </div>
+          </div>
+          <div class="osa-mesice" aria-hidden="true">
+            <span class="osa-plneni"></span>
+            <span class="osa-bod" style="--x:0">M0</span><span class="osa-bod" style="--x:.3333">M1</span><span class="osa-bod" style="--x:.6667">M2</span><span class="osa-bod" style="--x:1">M3</span>
+          </div>
+        </div>
+
+        <div class="studie-pribeh">
+          <div><h4>Výzva</h4><p>{{ M.vyzva }}</p></div>
+          <div><h4>Co jsme udělali</h4><ul role="list">{% for u in M.udelali %}<li>{{ u }}</li>{% endfor %}</ul></div>
+        </div>
+        <a class="link-sipka" href="{{ M.ig.href }}" target="_blank" rel="noopener">{{ M.ig.text }}<span aria-hidden="true"> ↗</span></a>
+      </div>
+    </article>
+
+    <div class="karty-studii">
+      <article class="karta-studie karta-zlatka" data-reveal>
+        <p class="tc">{{ Z.stitek }}</p>
+        <h3>{{ Z.jmeno }}</h3>
+        <p class="studie-role">{{ Z.role }}</p>
+        <p class="karta-cislo">{{ Z.hlavni.cislo }}</p>
+        <p class="karta-cislo-t">{{ Z.hlavni.text }}</p>
+        <dl class="karta-dalsi">{% for d in Z.dalsi %}<div><dt>{{ d.cislo }}</dt><dd>{{ d.text }}</dd></div>{% endfor %}</dl>
+        <p class="karta-vyzva">{{ Z.vyzva }}</p>
+        <a class="link-sipka karta-odkaz" href="{{ url('pripadove-studie') }}#studie-otavova">Celá případová studie<span aria-hidden="true"> →</span></a>
+      </article>
+      <article class="karta-studie karta-petr" data-reveal data-reveal-delay="1">
+        <div class="karta-foto" data-reel data-src="{{ base }}video/vojnar.mp4">{{ img(P.foto, P.foto_alt, sizes='(min-width: 64rem) 20vw, 40vw', cls='') }}
+          <button type="button" class="reel-play" aria-label="Přehrát video: Petr Vojnar o spolupráci"><span class="play-ikona" aria-hidden="true"></span><span class="tc">0:50</span></button>
+        </div>
+        <div class="karta-petr-txt">
+          <p class="tc">{{ P.stitek }}</p>
+          <h3>{{ P.jmeno }}</h3>
+          <p class="studie-role">{{ P.role }}</p>
+          <p class="karta-cislo">{{ P.hlavni.cislo }}</p>
+          <p class="karta-cislo-t">{{ P.hlavni.text }}</p>
+          <dl class="karta-dalsi">{% for d in P.dalsi %}<div><dt>{{ d.cislo }}</dt><dd>{{ d.text }}</dd></div>{% endfor %}</dl>
+          <blockquote class="karta-citace"><p>„{{ P.citace }}“</p></blockquote>
+          <a class="link-sipka karta-odkaz" href="{{ url('pripadove-studie') }}#studie-vojnar">Celá případová studie<span aria-hidden="true"> →</span></a>
+        </div>
+      </article>
+    </div>
   </div>
 </section>
 
@@ -128,87 +211,12 @@
         </div>
         {% endfor %}
       </div>
+      <p class="pas-napoveda" aria-hidden="true">Posuňte do strany: strategie → produkce → distribuce → měření →</p>
       <p class="tl-zaver"><span aria-hidden="true">↻</span> {{ O.metoda.smycka }}</p>
     </div>
-  </div>
-</section>
-
-{# ================= VÝSLEDKY: Mirka před a po + karty ================= #}
-{% set M = data.studie[0] %}{% set Z = data.studie[1] %}{% set P = data.studie[2] %}
-<section class="sekce vysledky" id="vysledky" aria-labelledby="vys-h">
-  <div class="vysledky-svetlo" aria-hidden="true"></div>
-  <div class="wrap">
-    <div class="sekce-hlava">
-      <p class="stitek">Případové studie</p>
-      <h2 id="vys-h" class="h-velky">Reálné výsledky našich klientů.</h2>
-    </div>
-
-    <article class="mirka" id="studie-jungrova" aria-labelledby="mirka-h">
-      <div class="mirka-reel" data-reveal>
-        <div class="reel-ram" data-reel data-src="{{ base }}video/jungova.mp4">
-          {{ img(M.foto, M.foto_alt, sizes='(min-width: 64rem) 24vw, 70vw', cls='reel-poster') }}
-          <button type="button" class="reel-play" aria-label="Přehrát video: Mirka Jungrová o spolupráci">
-            <span class="play-ikona" aria-hidden="true"></span><span class="tc">1:47</span>
-          </button>
-        </div>
-        <p class="mirka-reel-pozn tc">Mirka vlastními slovy, natočeno a sestříháno u nás</p>
-      </div>
-      <div class="mirka-txt">
-        <p class="tc mirka-stitek">{{ M.stitek }}</p>
-        <h3 id="mirka-h" class="mirka-jmeno">{{ M.jmeno }}</h3>
-        <p class="studie-role">{{ M.role }}</p>
-
-        <div class="pred-po" data-predpo>
-          <div class="pred-po-sloupce">
-            <div class="pred">
-              <p class="tc">Před</p>
-              <p class="pred-po-cislo">Den&nbsp;1</p>
-              <p class="pred-po-pozn">start spolupráce</p>
-            </div>
-            <div class="po">
-              <p class="tc">Po 3 měsících</p>
-              <p class="pred-po-cislo po-cislo"><span class="sr">60 mil. Kč</span><span aria-hidden="true"><span class="pocitadlo"><span class="pocitadlo-txt">60</span></span>&nbsp;mil.&nbsp;Kč</span></p>
-              <p class="pred-po-pozn">nemovitostí přibylo do portfolia</p>
-            </div>
-          </div>
-          <div class="osa-mesice" aria-hidden="true">
-            <span class="osa-plneni"></span>
-            <span class="osa-bod" style="--x:0">M0</span><span class="osa-bod" style="--x:.3333">M1</span><span class="osa-bod" style="--x:.6667">M2</span><span class="osa-bod" style="--x:1">M3</span>
-          </div>
-        </div>
-
-        <div class="studie-pribeh">
-          <div><h4>Výzva</h4><p>{{ M.vyzva }}</p></div>
-          <div><h4>Co jsme udělali</h4><ul role="list">{% for u in M.udelali %}<li>{{ u }}</li>{% endfor %}</ul></div>
-        </div>
-        <a class="link-sipka" href="{{ M.ig.href }}" target="_blank" rel="noopener">{{ M.ig.text }}<span aria-hidden="true"> ↗</span></a>
-      </div>
-    </article>
-
-    <div class="karty-studii">
-      <article class="karta-studie karta-zlatka" data-reveal>
-        <p class="tc">{{ Z.stitek }}</p>
-        <h3>{{ Z.jmeno }}</h3>
-        <p class="studie-role">{{ Z.role }}</p>
-        <p class="karta-cislo">{{ Z.hlavni.cislo }}</p>
-        <p class="karta-cislo-t">{{ Z.hlavni.text }}</p>
-        <dl class="karta-dalsi">{% for d in Z.dalsi %}<div><dt>{{ d.cislo }}</dt><dd>{{ d.text }}</dd></div>{% endfor %}</dl>
-        <p class="karta-vyzva">{{ Z.vyzva }}</p>
-        <a class="link-sipka karta-odkaz" href="{{ url('pripadove-studie') }}#studie-otavova">Celá případová studie<span aria-hidden="true"> →</span></a>
-      </article>
-      <article class="karta-studie karta-petr" data-reveal data-reveal-delay="1">
-        <div class="karta-foto">{{ img(P.foto, P.foto_alt, sizes='(min-width: 64rem) 20vw, 40vw', cls='') }}</div>
-        <div class="karta-petr-txt">
-          <p class="tc">{{ P.stitek }}</p>
-          <h3>{{ P.jmeno }}</h3>
-          <p class="studie-role">{{ P.role }}</p>
-          <p class="karta-cislo">{{ P.hlavni.cislo }}</p>
-          <p class="karta-cislo-t">{{ P.hlavni.text }}</p>
-          <dl class="karta-dalsi">{% for d in P.dalsi %}<div><dt>{{ d.cislo }}</dt><dd>{{ d.text }}</dd></div>{% endfor %}</dl>
-          <blockquote class="karta-citace"><p>„{{ P.citace }}“</p></blockquote>
-          <a class="link-sipka karta-odkaz" href="{{ url('pripadove-studie') }}#studie-vojnar">Celá případová studie<span aria-hidden="true"> →</span></a>
-        </div>
-      </article>
+    <div class="cta-radek">
+      <p>Chcete vědět, jak by systém vypadal u vás? Na konzultaci vám ukážeme konkrétní plán na 90 dní.</p>
+      <a href="#kontakt" class="btn">Domluvit konzultaci zdarma</a>
     </div>
   </div>
 </section>
@@ -228,17 +236,11 @@
   </div>
 </section>
 
-{# ================= REELS: pás, který se se scrollem posouvá do strany ================= #}
-{% include "_reels.html" %}
+{# ================= PROCES + CENÍK + ZÁRUKA ================= #}
+{% set kroky = [] %}{% include "_proces.html" %}
 
 {# ================= RECENZE Z GOOGLU ================= #}
 {% include "_recenze.html" %}
-
-{# ================= PROCES + CENÍK + ZÁRUKA ================= #}
-{% include "_proces.html" %}
-
-{# ================= VOJTA: editorial ================= #}
-{% include "_zakladatel.html" %}
 
 {# ================= SLUŽBY + BLOG ================= #}
 <section class="sekce sluzby-blog" id="sluzby" aria-labelledby="sl-h">
@@ -259,7 +261,11 @@
   </div>
 </section>
 
-<section class="sekce otazky papir" id="otazky" aria-labelledby="faq-h">
+{# ================= VOJTA: editorial ================= #}
+{% set pocet_epizod = 3 %}{% include "_zakladatel.html" %}
+
+{# ================= FAQ ================= #}
+<section class="sekce otazky otazky-tma" id="otazky" aria-labelledby="faq-h">
   <div class="wrap otazky-grid">
     <div>
       <p class="stitek">Nejčastější otázky</p>

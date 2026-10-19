@@ -81,3 +81,10 @@ Podstránky se stejnými URL: /osobni-znacka/, /firemni-znacka/, /sprava-socialn
 - Karty článků: typografická obálka jako „klip“ (téma, délka čtení, pás průběhu) – fotky z jeho blogu jsou zčásti AI s nesmyslným textem.
 - Písmo: Syne + Inter (Plex Mono pryč, `.tc` = Inter s tabulkovými číslicemi).
 - Review 19. 10.: 7/10 po 3 kolech; zbylá výtka „zjednodušit hero na jednu fotku“ vědomě neprovedena – klient odsouhlasil tenhle úvod. Případně nabídnout jako variantu.
+
+---
+
+## v4 (19. 10. 2026 večer, Rafael: „mnohem lepší“)
+- Úvod zjednodušen: titulek vlevo, vpravo dvě skutečná reels klientů (smyčka bez zvuku, klik = celé video) s jejich citací. Pryč hledáček, plovoucí čísla a vedlejší fotky (výtka review 3 kola po sobě).
+- Důkaz dřív: případové studie hned pod úvodem. Výzva ke konzultaci za metodou.
+- Úvodní stránka kratší (pás reels, 4 kroky a 3 díly podcastu pryč). Rytmus pozadí: tma · tma · papír · tma · papír · tma · papír · tma · papír · tma · oranžová.

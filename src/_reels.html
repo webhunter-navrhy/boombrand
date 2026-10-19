@@ -1,18 +1,14 @@
-{# Pás reels: na PC se při scrollu posouvá do strany (CSS scroll-driven), na mobilu swipe. #}
+{# Video reference: na PC čtyři reels vedle sebe, na mobilu swipe. #}
 <section class="sekce reels zrno" id="reference" aria-labelledby="reels-h">
   <div class="wrap reels-hlava">
     <div>
       <p class="stitek">Video reference</p>
       <h2 id="reels-h" class="h-velky">Slyšte to přímo od klientů.</h2>
     </div>
-    <p class="perex">Krátká videa od lidí, se kterými dlouhodobě spolupracujeme. Mezi nimi záběry ze zákulisí natáčení. Klikněte na video pro přehrání.</p>
+    <p class="perex">Krátká videa od lidí, se kterými dlouhodobě spolupracujeme. Klikněte na video pro přehrání.</p>
   </div>
   <div class="pas-obal" data-pas>
     <ul class="pas" role="list">
-      {% set zakulisi = [
-        ('nataceni-studio.webp', 'Natáčení ve studiu u podcastového mikrofonu', 'Ze zákulisí · studio', 'z34'),
-        ('nataceni-rozhovor.webp', 'Zákulisí natáčení rozhovoru: klienti u stolu, kamera a studiová světla', 'Ze zákulisí · rozhovor', 'z43'),
-        ('yt/ig8-buC5ovQ.jpg', 'Podcast TalkToWin, epizoda s Josefem Hoangem', 'Podcast TalkToWin', 'z169')] %}
       {% for v in data.videa %}
       <li class="pas-1 pas-reel">
         <div class="reel-ram" data-reel data-src="{{ base }}{{ v.video }}">
@@ -24,12 +20,6 @@
         <p class="reel-jmeno">{{ v.jmeno }}</p>
         <p class="reel-role">{{ v.role }}</p>
       </li>
-      {% if loop.index0 < zakulisi|length %}{% set z = zakulisi[loop.index0] %}
-      <li class="pas-1 pas-foto pas-{{ z[3] }}" aria-hidden="true">
-        <div class="pas-foto-ram">{{ img(z[0], '', sizes='(min-width: 64rem) 34rem, 80vw', cls='') }}</div>
-        <p class="tc pas-foto-k">{{ z[2] }}</p>
-      </li>
-      {% endif %}
       {% endfor %}
     </ul>
   </div>
