@@ -575,7 +575,7 @@
  },
  "fakta_klicova": [
   {
-   "text": "Metoda BrandFormance™, 11 kroků každý měsíc (průzkum trhu … psaní přímých zpráv)",
+   "text": "Metoda BrandFormance™, 10 kroků každý měsíc (na webu klienta od 10/2026 deset kroků, krok Přímé zprávy vypuštěn)",
    "zdroj": "https://boom-brand.cz/"
   },
   {
@@ -625,6 +625,22 @@
   {
    "text": "FAQ: „Pozvali si mě do CNN Prima News“, rozhovor Nový den – Jak nás ovlivňují sociální sítě (YouTube VVShS5jHxWQ)",
    "zdroj": "https://boom-brand.cz/o-nas"
+  },
+  {
+   "text": "Ceník: 35 000 Kč (4 reels, 1× týdně), 50 000 Kč (8 reels, 2× týdně, doporučený), 65 000 Kč (12 reels, 3× týdně); reklama od 15 000 Kč měsíčně navíc",
+   "zdroj": "https://boom-brand.cz/sluzby"
+  },
+  {
+   "text": "Google: 5,0 z 9 recenzí (texty doslovně v _data/recenze.json)",
+   "zdroj": "https://boom-brand.cz/ + https://www.google.com/maps?cid=11265541734029459772"
+  },
+  {
+   "text": "Za co ručíme + Co si z hovoru odnesete + 3krokový formulář",
+   "zdroj": "https://boom-brand.cz/formular"
+  },
+  {
+   "text": "OR: Krajský soud v Brně, oddíl C, vložka 151984; sídlo Plachty 514/8, 634 00 Brno",
+   "zdroj": "ARES VR 29604001"
   }
  ]
 }

@@ -19,9 +19,10 @@
       <p class="hero-h1b">{{ O.hero.h1b }}</p>
       <p class="hero-perex">{{ O.hero.perex }}</p>
       <div class="tlacitka">
-        <a href="#kontakt" class="btn">Domluvit konzultaci zdarma</a>
+        <a href="#kontakt" class="btn">Nezávazná konzultace zdarma</a>
         <a href="#metoda" class="btn btn-obrys">Jak pracujeme</a>
       </div>
+      <a class="hero-hodnoceni" href="#recenze"><span class="hvezdy" aria-hidden="true">★★★★★</span><span><strong>{{ data.recenze.hodnoceni }}</strong> z&nbsp;{{ data.recenze.pocet }} recenzí na Googlu</span></a>
     </div>
 
     <div class="scena" data-scena>
@@ -29,7 +30,6 @@
         {{ img('vojta-cnn-prima.webp', O.hero.popisek, sizes='(min-width: 64rem) 46vw, 92vw', cls='hledacek-img') }}
         <span class="roh roh-tl" aria-hidden="true"></span><span class="roh roh-tr" aria-hidden="true"></span>
         <span class="roh roh-bl" aria-hidden="true"></span><span class="roh roh-br" aria-hidden="true"></span>
-        <span class="hledacek-rec tc" aria-hidden="true"><span class="rec rec-blik"></span>REC <span data-timecode>00:00:00:00</span></span>
         <button type="button" class="monitor-play" aria-label="Přehrát rozhovor: {{ data.podcast.cnn.nazev }} (CNN Prima News)">
           <span class="play-ikona" aria-hidden="true"></span><span class="monitor-play-txt">Pustit rozhovor<small>CNN Prima News</small></span>
         </button>
@@ -48,15 +48,16 @@
 
       <p class="chip chip-a vrstva-4"><strong>60 mil. Kč</strong><span>v portfoliu makléřky za první 3 měsíce</span></p>
       <p class="chip chip-b vrstva-5"><strong>20M+</strong><span>zhlédnutí jednoho videa Petra Vojnara</span></p>
-      <p class="chip chip-c vrstva-4"><strong>100M+</strong><span>zhlédnutí pro klienty</span></p>
     </div>
   </div>
 
-  <div class="wrap hero-klienti" aria-label="Důvěřují nám">
+  <div class="wrap hero-klienti">
     <p class="hero-klienti-k">Důvěřují nám</p>
-    <ul role="list">
-      {% for j in O.duveruji %}<li>{{ j }}</li>{% endfor %}
+    <ul class="hero-loga" role="list">
+      {% for l in O.loga %}<li>{{ img(l.soubor, l.nazev, sizes='8rem', cls='logo-klient', eager=False) }}</li>{% endfor %}
+      {% for j in O.duveruji %}<li class="hero-jmeno">{{ j }}</li>{% endfor %}
     </ul>
+    <p class="hero-media"><span>Vystoupili jsme v</span>{{ img('loga/cnn-prima-bila.png', 'CNN Prima News', sizes='7rem', cls='logo-cnn', eager=False) }}</p>
   </div>
 </section>
 
@@ -93,7 +94,7 @@
 
     <div class="tl" data-tl style="--n: {{ O.metoda.kroky|length }}">
       <div class="tl-editor" aria-hidden="true">
-        <div class="tl-hlava tc"><span>BrandFormance™ · jeden měsíc spolupráce</span><span>11 kroků · 4 stopy</span></div>
+        <div class="tl-hlava tc"><span>BrandFormance™ · jeden měsíc spolupráce</span><span>{{ O.metoda.kroky|length }} kroků · {{ O.metoda.stopy|length }} stopy</span></div>
         <div class="tl-stopy">
           {% for st in O.metoda.stopy %}
           <div class="tl-stopa">
@@ -230,10 +231,33 @@
 {# ================= REELS: pás, který se se scrollem posouvá do strany ================= #}
 {% include "_reels.html" %}
 
+{# ================= RECENZE Z GOOGLU ================= #}
+{% include "_recenze.html" %}
+
+{# ================= PROCES + CENÍK + ZÁRUKA ================= #}
+{% include "_proces.html" %}
+
 {# ================= VOJTA: editorial ================= #}
 {% include "_zakladatel.html" %}
 
-{% include "_proces.html" %}
+{# ================= SLUŽBY + BLOG ================= #}
+<section class="sekce sluzby-blog" id="sluzby" aria-labelledby="sl-h">
+  <div class="wrap">
+    <div class="sekce-hlava">
+      <p class="stitek">Naše služby</p>
+      <h2 id="sl-h" class="h-velky">Jedna metoda, devět cest k&nbsp;poptávkám.</h2>
+      <p class="perex">Marketing, sociální sítě a budování značky pro firmy v Brně i po celé České republice.</p>
+    </div>
+    {% include "_sluzby_rejstrik.html" %}
+    <div class="blog-nahled">
+      <div class="blog-nahled-hlava">
+        <h3 class="h2">Z blogu</h3>
+        <a class="link-sipka" href="{{ url('blog') }}">Všechny články<span aria-hidden="true"> →</span></a>
+      </div>
+      {% set clanky = data.blog[:3] %}{% include "_blog_karty.html" %}
+    </div>
+  </div>
+</section>
 
 <section class="sekce otazky papir" id="otazky" aria-labelledby="faq-h">
   <div class="wrap otazky-grid">

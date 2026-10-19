@@ -1,0 +1,39 @@
+{% extends "_base.html" %}
+{% set titulek = 'Blog – personal branding a sociální sítě v praxi | BoomBrand' %}
+{% set popis = 'Praktické články pro podnikatele: kolik stojí osobní značka a správa sítí, jak vybrat agenturu, LinkedIn nebo Instagram a jak měřit poptávky místo lajků.' %}
+{% set cesta = 'blog/' %}
+{% block head %}
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Blog","name":"Blog BoomBrand","url":{{ (site.url ~ 'blog/')|tojson }},"publisher":{"@id":{{ (site.url ~ '#firma')|tojson }}},"blogPost":[{% for c in data.blog %}{"@type":"BlogPosting","headline":{{ c.h1|replace(' ',' ')|tojson }},"url":{{ (site.url ~ 'blog/' ~ c.slug ~ '/')|tojson }},"datePublished":{{ c.datum|tojson }}}{{ ',' if not loop.last }}{% endfor %}]}</script>
+{% endblock %}
+{% block body_class %}podstranka blog-stranka{% endblock %}
+{% block obsah %}
+<section class="sub-hero blog-hero" aria-labelledby="b-h">
+  <div class="wrap">
+    <nav class="drobky tc" aria-label="Drobečková navigace"><a href="{{ url('') }}">BoomBrand</a> / <span>Blog</span></nav>
+    <p class="hero-nad"><span class="rec" aria-hidden="true"></span>Blog · píše Vojtěch Bartoň</p>
+    <h1 id="b-h" class="sub-h1">Personal branding a sociální sítě v&nbsp;praxi.</h1>
+    <p class="perex">Praktické články pro podnikatele, kteří chtějí být vidět a budovat značku, která vydělává.</p>
+  </div>
+</section>
+<section class="sekce blog-vypis papir" aria-label="Články">
+  <div class="wrap">
+    <div class="blog-filtr" role="group" aria-label="Filtrovat články podle tématu" data-blog-filtr hidden>
+      {% for k, t in [('vse','Vše'),('znacka','Osobní a firemní značka'),('ceny','Ceny'),('site','Sociální sítě a LinkedIn'),('obory','Obory a výsledky')] %}
+      <button type="button" class="chip-filtr" data-kat="{{ k }}" aria-pressed="{{ 'true' if loop.first else 'false' }}">{{ t }}</button>
+      {% endfor %}
+    </div>
+    {% set clanky = data.blog %}{% set blog_trida = 'blog-karty-papir blog-karty-vse' %}{% include "_blog_karty.html" %}
+    <p class="blog-prazdno" data-blog-prazdno hidden>V&nbsp;tomhle tématu zatím článek není.</p>
+  </div>
+</section>
+<section class="sekce blog-tipy" aria-labelledby="bt-h">
+  <div class="wrap blog-tipy-in">
+    <div>
+      <p class="stitek">PDF zdarma</p>
+      <h2 id="bt-h" class="h2">20 AI triků, které nahradí grafika i fotografa.</h2>
+    </div>
+    <a class="btn btn-velke" href="{{ url('tipy') }}">Stáhnout tipy</a>
+  </div>
+</section>
+{% include "_kontakt.html" %}
+{% endblock %}

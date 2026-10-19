@@ -26,12 +26,14 @@
   "sameas": [
     "https://www.instagram.com/boombrand_socialmedia/",
     "https://www.instagram.com/vojta__barton/",
-    "https://linkedin.com/in/vojtabarton"
+    "https://linkedin.com/in/vojtabarton",
+    "https://www.facebook.com/vojtechbarton.marketing/",
+    "https://youtube.com/playlist?list=PLkOQbECU51UsJ7UmKFzwvm_kb9gbNqt_6"
   ],
   "cenove_rozpeti": "od 35 000 Kč měsíčně",
   "formular": {
-    "endpoint": "",
-    "demo": true,
+    "endpoint": "https://webhunter-admin.webhunter.workers.dev/api/boombrand/form",
+    "demo": false,
     "predmet": "Poptávka z webu BoomBrand"
   },
   "nav": [
@@ -41,11 +43,11 @@
     },
     {
       "text": "Výsledky",
-      "href": "#vysledky"
+      "href": "pripadove-studie"
     },
     {
       "text": "Služby",
-      "href": "#sluzby",
+      "href": "sluzby",
       "menu": [
         {
           "text": "Osobní značka",
@@ -58,16 +60,44 @@
         {
           "text": "Správa sociálních sítí",
           "href": "sprava-socialnich-siti"
+        },
+        {
+          "text": "Správa Instagramu",
+          "href": "sprava-instagramu"
+        },
+        {
+          "text": "LinkedIn pro majitele firem",
+          "href": "linkedin-pro-majitele-firem"
+        },
+        {
+          "text": "Reklama Brno",
+          "href": "reklama-brno"
+        },
+        {
+          "text": "Marketingová agentura Brno",
+          "href": "marketingova-agentura-brno"
+        },
+        {
+          "text": "Pro realitní makléře",
+          "href": "osobni-znacka-pro-realitni-maklere"
+        },
+        {
+          "text": "Pro finanční poradce",
+          "href": "osobni-znacka-pro-financni-poradce"
         }
       ]
     },
     {
-      "text": "O nás",
-      "href": "o-nas"
+      "text": "Ceník",
+      "href": "#cenik"
     },
     {
-      "text": "Otázky",
-      "href": "#otazky"
+      "text": "Blog",
+      "href": "blog"
+    },
+    {
+      "text": "O nás",
+      "href": "o-nas"
     }
   ],
   "firma": "BoomBrand s.r.o.",
@@ -85,8 +115,31 @@
       "href": "https://linkedin.com/in/vojtabarton"
     },
     {
+      "text": "Facebook",
+      "href": "https://www.facebook.com/vojtechbarton.marketing/"
+    },
+    {
       "text": "Podcast TalkToWin",
       "href": "https://youtube.com/playlist?list=PLkOQbECU51UsJ7UmKFzwvm_kb9gbNqt_6"
     }
-  ]
+  ],
+  "sidlo": {
+    "ulice": "Plachty 514/8",
+    "psc": "634 00",
+    "mesto": "Brno",
+    "cast": "Nový Lískovec"
+  },
+  "rejstrik": "Zapsáno v obchodním rejstříku vedeném Krajským soudem v Brně, oddíl C, vložka 151984",
+  "zakladatel": "Vojtěch Bartoň",
+  "mereni": {
+    "aktivni": false,
+    "ga4": "G-Y693XYBJWD",
+    "pixel": "1028623522957529",
+    "pozn": "aktivni=true až na ostré doméně, jinak by návrh posílal data do Vojtova GA4 a Pixelu"
+  },
+  "tipy": {
+    "pdf": "",
+    "pozn": "po dodání PDF od klienta nahrát do static/ a sem napsat cestu (např. tipy/20-ai-triku.pdf)"
+  },
+  "recenze_google": "https://www.google.com/maps?cid=11265541734029459772"
 }

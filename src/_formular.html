@@ -1,15 +1,23 @@
-<form class="formular" method="post" {% if site.formular.endpoint and not site.formular.demo %}action="{{ site.formular.endpoint }}"{% endif %} data-endpoint="{{ site.formular.endpoint }}" data-demo="{{ 1 if site.formular.demo or not site.formular.endpoint else 0 }}">
+{# Poptávkový formulář → webhunter-admin (uloží se a přijde e-mailem). Názvy polí = popisky v e-mailu. #}
+{% set F = data.obsah.formular %}{% set fid = fid if fid is defined else 'k' %}
+<form class="formular" method="post" novalidate data-form="dopyt" data-ucel="Poptávka konzultace" data-dekujeme="{{ F.dekujeme }}">
   <div class="pole-2">
-    <label class="pole"><span>Jméno</span><input name="jmeno" autocomplete="name" required></label>
-    <label class="pole"><span>Telefon</span><input name="telefon" type="tel" autocomplete="tel"></label>
+    <label class="pole"><span>Jméno a příjmení *</span><input name="Jméno" autocomplete="name" required maxlength="80"></label>
+    <label class="pole"><span>Telefon *</span><input name="Telefon" type="tel" autocomplete="tel" required inputmode="tel" placeholder="+420 777 123 456" maxlength="24"></label>
   </div>
-  <label class="pole"><span>E-mail</span><input name="email" type="email" autocomplete="email" required></label>
-  <label class="pole"><span>Čím se zabýváte a odkud dnes chodí zakázky?</span><textarea name="zprava" rows="4" maxlength="1000" required></textarea></label>
-  <div class="past" aria-hidden="true"><label>Nevyplňovat <input name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
-  <input type="hidden" name="_subject" value="{{ site.formular.predmet }}">
+  <label class="pole"><span>E-mail *</span><input name="E-mail" type="email" autocomplete="email" required placeholder="vas@email.cz" maxlength="120"></label>
+  <div class="pole-2">
+    <label class="pole"><span>Obor podnikání</span>
+      <select name="Obor"><option value="">Vyberte…</option>{% for o in F.obory %}<option>{{ o }}</option>{% endfor %}</select></label>
+    <label class="pole"><span>Odkud dnes chodí zakázky</span>
+      <select name="Odkud chodí zakázky"><option value="">Vyberte…</option>{% for o in F.zdroje %}<option>{{ o }}</option>{% endfor %}</select></label>
+  </div>
+  <label class="pole"><span>Co byste rádi řešili <small>nepovinné</small></span><textarea name="Zpráva" rows="3" maxlength="1000" placeholder="Krátce popište svůj byznys a cíl…"></textarea></label>
+  <div class="past" aria-hidden="true"><label>Nevyplňovat <input name="_hp" tabindex="-1" autocomplete="off"></label></div>
   <div class="formular-spod">
     <button type="submit" class="btn">Odeslat poptávku</button>
     <p class="formular-pozn">{{ data.obsah.kontakt.pozn }}</p>
   </div>
+  <p class="formular-gdpr">Údaje použijeme jen k&nbsp;vyřízení poptávky a&nbsp;domluvě konzultace. Více v&nbsp;<a href="{{ url('ochrana-osobnich-udaju') }}">zásadách ochrany osobních údajů</a>.</p>
   <p class="formular-stav" role="status" aria-live="polite"></p>
 </form>

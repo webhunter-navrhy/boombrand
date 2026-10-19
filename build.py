@@ -48,7 +48,7 @@ def nb(text):
 
 def _nb_vse(x):
     if isinstance(x, dict):
-        return {k: (v if k in ("href", "src", "id", "url", "soubor", "foto", "video", "poster") else _nb_vse(v)) for k, v in x.items()}
+        return {k: (v if k in ("href", "src", "id", "url", "soubor", "foto", "video", "poster", "pole", "slug") else _nb_vse(v)) for k, v in x.items()}
     if isinstance(x, list):
         return [_nb_vse(v) for v in x]
     return nb(x)
@@ -149,23 +149,29 @@ def hash_souboru(cesta):
 
 
 def jsonld(site):
+    """Organizace pro všechny stránky: ProfessionalService s doloženými údaji (OR, ARES), zakladatel, profily."""
     k = site.get("kontakt", {})
-    a = k.get("adresa", {})
-    j = {"@context": "https://schema.org", "@type": site.get("typ") or "LocalBusiness", "name": site["nazev"],
-         "url": site["url"], "description": site.get("popis", "")}
-    if k.get("telefon"): j["telephone"] = k["telefon"]
+    a = site.get("sidlo", {})
+    j = {"@context": "https://schema.org", "@type": site.get("typ") or "LocalBusiness", "@id": site["url"] + "#firma",
+         "name": site["nazev"], "legalName": site.get("firma"), "url": site["url"], "description": site.get("popis", "")}
+    if k.get("telefon"): j["telephone"] = k["telefon"].replace(" ", "")
     if k.get("email"): j["email"] = k["email"]
-    if any(a.get(x) for x in ("ulice", "psc", "mesto")):
-        adr = {"@type": "PostalAddress", "streetAddress": a.get("ulice"), "postalCode": a.get("psc"),
-               "addressLocality": a.get("mesto"), "addressCountry": a.get("zeme") or "CZ"}
-        j["address"] = {k: v for k, v in adr.items() if v}
-    if site.get("oteviraci_doba"): j["openingHours"] = site["oteviraci_doba"]
+    if a:
+        j["address"] = {"@type": "PostalAddress", "streetAddress": a.get("ulice"), "postalCode": a.get("psc"),
+                        "addressLocality": a.get("mesto"), "addressCountry": "CZ"}
+    j["areaServed"] = [{"@type": "City", "name": "Brno"}, {"@type": "Country", "name": "Česká republika"}]
     if site.get("sameas"): j["sameAs"] = site["sameas"]
     if site.get("cenove_rozpeti"): j["priceRange"] = site["cenove_rozpeti"]
-    if site.get("ico"): j["taxID"] = site["ico"]
+    if site.get("ico"): j["identifier"] = {"@type": "PropertyValue", "propertyID": "IČO", "value": site["ico"]}
     if site.get("logo"): j["logo"] = site["url"] + site["logo"]
+    if site.get("zakladatel"):
+        j["founder"] = {"@type": "Person", "name": site["zakladatel"], "url": site["url"] + "o-nas/"}
     j["image"] = site["url"] + "og.jpg"
     return json.dumps(j, ensure_ascii=False).replace("</", "<\\/")
+
+
+ROBOTI = ("GPTBot", "OAI-SearchBot", "ChatGPT-User", "PerplexityBot", "Perplexity-User", "Google-Extended", "ClaudeBot",
+          "Claude-User", "Applebot", "Applebot-Extended", "Bingbot", "CCBot", "meta-externalagent")
 
 
 def main():
@@ -204,27 +210,70 @@ def main():
 
     env = Environment(loader=FileSystemLoader(SRC), autoescape=select_autoescape(["html"]), undefined=StrictUndefined)
     env.filters["nb"] = nb
+    def clanky_ke_sluzbe(klic, n=3):
+        return [c for c in data.get("blog", []) if c.get("sluzba") and c["sluzba"]["href"] == klic][:n]
+
+    def datum_cz(iso):
+        r, m, d = (int(x) for x in iso.split("-"))
+        mesice = ("ledna", "února", "března", "dubna", "května", "června", "července", "srpna", "září", "října", "listopadu", "prosince")
+        return f"{d}.\u00a0{mesice[m - 1]} {r}"
+
+    def faq_z_tela(telo):
+        """Otázky z části „Časté otázky“ článku (h3 + odstavec) pro FAQPage."""
+        i = telo.find("<h2>Časté otázky</h2>")
+        if i < 0:
+            return []
+        cast = telo[i:]
+        j = cast.find("<h2>", 5)
+        cast = cast[:j] if j > 0 else cast
+        ven = []
+        for q, a in re.findall(r"<h3>(.*?)</h3>(.*?)(?=<h3>|$)", cast, re.S):
+            a = re.sub(r"<[^>]+>", " ", a)
+            ven.append({"q": html.unescape(re.sub(r"<[^>]+>", "", q)).strip(), "a": html.unescape(re.sub(r"\s+", " ", a)).strip()})
+        return [x for x in ven if x["a"]]
+
+    def dalsi_clanky(c, n=2):
+        stejne = [x for x in data["blog"] if x["slug"] != c["slug"] and set(x["kategorie"]) & set(c["kategorie"])]
+        ostatni = [x for x in data["blog"] if x["slug"] != c["slug"] and x not in stejne]
+        return (stejne + ostatni)[:n]
+
+    env.filters["datum_cz"] = datum_cz
     env.globals.update(site=site, data=data, base=base, asset=asset, url=url, img=obr.img, img_url=obr.img_url,
-                       og_url=og_url, jsonld=jsonld(site), titulek="", popis="", cesta="", noindex=False)
-    stranky = []
+                       og_url=og_url, jsonld=jsonld(site), titulek="", popis="", cesta="", noindex=False,
+                       clanky_ke_sluzbe=clanky_ke_sluzbe, faq_z_tela=faq_z_tela, dalsi_clanky=dalsi_clanky, minimal=False)
+    stranky = []   # (cesta, lastmod)
+    dnes = datetime.date.today().isoformat()
+
+    def zapis(cesta, kod, lastmod=None):
+        if cesta == "404":
+            vystup = os.path.join(DIST, "404.html")
+        else:
+            os.makedirs(os.path.join(DIST, cesta), exist_ok=True)
+            vystup = os.path.join(DIST, cesta, "index.html")
+            stranky.append((cesta + "/" if cesta else "", lastmod or dnes))
+        with open(vystup, "w", encoding="utf-8") as fh:
+            fh.write(kod)
+
     for f in sorted(os.listdir(SRC)):
         if not f.endswith(".html") or f.startswith("_"):
             continue
         jmeno = f[:-5]
         obr.reset()
-        tpl = env.get_template(f)
-        kod = tpl.render()
-        if jmeno == "404":
-            vystup = os.path.join(DIST, "404.html")
-        elif jmeno == "index":
-            vystup = os.path.join(DIST, "index.html")
-            stranky.append("")
-        else:
-            os.makedirs(os.path.join(DIST, jmeno), exist_ok=True)
-            vystup = os.path.join(DIST, jmeno, "index.html")
-            stranky.append(jmeno + "/")
-        with open(vystup, "w", encoding="utf-8") as fh:
-            fh.write(kod)
+        zapis("" if jmeno == "index" else jmeno, env.get_template(f).render(), (data["blog"][0]["datum"] if jmeno == "blog" and data.get("blog") else None))
+    # služby a oborové stránky: jedna šablona, obsah v _data/sluzby.json (URL = klíč, stejné jako na starém webu)
+    for klic in data.get("sluzby", {}):
+        if not os.path.exists(os.path.join(SRC, klic + ".html")):
+            obr.reset()
+            zapis(klic, env.get_template("_sluzba.html").render(klic=klic))
+    # články blogu: blog/<slug>/
+    for c in data.get("blog", []):
+        obr.reset()
+        zapis("blog/" + c["slug"], env.get_template("_clanek.html").render(c=c), c["datum"])
+    # textové soubory pro vyhledávače a AI (šablony src/*.txt)
+    for f in sorted(os.listdir(SRC)):
+        if f.endswith(".txt"):
+            with open(os.path.join(DIST, f), "w", encoding="utf-8") as fh:
+                fh.write(env.get_template(f).render())
 
     # robots, sitemap, CNAME
     navrh = bool(site.get("navrh"))
@@ -232,12 +281,13 @@ def main():
         if navrh:
             fh.write("User-agent: *\nDisallow: /\n")
         else:
-            fh.write(f"User-agent: *\nAllow: /\n\nSitemap: {site['url']}sitemap.xml\n")
-    dnes = datetime.date.today().isoformat()
+            fh.write("User-agent: *\nAllow: /\n\n# AI vyhledávače a asistenti – povolený přístup k obsahu\n")
+            fh.write("".join(f"User-agent: {r}\nAllow: /\n\n" for r in ROBOTI))
+            fh.write(f"Sitemap: {site['url']}sitemap.xml\n")
     with open(os.path.join(DIST, "sitemap.xml"), "w", encoding="utf-8") as fh:
         fh.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
-        for s in stranky:
-            fh.write(f"  <url><loc>{site['url']}{s}</loc><lastmod>{dnes}</lastmod></url>\n")
+        for cesta, lastmod in stranky:
+            fh.write(f"  <url><loc>{site['url']}{cesta}</loc><lastmod>{lastmod}</lastmod></url>\n")
         fh.write("</urlset>\n")
     open(os.path.join(DIST, ".nojekyll"), "w").close()
     if site.get("domena") and not navrh:

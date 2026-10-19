@@ -1,6 +1,7 @@
 {% set P = data.obsah.proces %}{% set KN = kroky_nadpis if kroky_nadpis is defined else '' %}{% set KK = kroky if kroky is defined else P.kroky %}
 <section class="sekce proces" id="spoluprace" aria-labelledby="proces-h">
   <div class="wrap">
+    {% if KK %}
     <div class="proces-hlava">
       <p class="stitek">Jak spolupráce probíhá</p>
       <h2 id="proces-h" class="h2">{{ KN or P.nadpis }}</h2>
@@ -8,19 +9,10 @@
     </div>
     <ol class="proces-kroky" role="list">
       {% for k in KK %}
-      <li data-reveal data-reveal-delay="{{ loop.index0 % 3 }}"><h3>{{ k.nazev }}</h3><p>{{ k.text }}</p></li>
+      <li data-reveal data-reveal-delay="{{ loop.index0 % 3 }}"><span class="tc">Krok {{ loop.index }}</span><h3>{{ k.nazev }}</h3><p>{{ k.text }}</p></li>
       {% endfor %}
     </ol>
-    <div class="cena" data-reveal>
-      <div class="cena-hlavni">
-        <p class="cena-k">Cena spolupráce</p>
-        <p class="cena-cislo">{{ P.cena }}</p>
-        <p class="cena-pozn">{{ P.cena_pozn }}</p>
-      </div>
-      <dl class="cena-podminky">
-        {% for p in P.podminky %}<div><dt>{{ p.k }}</dt><dd>{{ p.v }}</dd></div>{% endfor %}
-      </dl>
-      <a href="#kontakt" class="btn btn-velke">Domluvit konzultaci zdarma</a>
-    </div>
+    {% else %}<h2 id="proces-h" class="sr">Ceník a spolupráce</h2>{% endif %}
+    {% include "_cenik.html" %}
   </div>
 </section>

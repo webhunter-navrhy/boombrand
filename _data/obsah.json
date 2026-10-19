@@ -7,8 +7,6 @@
   "popisek": "Vojtěch Bartoň, zakladatel BoomBrand, v pořadu Nový den na CNN Prima News"
  },
  "duveruji": [
-  "T-Mobile ČR",
-  "Sirius Finance",
   "Petr Vojnar",
   "Josef Hoang",
   "Soňa Sedláčková",
@@ -32,7 +30,7 @@
  },
  "metoda": {
   "nadpis": "Nedostanete obsah. Dostanete systém.",
-  "perex": "Jedenáct kroků metody BrandFormance™, které běží každý měsíc. Vy do toho vstupujete jednou — na natáčecí blok. Všechno ostatní, včetně rozhodování o tom, co se bude točit, je na nás.",
+  "perex": "Deset kroků metody BrandFormance™, které běží každý měsíc. Vy do toho vstupujete jednou — na natáčecí blok. Všechno ostatní, včetně rozhodování o tom, co se bude točit, je na nás.",
   "stopy": [
    {
     "id": "S",
@@ -110,12 +108,6 @@
     "stopa": "M",
     "nazev": "Reporting a vyhodnocování",
     "text": "Neměříme dosah a lajky — měříme poptávky, jejich zdroj a obchodní příležitosti.",
-    "vy": false
-   },
-   {
-    "stopa": "M",
-    "nazev": "Přímé zprávy potenciálním klientům",
-    "text": "Aktivní oslovování potenciálních klientů a zákazníků skrz sociální sítě.",
     "vy": false
    }
   ],
@@ -218,5 +210,162 @@
   "nadpis": "Pojďme spolupracovat.",
   "text": "Třicet minut, kde projdeme váš byznys, odkud dnes chodí zakázky a jestli pro vás osobní značka vůbec dává ekonomický smysl. Když ne, řekneme vám to.",
   "pozn": "Odpovídáme do 24 hodin."
+ },
+ "loga": [
+  {
+   "soubor": "loga/tmobile-bila.png",
+   "nazev": "T-Mobile"
+  },
+  {
+   "soubor": "loga/sirius-bila.png",
+   "nazev": "Sirius Finance"
+  },
+  {
+   "soubor": "loga/4fin-bila.png",
+   "nazev": "4fin"
+  },
+  {
+   "soubor": "loga/remax-bila.png",
+   "nazev": "RE/MAX"
+  }
+ ],
+ "cenik": {
+  "nadpis": "Kolik stojí spolupráce",
+  "perex": "V každém balíčku je strategie, obsahový plán, natáčení, střih, publikace na Instagram, Facebook, LinkedIn a YouTube, správa Meta Ads a reporting poptávek. Rozpočet na reklamu je navíc, od 15 000 Kč měsíčně. Od vás potřebujeme 2–3 hodiny natáčení měsíčně.",
+  "balicky": [
+   {
+    "cena": "35 000 Kč",
+    "reels": 4,
+    "publikace": "1× týdně",
+    "pro": "Start osobní značky",
+    "doporuceny": false,
+    "kc": 35000
+   },
+   {
+    "cena": "50 000 Kč",
+    "reels": 8,
+    "publikace": "2× týdně",
+    "pro": "Doporučený balíček pro většinu firem",
+    "doporuceny": true,
+    "kc": 50000
+   },
+   {
+    "cena": "65 000 Kč",
+    "reels": 12,
+    "publikace": "3× týdně",
+    "pro": "Osobní i firemní značka naplno",
+    "doporuceny": false,
+    "kc": 65000
+   }
+  ]
+ },
+ "zaruka": {
+  "nadpis": "Za co ručíme",
+  "uvod": "Neručíme za to, kolik vyděláte — to neovlivníme my, ale vy a váš trh.",
+  "body": [
+   "Do 30 dnů máte hotovou strategii, pozicování a obsahový plán na tři měsíce dopředu.",
+   "Každý měsíc dostanete report, který neukazuje lajky, ale počet poptávek a jejich zdroj.",
+   "Pokud po třech měsících nevidíte konkrétní obchodní přínos, sedneme si nad čísly. Buď najdeme, co opravit, nebo se rozejdeme bez výpovědní lhůty."
+  ]
+ },
+ "vystupy": {
+  "nadpis": "Co si z hovoru odnesete",
+  "perex": "Čtyři konkrétní věci — i kdybychom spolu nakonec nezačali spolupracovat.",
+  "body": [
+   {
+    "nazev": "Kde reálně ztrácíte zakázky",
+    "text": "Projdeme, odkud vám dnes chodí klienti a jak velká část obratu visí na jediném zdroji. Většina lidí to číslo nikdy nespočítala."
+   },
+   {
+    "nazev": "Čím se odlišíte dřív, než přijdete na schůzku",
+    "text": "Ukážeme, jak má vypadat sdělení, aby si klient vybral vás ještě předtím, než začne srovnávat ceny."
+   },
+   {
+    "nazev": "Konkrétní plán na 90 dní",
+    "text": "Odejdete s tím, co dělat hned — témata, formáty, frekvence. Použitelné, i když si to budete dělat sám."
+   },
+   {
+    "nazev": "Nebo vám řekneme, že to nemá smysl",
+    "text": "Ne každý potřebuje osobní značku. Když máte stabilní zakázky a plnou kapacitu, řekneme vám to na rovinu."
+   }
+  ]
+ },
+ "formular": {
+  "obory": [
+   "Reality",
+   "Finance",
+   "Služby",
+   "Konzultace",
+   "Jiné"
+  ],
+  "zdroje": [
+   "Doporučení",
+   "Sociální sítě",
+   "Google / web",
+   "Placená reklama",
+   "Osobní networking",
+   "Jiné"
+  ],
+  "dekujeme": "Díky za důvěru! Ozveme se vám telefonicky do 24 hodin a probereme další krok."
+ },
+ "vsl": {
+  "video": "9gqzIU4l_P8",
+  "video_nazev": "Zdvojnásobíme tvoje příjmy do 3 měsíců díky osobní značce na sociálních sítích.",
+  "h1": "Vaše jméno prodává.",
+  "h1b": "Zatím jen ve chvíli, kdy jste osobně na schůzce.",
+  "perex": "Pusťte si krátké video a vyplňte formulář. Na hovoru projdeme, odkud vám dnes chodí zakázky a jestli pro vás osobní značka vůbec dává ekonomický smysl — podle metody BrandFormance™.",
+  "kroky": [
+   "Kdo jste",
+   "Kde jste finančně",
+   "Co vás brzdí"
+  ],
+  "obrat": [
+   "do 150 000 Kč",
+   "150 000 – 250 000 Kč",
+   "250 000 – 450 000 Kč",
+   "nad 450 000 Kč"
+  ],
+  "prijem": [
+   "do 50 000 Kč",
+   "50 000 – 150 000 Kč",
+   "150 000 – 300 000 Kč",
+   "300 000 Kč+"
+  ],
+  "cil": [
+   "do 150 000 Kč",
+   "150 000 – 300 000 Kč",
+   "300 000 – 500 000 Kč",
+   "500 000 Kč+"
+  ],
+  "otazky": [
+   {
+    "q": "Když na vás někdo narazí na Instagramu, je mu během pár vteřin jasné, kdo přesně jste, komu pomáháte a proč právě vy?",
+    "o": [
+     "Ano, mám to jasně dané",
+     "Mám to napsané, ale asi to nefunguje",
+     "Vůbec — splývám s ostatními ve svém oboru"
+    ],
+    "pole": "Pozicování"
+   },
+   {
+    "q": "Přivádí vám váš obsah pravidelně lidi, kteří se reálně ptají na vaši službu?",
+    "o": [
+     "Ano, chodí mi to konzistentně",
+     "Občas něco přijde, ale je to nahodilé",
+     "Ne, zhlédnutí mám, ale poptávky ne"
+    ],
+    "pole": "Obsah a poptávky"
+   },
+   {
+    "q": "Když přijde zájemce, máte jasnou nabídku, kterou stačí říct a lidé kupují?",
+    "o": [
+     "Ano, mám to vyladěné",
+     "Mám nabídku, ale musím dost přesvědčovat",
+     "Spíš domlouvám případ od případu"
+    ],
+    "pole": "Nabídka"
+   }
+  ],
+  "dekujeme": "Díky za důvěru! Osobní značka je jedna z nejlepších investic, kterou teď můžete udělat. Ozveme se vám telefonicky do 24 hodin a probereme další krok."
  }
 }

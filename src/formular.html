@@ -1,0 +1,110 @@
+{% extends "_base.html" %}
+{% set titulek = 'Strategický hovor zdarma – osobní značka | BoomBrand' %}
+{% set popis = 'Pusťte si krátké video a vyplňte formulář. Na 30minutovém hovoru projdeme, odkud vám chodí zakázky a jestli pro vás osobní značka dává ekonomický smysl.' %}
+{% set cesta = 'formular/' %}
+{% set minimal = True %}
+{% set V = data.obsah.vsl %}{% set VY = data.obsah.vystupy %}{% set Z = data.obsah.zaruka %}
+{% block body_class %}podstranka vsl-stranka{% endblock %}
+{% block obsah %}
+<section class="vsl-hero zrno" aria-labelledby="vsl-h">
+  <div class="hero-svetlo" aria-hidden="true"></div>
+  <div class="wrap vsl-grid">
+    <div class="vsl-txt">
+      <p class="hero-nad"><span class="rec" aria-hidden="true"></span>Metoda BrandFormance™ · strategický hovor zdarma</p>
+      <h1 id="vsl-h" class="hero-h1 vsl-h1">{{ V.h1 }}</h1>
+      <p class="hero-h1b">{{ V.h1b }}</p>
+      <p class="hero-perex">{{ V.perex }}</p>
+      <div class="tlacitka"><a href="#formular" class="btn btn-velke">Chci strategický hovor zdarma</a></div>
+      <a class="hero-hodnoceni" href="#recenze"><span class="hvezdy" aria-hidden="true">★★★★★</span><span><strong>{{ data.recenze.hodnoceni }}</strong> z&nbsp;{{ data.recenze.pocet }} recenzí na Googlu</span></a>
+    </div>
+    <figure class="hledacek vsl-video" data-yt="{{ V.video }}">
+      {{ img('yt/' ~ V.video ~ '.jpg', 'Vojtěch Bartoň ve videu: ' ~ V.video_nazev, sizes='(min-width: 64rem) 50vw, 92vw', cls='hledacek-img') }}
+      <span class="roh roh-tl" aria-hidden="true"></span><span class="roh roh-tr" aria-hidden="true"></span>
+      <span class="roh roh-bl" aria-hidden="true"></span><span class="roh roh-br" aria-hidden="true"></span>
+      <button type="button" class="monitor-play" aria-label="Přehrát video: {{ V.video_nazev }}">
+        <span class="play-ikona" aria-hidden="true"></span><span class="monitor-play-txt">Pustit video<small>zapněte si zvuk</small></span>
+      </button>
+    </figure>
+  </div>
+</section>
+
+<section class="sekce vsl-form papir" id="formular" aria-labelledby="vf-h">
+  <div class="wrap vsl-form-grid">
+    <div class="vsl-form-txt">
+      <p class="stitek">Krok za krokem</p>
+      <h2 id="vf-h" class="h-velky">Vyplňte formulář.</h2>
+      <p class="perex">Zabere vám to 2&nbsp;minuty. Ozveme se telefonicky do 24&nbsp;hodin.</p>
+      <div class="zaruka zaruka-papir">
+        <p class="zaruka-h">{{ Z.nadpis }}</p>
+        <p class="zaruka-uvod">{{ Z.uvod }}</p>
+        <ul role="list">{% for x in Z.body %}<li>{{ x }}</li>{% endfor %}</ul>
+      </div>
+    </div>
+    <form class="formular kroky-form" method="post" novalidate data-form="dopyt" data-ucel="Strategický hovor (formulář s videem)" data-dekujeme="{{ V.dekujeme }}" data-kroky>
+      <div class="kroky-prubeh" aria-hidden="true"><span data-kroky-pas></span></div>
+      {% for t in V.kroky %}
+      <fieldset class="krok" data-krok="{{ loop.index }}"{% if not loop.first %} hidden{% endif %}>
+        <legend><span class="tc">Krok {{ loop.index }} ze {{ V.kroky|length }}</span>{{ t }}</legend>
+        {% if loop.index == 1 %}
+        <div class="pole-2">
+          <label class="pole"><span>Jméno *</span><input name="Jméno" autocomplete="given-name" required maxlength="60"></label>
+          <label class="pole"><span>Příjmení *</span><input name="Příjmení" autocomplete="family-name" required maxlength="60"></label>
+        </div>
+        <div class="pole-2">
+          <label class="pole"><span>E-mail *</span><input name="E-mail" type="email" autocomplete="email" required placeholder="vas@email.cz" maxlength="120"></label>
+          <label class="pole"><span>Telefon *</span><input name="Telefon" type="tel" autocomplete="tel" inputmode="tel" required placeholder="+420 777 123 456" maxlength="24"></label>
+        </div>
+        <label class="pole"><span>Obor podnikání *</span><input name="Obor" required placeholder="např. reality, finance, kouč…" maxlength="120"></label>
+        <label class="pole"><span>Odkaz na sociální sítě nebo web <small>nepovinné</small></span><input name="Sítě nebo web" type="text" inputmode="url" placeholder="např. instagram.com/vaseznacka" maxlength="255"></label>
+        {% elif loop.index == 2 %}
+        <label class="pole"><span>Přibližný měsíční obrat *</span><select name="Měsíční obrat" required><option value="">Vyberte…</option>{% for o in V.obrat %}<option>{{ o }}</option>{% endfor %}</select></label>
+        <label class="pole"><span>Odkud vám dnes chodí většina zakázek? <small>nepovinné</small></span><input name="Odkud chodí zakázky" placeholder="Doporučení, portály, reklama, obchodník…" maxlength="200"></label>
+        <label class="pole"><span>Kolik aktuálně měsíčně vyděláváte? *</span><select name="Aktuální měsíční příjem" required><option value="">Vyberte…</option>{% for o in V.prijem %}<option>{{ o }}</option>{% endfor %}</select></label>
+        <label class="pole"><span>Kolik chcete vydělávat za 12 měsíců? *</span><select name="Cíl za 12 měsíců" required><option value="">Vyberte…</option>{% for o in V.cil %}<option>{{ o }}</option>{% endfor %}</select></label>
+        {% else %}
+        {% for q in V.otazky %}
+        <div class="pole volby" role="radiogroup" aria-labelledby="q{{ loop.index }}">
+          <span id="q{{ loop.index }}">{{ q.q }} *</span>
+          {% set outer = loop %}
+          {% for o in q.o %}<label class="volba"><input type="radio" name="{{ q.pole }}" value="{{ o }}" required><span>{{ o }}</span></label>{% endfor %}
+        </div>
+        {% endfor %}
+        {% endif %}
+      </fieldset>
+      {% endfor %}
+      <div class="past" aria-hidden="true"><label>Nevyplňovat <input name="_hp" tabindex="-1" autocomplete="off"></label></div>
+      <div class="kroky-tlacitka">
+        <button type="button" class="btn btn-obrys-tmavy" data-zpet hidden>← Zpět</button>
+        <button type="button" class="btn" data-dal>Pokračovat</button>
+        <button type="submit" class="btn" data-odeslat hidden>Odeslat</button>
+      </div>
+      <p class="formular-gdpr">Údaje použijeme jen k&nbsp;vyřízení poptávky a&nbsp;přípravě hovoru. Žádné reklamní e-maily bez vašeho souhlasu. Více v&nbsp;<a href="{{ url('ochrana-osobnich-udaju') }}">zásadách ochrany osobních údajů</a>.</p>
+      <p class="formular-stav" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<section class="sekce vsl-vystupy" aria-labelledby="vv-h">
+  <div class="wrap">
+    <div class="sekce-hlava">
+      <p class="stitek">Výstupy metody BrandFormance™</p>
+      <h2 id="vv-h" class="h-velky">{{ VY.nadpis }}</h2>
+      <p class="perex">{{ VY.perex }}</p>
+    </div>
+    <ol class="vystupy" role="list">
+      {% for b in VY.body %}<li data-reveal data-reveal-delay="{{ loop.index0 % 3 }}"><span class="tc">0{{ loop.index }}</span><h3>{{ b.nazev }}</h3><p>{{ b.text }}</p></li>{% endfor %}
+    </ol>
+    <a href="#formular" class="btn btn-velke">Chci strategický hovor</a>
+  </div>
+</section>
+
+{% include "_reels.html" %}
+{% set pocet_rec = 6 %}{% include "_recenze.html" %}
+
+<section class="sekce vsl-zaver" aria-labelledby="vz-h">
+  <div class="wrap vsl-zaver-in">
+    <h2 id="vz-h" class="h-velky">Třicet minut, které vám řeknou, jestli to má smysl.</h2>
+    <a href="#formular" class="btn btn-velke">Vyplnit formulář</a>
+  </div>
+</section>
+{% endblock %}

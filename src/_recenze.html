@@ -1,0 +1,31 @@
+{# Recenze z Googlu, doslovně, se zdrojem. pocet_rec = kolik jich ukázat. #}
+{% set R = data.recenze %}{% set N = pocet_rec if pocet_rec is defined else R.polozky|length %}
+<section class="sekce recenze papir" id="recenze" aria-labelledby="rec-h">
+  <div class="wrap">
+    <div class="recenze-hlava">
+      <div>
+        <p class="stitek">Co říkají klienti</p>
+        <h2 id="rec-h" class="h-velky">Hodnocení na Googlu.</h2>
+      </div>
+      <a class="recenze-skore" href="{{ R.odkaz }}" target="_blank" rel="noopener">
+        <span class="recenze-cislo">{{ R.hodnoceni }}</span>
+        <span class="recenze-skore-txt"><span class="hvezdy" aria-hidden="true">★★★★★</span><span>{{ R.pocet }} recenzí na Googlu<span aria-hidden="true"> ↗</span></span></span>
+      </a>
+    </div>
+    <ul class="recenze-mriz" role="list">
+      {% for r in R.polozky[:N] %}
+      <li class="recenze-1" data-reveal data-reveal-delay="{{ loop.index0 % 3 }}">
+        <figure>
+          <p class="hvezdy" role="img" aria-label="Hodnocení 5 z 5">★★★★★</p>
+          <blockquote class="recenze-text{% if r.text|join(' ')|length > 420 %} recenze-dlouha{% endif %}" data-recenze>
+            {% for t in r.text %}<p>{{ t }}</p>{% endfor %}
+          </blockquote>
+          {% if r.text|join(' ')|length > 420 %}<button type="button" class="recenze-vic" aria-expanded="false" data-recenze-vic>Číst celou recenzi</button>{% endif %}
+          <figcaption><span class="recenze-avatar" aria-hidden="true">{{ r.jmeno.replace('Ing. ', '').split(' ')|map('first')|join('') }}</span><span><strong>{{ r.jmeno }}</strong>{% if r.role %}<small>{{ r.role }}</small>{% endif %}</span></figcaption>
+        </figure>
+      </li>
+      {% endfor %}
+    </ul>
+    <p class="recenze-zdroj">Recenze jsou převzaté doslovně z&nbsp;profilu BoomBrand s.r.o. na Googlu. <a class="link-sipka" href="{{ R.odkaz }}" target="_blank" rel="noopener">Všechny recenze na Googlu<span aria-hidden="true"> ↗</span></a></p>
+  </div>
+</section>

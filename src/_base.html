@@ -8,7 +8,7 @@
 {% if site.navrh or noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
 <meta name="theme-color" content="{{ site.theme_color }}">
 <link rel="canonical" href="{{ site.url }}{{ cesta or '' }}">
-<meta property="og:type" content="website">
+<meta property="og:type" content="{{ og_typ if og_typ is defined else 'website' }}">
 <meta property="og:locale" content="cs_CZ">
 <meta property="og:site_name" content="BoomBrand">
 <meta property="og:title" content="{{ titulek or site.nazev }}">
@@ -23,6 +23,7 @@
 <link rel="stylesheet" href="{{ asset('fonts/fonts.css') }}">
 <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 <script>document.documentElement.classList.add('js')</script>
+<script>window.BB={endpoint:{{ site.formular.endpoint|tojson }},demo:{{ 'true' if site.formular.demo else 'false' }},mereni:{{ site.mereni|tojson }},base:{{ base|tojson }}};</script>
 {% block head %}{% endblock %}
 {% if jsonld %}<script type="application/ld+json">{{ jsonld|safe }}</script>{% endif %}
 </head>
@@ -32,19 +33,23 @@
 {% macro odkaz(h) -%}
 {%- if h.startswith('#') -%}{{ '' if doma else url('') }}{{ h }}{%- elif h.startswith('http') -%}{{ h }}{%- else -%}{{ url(h) }}{%- endif -%}
 {%- endmacro %}
-<header class="hlavicka" data-hlavicka>
+<header class="hlavicka{% if minimal %} hlavicka-min{% endif %}" data-hlavicka>
   <span class="hlavicka-prubeh" aria-hidden="true"></span>
   <div class="hlavicka-in">
     <a href="{{ url('') }}" class="logo" aria-label="BoomBrand – úvodní stránka">
       <img src="{{ base }}{{ site.logo }}" alt="BoomBrand" width="226" height="13">
     </a>
+    {% if minimal %}
+    <a href="#formular" class="btn btn-sm hlavicka-cta hlavicka-cta-min">Vyplnit formulář</a>
+    {% else %}
     <nav class="nav" aria-label="Hlavní">
       {% for n in site.nav %}
         {% if n.menu is defined %}
         <div class="nav-sub">
           <a href="{{ odkaz(n.href) }}" class="nav-a" aria-haspopup="true">{{ n.text }}</a>
-          <div class="nav-panel">
-            {% for m in n.menu %}<a href="{{ odkaz(m.href) }}">{{ m.text }}</a>{% endfor %}
+          <div class="nav-panel nav-panel-sluzby">
+            {% for m in n.menu %}<a href="{{ odkaz(m.href) }}"><strong>{{ m.text }}</strong><span>{{ data.sluzby[m.href].kratce }}</span></a>{% endfor %}
+            <a href="{{ odkaz(n.href) }}" class="nav-panel-vse">Všechny služby a ceník <span aria-hidden="true">→</span></a>
           </div>
         </div>
         {% else %}
@@ -56,7 +61,9 @@
     <button class="burger" type="button" aria-expanded="false" aria-controls="menu" data-burger>
       <span class="burger-car"></span><span class="burger-car"></span><span class="sr">Menu</span>
     </button>
+    {% endif %}
   </div>
+  {% if not minimal %}
   <div class="menu" id="menu" hidden data-menu>
     <nav aria-label="Mobilní">
       {% for n in site.nav %}
@@ -70,6 +77,7 @@
       <a href="{{ odkaz('#kontakt') }}" class="btn">Domluvit konzultaci zdarma</a>
     </div>
   </div>
+  {% endif %}
 </header>
 <main id="obsah">
 {% block obsah %}{% endblock %}
@@ -78,14 +86,24 @@
   <div class="wrap paticka-grid">
     <div class="paticka-brand">
       <img src="{{ base }}{{ site.logo }}" alt="BoomBrand" width="226" height="13" loading="lazy">
-      <p>Osobní a firemní značka na sociálních sítích. Metoda BrandFormance™. Brno a celá Česká republika.</p>
+      <p>Osobní a firemní značka na sociálních sítích. Metoda BrandFormance™. Natáčíme v&nbsp;Brně a&nbsp;okolí, spolupracujeme po celé České republice.</p>
+      <a class="paticka-recenze" href="{{ site.recenze_google }}" target="_blank" rel="noopener"><span class="hvezdy" aria-hidden="true">★★★★★</span> {{ data.recenze.hodnoceni }} · {{ data.recenze.pocet }} recenzí na Googlu<span aria-hidden="true"> ↗</span></a>
     </div>
     <div>
       <h2 class="paticka-h">Služby</h2>
       <ul role="list">
         {% for k, s in data.sluzby.items() %}<li><a href="{{ url(k) }}">{{ s.menu }}</a></li>{% endfor %}
+      </ul>
+    </div>
+    <div>
+      <h2 class="paticka-h">BoomBrand</h2>
+      <ul role="list">
+        <li><a href="{{ url('sluzby') }}">Služby a ceník</a></li>
         <li><a href="{{ url('pripadove-studie') }}">Případové studie</a></li>
         <li><a href="{{ url('o-nas') }}">O nás – Vojtěch Bartoň</a></li>
+        <li><a href="{{ url('blog') }}">Blog</a></li>
+        <li><a href="{{ url('tipy') }}">20 AI triků v PDF zdarma</a></li>
+        <li><a href="{{ url('formular') }}">Strategický hovor zdarma</a></li>
       </ul>
     </div>
     <div>
@@ -98,10 +116,36 @@
     </div>
   </div>
   <div class="wrap paticka-spod">
-    <p>© 2026 {{ site.firma }} · IČO {{ site.ico }} · Brno</p>
-    <p>BrandFormance™ je metoda BoomBrand.</p>
+    <p>© 2026 {{ site.firma }} · IČO {{ site.ico }} · sídlo {{ site.sidlo.ulice }}, {{ site.sidlo.psc }} {{ site.sidlo.mesto }} · {{ site.rejstrik }}</p>
+    <p class="paticka-pravni"><a href="{{ url('ochrana-osobnich-udaju') }}">Ochrana osobních údajů</a><button type="button" class="paticka-cookies" data-cookies-nastaveni>Nastavení cookies</button></p>
   </div>
 </footer>
+
+{% if not minimal %}
+<div class="lepici-cta" data-lepici hidden>
+  <a href="{{ odkaz('#kontakt') }}" class="btn">Konzultace zdarma</a>
+  <a href="tel:{{ site.kontakt.telefon|replace(' ', '') }}" class="lepici-tel" aria-label="Zavolat {{ site.kontakt.telefon }}"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z" fill="currentColor"/></svg></a>
+</div>
+{% endif %}
+
+{# Souhlas s cookies: nic měřicího se nenačte, dokud návštěvník nesouhlasí. Odmítnout je stejně snadné jako přijmout. #}
+<div class="souhlas" data-souhlas hidden role="region" aria-label="Souhlas s cookies">
+  <div class="souhlas-in">
+    <p class="souhlas-h">Cookies jen s vaším souhlasem</p>
+    <p class="souhlas-txt">Nezbytné věci web zvládne bez nich. S&nbsp;vaším souhlasem použijeme Google Analytics (návštěvnost) a&nbsp;Meta Pixel (měření a&nbsp;cílení reklam na Facebooku a&nbsp;Instagramu). <a href="{{ url('ochrana-osobnich-udaju') }}#cookies">Podrobnosti</a></p>
+    <div class="souhlas-volby" data-souhlas-volby hidden>
+      <label class="prepinac"><input type="checkbox" checked disabled><span><strong>Nezbytné</strong> – chod webu a uložení této volby. Vždy zapnuté.</span></label>
+      <label class="prepinac"><input type="checkbox" data-souhlas-a><span><strong>Analytické</strong> – Google Analytics 4, anonymní statistiky návštěvnosti.</span></label>
+      <label class="prepinac"><input type="checkbox" data-souhlas-m><span><strong>Marketingové</strong> – Meta Pixel, měření a&nbsp;cílení reklam.</span></label>
+    </div>
+    <div class="souhlas-tlacitka">
+      <button type="button" class="btn btn-sm souhlas-ano" data-souhlas-vse>Přijmout vše</button>
+      <button type="button" class="btn btn-sm btn-obrys" data-souhlas-nic>Odmítnout</button>
+      <button type="button" class="souhlas-odkaz" data-souhlas-nastavit>Nastavit</button>
+      <button type="button" class="btn btn-sm btn-obrys" data-souhlas-ulozit hidden>Uložit výběr</button>
+    </div>
+  </div>
+</div>
 <script src="{{ asset('js/main.js') }}" defer></script>
 </body>
 </html>

@@ -1,0 +1,90 @@
+{% extends "_base.html" %}
+{% set titulek = 'Ochrana osobních údajů a cookies | BoomBrand' %}
+{% set popis = 'Jak BoomBrand s.r.o. zpracovává osobní údaje z formulářů na webu, jaké používá cookies a jaká máte práva.' %}
+{% set cesta = 'ochrana-osobnich-udaju/' %}
+{% block body_class %}podstranka pravni-stranka{% endblock %}
+{% block obsah %}
+<section class="sub-hero" aria-labelledby="gd-h">
+  <div class="wrap">
+    <nav class="drobky tc" aria-label="Drobečková navigace"><a href="{{ url('') }}">BoomBrand</a> / <span>Ochrana osobních údajů</span></nav>
+    <p class="hero-nad"><span class="rec" aria-hidden="true"></span>GDPR a cookies</p>
+    <h1 id="gd-h" class="sub-h1">Ochrana osobních údajů</h1>
+    <p class="perex">Krátce: údaje z&nbsp;formulářů použijeme jen k&nbsp;tomu, o&nbsp;co nás žádáte. Nic neprodáváme. Měřicí a&nbsp;reklamní cookies zapneme jen s&nbsp;vaším souhlasem.</p>
+  </div>
+</section>
+<section class="sekce papir pravni" aria-label="Zásady zpracování osobních údajů">
+  <div class="wrap pravni-grid">
+    <nav class="pravni-obsah" aria-label="Obsah stránky">
+      <p class="tc">Obsah</p>
+      <ol role="list">
+        <li><a href="#spravce">Kdo údaje zpracovává</a></li>
+        <li><a href="#ucely">Jaké údaje, proč a jak dlouho</a></li>
+        <li><a href="#prijemci">Kdo k&nbsp;údajům má přístup</a></li>
+        <li><a href="#prava">Vaše práva</a></li>
+        <li><a href="#cookies">Cookies</a></li>
+      </ol>
+    </nav>
+    <div class="prose pravni-text">
+      <h2 id="spravce">1. Kdo vaše údaje zpracovává</h2>
+      <p>Správcem osobních údajů je <strong>{{ site.firma }}</strong>, IČO {{ site.ico }}, se sídlem {{ site.sidlo.ulice }}, {{ site.sidlo.cast }}, {{ site.sidlo.psc }} {{ site.sidlo.mesto }}, zapsaná v&nbsp;obchodním rejstříku vedeném Krajským soudem v&nbsp;Brně, oddíl C, vložka 151984 (dále „BoomBrand“, „my“).</p>
+      <p>Ve všem, co se týká osobních údajů, nám pište na <a href="mailto:{{ site.kontakt.email }}">{{ site.kontakt.email }}</a> nebo volejte na <a href="tel:{{ site.kontakt.telefon|replace(' ', '') }}">{{ site.kontakt.telefon }}</a>. Pověřence pro ochranu osobních údajů jmenovaného nemáme, zákon nám to neukládá.</p>
+
+      <h2 id="ucely">2. Jaké údaje, proč a jak dlouho</h2>
+      <div class="tabulka" role="region" aria-label="Přehled zpracování" tabindex="0">
+      <table>
+        <thead><tr><th scope="col">Kdy</th><th scope="col">Jaké údaje</th><th scope="col">Proč a na jakém základě</th><th scope="col">Jak dlouho</th></tr></thead>
+        <tbody>
+          <tr><td data-l="Kdy">Poptávka a&nbsp;formulář ke strategickému hovoru</td><td data-l="Jaké údaje">jméno, příjmení, e-mail, telefon, obor, odkaz na web nebo sítě, odpovědi ve formuláři (obrat, příjmy, cíle, odkud chodí zakázky) a&nbsp;zpráva</td><td data-l="Proč a na jakém základě">Abychom se vám ozvali, připravili konzultaci a&nbsp;případně nabídku. Jednání o&nbsp;smlouvě na vaši žádost, čl. 6 odst. 1 písm. b) GDPR.</td><td data-l="Jak dlouho">12 měsíců od posledního kontaktu. Když začneme spolupracovat, po dobu spolupráce a&nbsp;3 roky po jejím skončení.</td></tr>
+          <tr><td data-l="Kdy">Formulář na PDF s&nbsp;tipy</td><td data-l="Jaké údaje">jméno a&nbsp;e-mail</td><td data-l="Proč a na jakém základě">Abychom vám poslali PDF, o&nbsp;které jste požádali, čl. 6 odst. 1 písm. b) GDPR.</td><td data-l="Jak dlouho">12 měsíců</td></tr>
+          <tr><td data-l="Kdy">Další tipy e-mailem (jen když zaškrtnete)</td><td data-l="Jaké údaje">jméno a&nbsp;e-mail</td><td data-l="Proč a na jakém základě">Zasílání tipů a&nbsp;novinek. Váš souhlas, čl. 6 odst. 1 písm. a) GDPR. Odvolat ho můžete kdykoli odkazem v&nbsp;e-mailu nebo na {{ site.kontakt.email }}.</td><td data-l="Jak dlouho">do odvolání souhlasu</td></tr>
+          <tr><td data-l="Kdy">Spolupráce a&nbsp;fakturace</td><td data-l="Jaké údaje">identifikační a&nbsp;kontaktní údaje, údaje na dokladech</td><td data-l="Proč a na jakém základě">Plnění smlouvy a&nbsp;zákonné povinnosti (účetnictví, daně), čl. 6 odst. 1 písm. b) a&nbsp;c) GDPR.</td><td data-l="Jak dlouho">po dobu smlouvy, účetní doklady 10 let</td></tr>
+          <tr><td data-l="Kdy">Měření návštěvnosti a&nbsp;reklamy</td><td data-l="Jaké údaje">identifikátory cookies, informace o&nbsp;zařízení a&nbsp;prohlížení webu</td><td data-l="Proč a na jakém základě">Jen s&nbsp;vaším souhlasem, čl. 6 odst. 1 písm. a) GDPR a&nbsp;§ 89 odst. 3 zákona o&nbsp;elektronických komunikacích. Podrobnosti v&nbsp;části <a href="#cookies">Cookies</a>.</td><td data-l="Jak dlouho">podle typu cookie, viz níže</td></tr>
+          <tr><td data-l="Kdy">Provoz a&nbsp;zabezpečení webu</td><td data-l="Jaké údaje">IP adresa, čas a&nbsp;technické údaje požadavku</td><td data-l="Proč a na jakém základě">Ochrana webu a&nbsp;formulářů před zneužitím (spam, útoky). Oprávněný zájem, čl. 6 odst. 1 písm. f) GDPR.</td><td data-l="Jak dlouho">nejvýše 30 dní</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>Údaje nám dáváte dobrovolně. Bez kontaktu se vám ale nemůžeme ozvat. Automatizované rozhodování ani profilování s&nbsp;právními účinky neprovádíme.</p>
+
+      <h2 id="prijemci">3. Kdo k údajům má přístup</h2>
+      <p>Údaje nikomu neprodáváme. Pracují s&nbsp;nimi jen lidé z&nbsp;BoomBrand a&nbsp;tito zpracovatelé, se kterými máme smlouvu:</p>
+      <ul>
+        <li><strong>WebHunter s.r.o.</strong>, IČO 29498511, Na Provaznici 2691/7, 150 00 Praha 5 – správa webu a&nbsp;formulářů. Formuláře ukládá a&nbsp;doručuje e-mailem přes služby Cloudflare, Inc. a&nbsp;Resend, Inc.</li>
+        <li><strong>Google Ireland Ltd.</strong> – firemní e-mail (Google Workspace) a&nbsp;Google Analytics, pokud k&nbsp;němu dáte souhlas.</li>
+        <li><strong>Meta Platforms Ireland Ltd.</strong> – Meta Pixel pro měření reklam na Facebooku a&nbsp;Instagramu, jen s&nbsp;vaším souhlasem.</li>
+        <li><strong>GitHub, Inc.</strong> – hosting webu.</li>
+        <li>účetní a&nbsp;daňový poradce, pokud spolu začneme spolupracovat.</li>
+      </ul>
+      <p>Část těchto firem sídlí nebo zpracovává data v&nbsp;USA. Předání je chráněné rámcem EU–USA pro ochranu osobních údajů (Data Privacy Framework) nebo standardními smluvními doložkami schválenými Evropskou komisí.</p>
+      <p>Videa z&nbsp;YouTube se načtou až po kliknutí na tlačítko přehrát, do té doby se k&nbsp;Googlu nic neposílá. Odkazy na Instagram, Facebook, LinkedIn a&nbsp;YouTube vedou na stránky těchto sítí, které mají vlastní pravidla.</p>
+
+      <h2 id="prava">4. Vaše práva</h2>
+      <p>Můžete od nás chtít:</p>
+      <ul>
+        <li>přístup k&nbsp;údajům, které o&nbsp;vás máme, a&nbsp;jejich kopii,</li>
+        <li>opravu nepřesných údajů,</li>
+        <li>výmaz, pokud už je nepotřebujeme nebo jste odvolali souhlas,</li>
+        <li>omezení zpracování a&nbsp;přenesení údajů k&nbsp;jinému správci,</li>
+        <li>vznést námitku proti zpracování na základě oprávněného zájmu,</li>
+        <li>kdykoli odvolat souhlas (u&nbsp;cookies přes <button type="button" class="pravni-cookies" data-cookies-nastaveni>nastavení cookies</button>).</li>
+      </ul>
+      <p>Stačí napsat na <a href="mailto:{{ site.kontakt.email }}">{{ site.kontakt.email }}</a>. Odpovíme nejpozději do jednoho měsíce. Pokud s&nbsp;námi nebudete spokojeni, můžete se obrátit na Úřad pro ochranu osobních údajů, Pplk. Sochora 27, 170 00 Praha 7, <a href="https://uoou.gov.cz" target="_blank" rel="noopener">uoou.gov.cz</a>.</p>
+
+      <h2 id="cookies">5. Cookies</h2>
+      <p>Cookies jsou malé soubory, které si web ukládá ve vašem prohlížeči. Bez souhlasu používáme jen to, co web nezbytně potřebuje. Analytické a&nbsp;marketingové cookies se načtou, až když je v&nbsp;liště povolíte. Volbu můžete kdykoli změnit:</p>
+      <p><button type="button" class="btn btn-sm" data-cookies-nastaveni>Změnit nastavení cookies</button></p>
+      <div class="tabulka" role="region" aria-label="Přehled cookies" tabindex="0">
+      <table>
+        <thead><tr><th scope="col">Název</th><th scope="col">Kdo</th><th scope="col">Účel</th><th scope="col">Typ</th><th scope="col">Platnost</th></tr></thead>
+        <tbody>
+          <tr><td data-l="Název"><code>bb-souhlas</code> (úložiště prohlížeče)</td><td data-l="Kdo">BoomBrand</td><td data-l="Účel">pamatuje si vaši volbu cookies</td><td data-l="Typ">nezbytné</td><td data-l="Platnost">12 měsíců</td></tr>
+          <tr><td data-l="Název"><code>_ga</code>, <code>_ga_*</code></td><td data-l="Kdo">Google</td><td data-l="Účel">statistiky návštěvnosti (Google Analytics 4)</td><td data-l="Typ">analytické, se souhlasem</td><td data-l="Platnost">2 roky</td></tr>
+          <tr><td data-l="Název"><code>_fbp</code></td><td data-l="Kdo">Meta</td><td data-l="Účel">měření a&nbsp;cílení reklam na Facebooku a&nbsp;Instagramu</td><td data-l="Typ">marketingové, se souhlasem</td><td data-l="Platnost">3 měsíce</td></tr>
+          <tr><td data-l="Název">cookies YouTube (např. <code>VISITOR_INFO1_LIVE</code>, <code>YSC</code>)</td><td data-l="Kdo">Google</td><td data-l="Účel">přehrání videa, nastaví se až po kliknutí na video</td><td data-l="Typ">funkční</td><td data-l="Platnost">do 6 měsíců</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p class="pravni-ucinnost">Platné od {{ site.zasady_od|default('19. 10. 2026') }}.</p>
+    </div>
+  </div>
+</section>
+{% endblock %}

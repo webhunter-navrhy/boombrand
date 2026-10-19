@@ -87,7 +87,9 @@
   "cta": {
    "nadpis": "Chcete značku, kterou trh zná?",
    "text": "Domluvte si nezávaznou konzultaci zdarma. Do pár hodin voláme a probereme první kroky."
-  }
+  },
+  "kratce": "Personal branding pro majitele firem a experty.",
+  "pilire_nadpis": ""
  },
  "firemni-znacka": {
   "menu": "Firemní značka",
@@ -96,8 +98,8 @@
   "titulek": "Firemní značka a branding na sociálních sítích – Brno | BoomBrand",
   "popis": "Budování firemní značky od pozice na trhu po pravidelný obsah na sociálních sítích. Metoda BrandFormance™, od 35 000 Kč měsíčně, Brno a celá ČR.",
   "perex": "Značka není logo. Je to důvod, proč si zákazník vybere vás a ne levnější konkurenci. Stavíme firemní značku od pozice na trhu až po obsah, který ji každý týden připomíná — metodou BrandFormance™.",
-  "foto": "nataceni-rozhovor.webp",
-  "foto_alt": "Zákulisí natáčení rozhovoru: klienti u stolu, kamera a studiová světla",
+  "foto": "michal-matocha.jpg",
+  "foto_alt": "Michal Matocha, majitel GRASSolutions, ve videu natočeném BoomBrand",
   "fakta": [
    {
     "k": "Co dodáváme",
@@ -185,7 +187,9 @@
   "cta": {
    "nadpis": "Chcete značku, která prodává i bez vás?",
    "text": "Domluvte si nezávaznou konzultaci zdarma. Řekneme vám, kde vaše značka dnes ztrácí zakázky."
-  }
+  },
+  "kratce": "Přenos důvěry z majitele na firmu a tým.",
+  "pilire_nadpis": ""
  },
  "sprava-socialnich-siti": {
   "menu": "Správa sociálních sítí",
@@ -275,6 +279,476 @@
   "cta": {
    "nadpis": "Chcete správu sítí pod jednou střechou?",
    "text": "Domluvte si nezávaznou konzultaci zdarma. Ozveme se telefonicky do pár hodin a řekneme si, co dává pro vaši firmu smysl."
-  }
+  },
+  "kratce": "Instagram, Facebook, LinkedIn i TikTok pod jednou střechou.",
+  "pilire_nadpis": ""
+ },
+ "sprava-instagramu": {
+  "stitek": "Správa Instagramu · od 35 000 Kč / měsíc",
+  "h1": "Správa Instagramu, která přivádí zákazníky.",
+  "titulek": "Správa Instagramu pro firmy — cena a rozsah | BoomBrand",
+  "popis": "Kompletní správa Instagramu pro firmy a podnikatele: strategie, natáčení reels, publikování a reklama. Cena od 35 000 Kč měsíčně. Agentura BoomBrand, Brno a celá ČR.",
+  "perex": "Správa Instagramu od BoomBrand je full-service služba pro majitele firem v ČR: strategie, scénáře, natáčení Reels, střih, publikace, Meta Ads a reporting poptávek. Cena od 35 000 Kč měsíčně, od klienta 2–3 hodiny měsíčně.",
+  "fakta": [
+   {
+    "k": "Cena",
+    "v": "Kompletní správa Instagramu od 35 000 Kč měsíčně, reklamní rozpočet zvlášť."
+   },
+   {
+    "k": "Rozsah",
+    "v": "Strategie, reels, stories, texty, publikování, komunita a měsíční report."
+   },
+   {
+    "k": "Váš čas",
+    "v": "Zhruba 1–2 hodiny natáčení měsíčně."
+   },
+   {
+    "k": "Kde",
+    "v": "Natáčení Brno a Jihomoravský kraj, správa pro celou ČR."
+   }
+  ],
+  "pilire": [
+   {
+    "nazev": "Obsahová strategie",
+    "text": "Určíme témata, formáty a rytmus, které vaši zákazníci opravdu sledují."
+   },
+   {
+    "nazev": "Natáčení reels",
+    "text": "Přijedeme, natočíme a sestříháme balík videí na celý měsíc dopředu."
+   },
+   {
+    "nazev": "Publikování a stories",
+    "text": "Postaráme se o pravidelnost, texty i denní stories, aby profil žil."
+   },
+   {
+    "nazev": "Reklama na Instagramu",
+    "text": "Nejlepší obsah podpoříme placenou propagací a měříme cenu za poptávku."
+   },
+   {
+    "nazev": "Komunikace s publikem",
+    "text": "Odpovídáme na komentáře a zprávy tak, aby z nich vznikaly obchodní hovory."
+   },
+   {
+    "nazev": "Měsíční report",
+    "text": "Poptávky, hovory a náklad na poptávku. Žádné schovávání se za dosah."
+   }
+  ],
+  "postup": [
+   {
+    "nazev": "Konzultace zdarma",
+    "text": "30 minut o vašem podnikání a dnešním profilu."
+   },
+   {
+    "nazev": "Strategie do 30 dnů",
+    "text": "Plán obsahu, formátů a kampaní na další měsíce."
+   },
+   {
+    "nazev": "První natáčecí den",
+    "text": "Natočíme obsah na měsíc dopředu a spustíme publikování."
+   },
+   {
+    "nazev": "Reporty a revize",
+    "text": "Každý měsíc report, po třech měsících společná revize."
+   }
+  ],
+  "faq": [
+   {
+    "q": "Kolik stojí správa Instagramu?",
+    "a": "U nás začíná kompletní správa Instagramu na 35 000 Kč měsíčně. Zahrnuje strategii, scénáře, natáčení, střih, publikování a vyhodnocení. Rozpočet na reklamu jde nad rámec."
+   },
+   {
+    "q": "Co je součástí správy Instagramu?",
+    "a": "Obsahová strategie, plán příspěvků a reels, natáčení, střih, texty, publikování, stories, komunikace s komentáři a měsíční report poptávek."
+   },
+   {
+    "q": "Kolik času to zabere mně?",
+    "a": "Zpravidla jedno natáčení měsíčně v délce jedné až dvou hodin. Zbytek řešíme my."
+   },
+   {
+    "q": "Natáčíte obsah, nebo ho musím dodat?",
+    "a": "Natáčíme. Přijedeme za vámi v Brně a okolí, u vzdálenějších klientů řešíme natáčecí dny."
+   },
+   {
+    "q": "Za jak dlouho uvidím výsledky?",
+    "a": "První reakce a poptávky obvykle přicházejí během dvou až tří měsíců pravidelného obsahu. Výsledky reportujeme každý měsíc."
+   }
+  ],
+  "cta": {
+   "nadpis": "Chcete Instagram, který nemusíte řešit?",
+   "text": "Domluvte si nezávaznou konzultaci zdarma a řekneme vám, co by váš profil měl dělat jinak."
+  },
+  "menu": "Správa Instagramu",
+  "foto": "petr-vojnar.jpg",
+  "kratce": "Strategie, natáčení reels, publikování a reporting.",
+  "foto_alt": "Petr Vojnar, moderátor a komunikační expert, v reels natočeném BoomBrand",
+  "pilire_nadpis": ""
+ },
+ "linkedin-pro-majitele-firem": {
+  "stitek": "LinkedIn",
+  "h1": "LinkedIn pro majitele firem",
+  "titulek": "LinkedIn pro majitele firem — BoomBrand",
+  "popis": "LinkedIn pro majitele firem: osobní profil, který přivádí obchodní příležitosti, partnery i nové lidi do týmu. Strategie, texty a videa od BoomBrand.",
+  "perex": "LinkedIn pro majitele firem od BoomBrand je služba, která z osobního profilu majitele dělá zdroj obchodních příležitostí: pozicování, obsahová strategie, texty a videa, publikace a vyhodnocení podle poptávek. Je součástí balíčků od 35 000 Kč měsíčně spolu s Instagramem, Facebookem a YouTube.",
+  "fakta": [
+   {
+    "k": "Pro koho",
+    "v": "Majitelé B2B firem, ředitelé a experti, kteří prodávají firmám."
+   },
+   {
+    "k": "Co získáte",
+    "v": "Profil a pravidelný obsah, díky kterému Vás oslovují firmy, partneři i kandidáti."
+   },
+   {
+    "k": "Cena",
+    "v": "Součást balíčků od 35 000 Kč měsíčně."
+   },
+   {
+    "k": "Kde",
+    "v": "Brno a celá Česká republika."
+   }
+  ],
+  "pilire": [
+   {
+    "nazev": "Profil, který prodává",
+    "text": "Upravíme profil tak, aby bylo za 5 vteřin jasné, komu pomáháte a proč Vám věřit."
+   },
+   {
+    "nazev": "Obsah z Vaší praxe",
+    "text": "Texty a krátká videa z Vašich zakázek, rozhodnutí a zkušeností. Ne obecné motivační citáty."
+   },
+   {
+    "nazev": "Propojení s ostatními sítěmi",
+    "text": "Jedno natáčení využijeme pro LinkedIn, Instagram i YouTube."
+   },
+   {
+    "nazev": "Obchodní výsledky",
+    "text": "Sledujeme poptávky a obchodní příležitosti, ne počet lajků."
+   }
+  ],
+  "postup": [],
+  "faq": [
+   {
+    "q": "LinkedIn, nebo Instagram?",
+    "a": "Pro prodej firmám je LinkedIn silnější, pro prodej lidem Instagram. Většině majitelů doporučujeme obojí z jednoho natáčení."
+   },
+   {
+    "q": "Musím psát příspěvky sám?",
+    "a": "Ne. Texty připravíme podle rozhovoru s Vámi a Vy je jen schválíte."
+   },
+   {
+    "q": "Kolik to stojí?",
+    "a": "LinkedIn je součástí balíčků od 35 000 Kč měsíčně."
+   }
+  ],
+  "cta": {
+   "nadpis": "Chcete, aby Vás firmy oslovovaly samy?",
+   "text": "Domluvte si nezávaznou konzultaci zdarma. Probereme, jestli pro Vás osobní značka dává ekonomický smysl."
+  },
+  "menu": "LinkedIn pro majitele firem",
+  "foto": "vojtech-barton.webp",
+  "kratce": "Profil, který přivádí obchodní příležitosti.",
+  "foto_alt": "Vojtěch Bartoň, zakladatel BoomBrand",
+  "pilire_nadpis": ""
+ },
+ "reklama-brno": {
+  "stitek": "Reklama a propagace · Brno",
+  "h1": "Reklama a propagace v Brně, která se měří v poptávkách",
+  "titulek": "Reklama a propagace Brno — BoomBrand",
+  "popis": "Reklama a propagace firem v Brně: obsah na sociální sítě, videoreklamy a placená propagace na Instagramu, Facebooku a TikToku. Měříme poptávky, ne dosah. Konzultace zdarma.",
+  "perex": "Reklama od BoomBrand je správa placené propagace na Meta (Facebook, Instagram) a Google pro firmy z Brna a celé ČR: strategie, videoreklamy, nastavení kampaní a měření poptávek. Je součástí balíčků od 35 000 Kč měsíčně, rozpočet na reklamu od 15 000 Kč měsíčně.",
+  "fakta": [
+   {
+    "k": "Kanály",
+    "v": "Instagram, Facebook, TikTok, YouTube a LinkedIn — organicky i placeně."
+   },
+   {
+    "k": "Kreativa",
+    "v": "Scénáře, natáčení i střih videoreklam děláme sami, včetně variant na testování."
+   },
+   {
+    "k": "Cena",
+    "v": "Práce agentury od 35 000 Kč měsíčně, mediální rozpočet zvlášť."
+   },
+   {
+    "k": "Lokalita",
+    "v": "Brno a Jihomoravský kraj osobně, zbytek ČR online."
+   }
+  ],
+  "pilire": [
+   {
+    "nazev": "Videoreklamy, které lidé dokoukají",
+    "text": "Reklamu stavíme na stejném jazyce jako organický obsah — vypadá jako obsah, ne jako banner."
+   },
+   {
+    "nazev": "Propagace s obličejem",
+    "text": "Reklamy s majitelem firmy vykazují vyšší důvěru a nižší cenu za poptávku než anonymní firemní spoty."
+   },
+   {
+    "nazev": "Lokální cílení na Brno",
+    "text": "Cílíme na lidi a firmy v Brně a okolí, kteří skutečně mohou být vašimi zákazníky."
+   },
+   {
+    "nazev": "Report v obchodních číslech",
+    "text": "Každý měsíc vidíte počet poptávek, hovorů a cenu za poptávku — ne jen dosah kampaně."
+   }
+  ],
+  "postup": [
+   {
+    "nazev": "Konzultace zdarma",
+    "text": "Zjistíme, kolik poptávek potřebujete a jestli je reklama nejrychlejší cesta."
+   },
+   {
+    "nazev": "Kreativa a nastavení",
+    "text": "Natočíme sadu reklam a nasadíme kampaně s jasně definovaným cílem."
+   },
+   {
+    "nazev": "Testování",
+    "text": "Testujeme kreativy i publika a průběžně vypínáme, co nevydělává."
+   },
+   {
+    "nazev": "Škálování",
+    "text": "Co funguje, škálujeme a podpoříme organickým obsahem a značkou."
+   }
+  ],
+  "faq": [
+   {
+    "q": "Jakou reklamu pro firmy v Brně děláte?",
+    "a": "Videoreklamy a obsahovou propagaci na Instagramu, Facebooku, TikToku a YouTube, doplněnou o organický obsah a osobní značku majitele. Kreativu i nasazení řešíme kompletně my."
+   },
+   {
+    "q": "Kolik stojí reklama a propagace?",
+    "a": "Naše práce začíná na 35 000 Kč měsíčně. Rozpočet na samotnou placenou reklamu jde nad rámec a nastavujeme ho podle cíle a velikosti trhu."
+   },
+   {
+    "q": "Funguje reklama i bez osobní značky?",
+    "a": "Funguje, ale dráž. Když lidé značku znají, reklama má vyšší prokliky i nižší cenu za poptávku. Proto obojí kombinujeme."
+   },
+   {
+    "q": "Propagujete jen firmy z Brna?",
+    "a": "Natáčení a osobní schůzky děláme hlavně v Brně a okolí, propagaci a správu kampaní vedeme pro klienty po celé ČR."
+   },
+   {
+    "q": "Jak měříte výsledky propagace?",
+    "a": "Měsíčním reportem počtu příchozích poptávek, kvalifikovaných hovorů a nákladu na poptávku, ne počtem zobrazení."
+   }
+  ],
+  "cta": {
+   "nadpis": "Potřebujete v Brně víc poptávek?",
+   "text": "Domluvte si nezávaznou konzultaci zdarma. Ozveme se do pár hodin telefonicky."
+  },
+  "menu": "Reklama Brno",
+  "foto": "hero-reel-poster.jpg",
+  "kratce": "Placená propagace na Meta a Google s měřením poptávek.",
+  "foto_alt": "Záběr z reels videa natočeného BoomBrand",
+  "pilire_nadpis": ""
+ },
+ "marketingova-agentura-brno": {
+  "stitek": "Marketingová agentura · Brno",
+  "h1": "Marketingová agentura v Brně, která měří poptávky, ne lajky",
+  "titulek": "Marketingová agentura Brno — BoomBrand",
+  "popis": "Marketingová agentura v Brně specializovaná na sociální sítě a osobní značku majitelů firem. Metodou BrandFormance™ přivádíme klienty z obsahu. Nezávazná konzultace zdarma.",
+  "perex": "Jsme BoomBrand. Metodou BrandFormance™ stavíme majitelům firem osobní značku na sociálních sítích, která přivádí klienty i tehdy, když zrovna neprodávají. Natáčíme osobně v Brně a okolí — stačí vám 2–3 hodiny měsíčně.",
+  "fakta": [],
+  "pilire": [
+   {
+    "nazev": "Klienti přicházejí sami",
+    "text": "Díky osobní značce a pravidelnému obsahu vás klienti registrují dřív, než potřebují poptat. Poptávka od někoho, kdo vás sleduje, je předprodaná."
+   },
+   {
+    "nazev": "2–3 hodiny měsíčně od vás",
+    "text": "Celý obsah natočíte v jednom dopoledni. Scénáře, střih, publikace, komunita a reporty zůstávají na nás."
+   },
+   {
+    "nazev": "Měříme poptávky, ne dosah",
+    "text": "Každý měsíc vidíte, kolik příchozích poptávek přinesly sítě. Žádné reporty o lajcích, které nic neznamenají."
+   },
+   {
+    "nazev": "Osobně v Brně, online po celé ČR",
+    "text": "Natáčení řešíme osobně u vás ve firmě v Brně a okolí. Strategie a správa sítí funguje odkudkoli."
+   }
+  ],
+  "postup": [
+   {
+    "nazev": "Strategie do 30 dnů",
+    "text": "Analyzujeme váš trh, konkurenci v Brně i mimo ni a připravíme kompletní obsahovou strategii na míru vašemu byznysu."
+   },
+   {
+    "nazev": "Jedno natáčení měsíčně",
+    "text": "Přijedeme za vámi do firmy. Za jedno dopoledne natočíte obsah na celý měsíc — se scénáři, technikou i režií od nás."
+   },
+   {
+    "nazev": "Publikace a správa sítí",
+    "text": "Střih, titulky, publikace, odpovědi na komentáře a budování komunity řešíme kompletně za vás."
+   },
+   {
+    "nazev": "Reporty poptávek",
+    "text": "Každý měsíc vidíte čísla, na kterých záleží: příchozí poptávky, kvalifikované hovory a obchodní příležitosti ze sítí."
+   }
+  ],
+  "faq": [
+   {
+    "q": "Působíte jen v Brně, nebo po celé ČR?",
+    "a": "Sídlíme v Brně a většinu natáčení děláme osobně u klienta v Brně a okolí. Se zbytkem ČR (Praha, Ostrava, Olomouc i jinde) spolupracujeme stejně — strategie, produkce i správa sítí fungují plně online."
+   },
+   {
+    "q": "Čím se lišíte od klasické marketingové agentury?",
+    "a": "Většina agentur prodává dosah — my prodáváme poptávky. Metoda BrandFormance™ staví na osobní značce majitele a důvěře, která přivádí klienty i bez placené reklamy. Měříme příchozí poptávky a obchodní příležitosti, ne lajky."
+   },
+   {
+    "q": "Kolik stojí spolupráce s marketingovou agenturou v Brně?",
+    "a": "Spolupráce začíná na 35 000 Kč měsíčně podle rozsahu — počet platforem, frekvence obsahu, placená reklama. Přesnou nabídku dostanete po nezávazné konzultaci zdarma."
+   },
+   {
+    "q": "Jak rychle uvidím výsledky?",
+    "a": "První viditelné výsledky (růst dosahu, první poptávky z obsahu) přicházejí typicky během 2–3 měsíců. Konkrétní byznysové výsledky obvykle 4–6 měsíců. Proto doporučujeme minimální délku spolupráce 6 měsíců."
+   },
+   {
+    "q": "Kolik mého času spolupráce zabere?",
+    "a": "Jen 2–3 hodiny měsíčně. Připravíme scénáře, lokaci i techniku — vy dorazíte a natočíte obsah na celý měsíc. Zbytek (střih, publikace, komunita, reporty) řešíme my."
+   }
+  ],
+  "cta": {
+   "nadpis": "Hledáte marketingovou agenturu v Brně?",
+   "text": "Domluvte si nezávaznou konzultaci zdarma. Do pár hodin se vám ozveme telefonicky a probereme, jestli a jak vám můžeme pomoct."
+  },
+  "pilire_nadpis": "Proč firmy v Brně volí BoomBrand",
+  "menu": "Marketingová agentura Brno",
+  "foto": "nataceni-rozhovor.webp",
+  "kratce": "Kompletní marketing pro firmy z Brna a okolí.",
+  "foto_alt": "Zákulisí natáčení rozhovoru: klienti u stolu, kamera a studiová světla"
+ },
+ "osobni-znacka-pro-realitni-maklere": {
+  "stitek": "Pro realitní makléře",
+  "h1": "Osobní značka pro realitní makléře",
+  "titulek": "Osobní značka pro realitní makléře — BoomBrand",
+  "popis": "Osobní značka pro realitní makléře na sociálních sítích: videa nemovitostí, důvěra prodávajících a poptávky na nábor zakázek. Od 35 000 Kč měsíčně.",
+  "perex": "Osobní značka pro realitní makléře od BoomBrand je služba, která makléřům a realitním kancelářím v ČR buduje důvěru u prodávajících ještě před první schůzkou: strategie, natáčení prohlídek a odborných videí, publikace na Instagram, Facebook a YouTube a Meta Ads. Cena od 35 000 Kč měsíčně, od makléře 2–3 hodiny natáčení měsíčně.",
+  "fakta": [
+   {
+    "k": "Pro koho",
+    "v": "Realitní makléři a majitelé realitních kanceláří, kteří chtějí víc exkluzivních zakázek."
+   },
+   {
+    "k": "Co získáte",
+    "v": "Pravidelná videa z nemovitostí i o trhu, která prodávající vidí dřív, než si vybírají makléře."
+   },
+   {
+    "k": "Cena",
+    "v": "Od 35 000 Kč měsíčně, reklama od 15 000 Kč měsíčně navíc."
+   },
+   {
+    "k": "Výsledek u klientky",
+    "v": "60 mil. Kč v portfoliu za 3 měsíce."
+   }
+  ],
+  "pilire": [
+   {
+    "nazev": "Důvěra před první schůzkou",
+    "text": "Prodávající si makléře vybírá podle toho, komu věří. Videa ukazují Vaši práci, znalost lokality a přístup ke klientům."
+   },
+   {
+    "nazev": "Nábor zakázek, ne jen prodej",
+    "text": "Obsah cílíme na lidi, kteří teprve zvažují prodej. Ti jsou pro makléře nejcennější."
+   },
+   {
+    "nazev": "Videa nemovitostí",
+    "text": "Prohlídky, které zvýší zájem o nabídku a zároveň budují Vaše jméno."
+   },
+   {
+    "nazev": "Měření poptávek",
+    "text": "Sledujeme, kolik náborových schůzek přišlo ze sociálních sítí."
+   }
+  ],
+  "postup": [],
+  "faq": [
+   {
+    "q": "Funguje osobní značka i pro makléře v menším městě?",
+    "a": "Ano. V menší lokalitě je konkurence slabší a pravidelný obsah Vás rychleji odliší jako místního odborníka."
+   },
+   {
+    "q": "Kolik času mi to zabere?",
+    "a": "Zhruba 2–3 hodiny natáčení měsíčně. Scénáře, střih, publikaci i reklamu připravíme my."
+   },
+   {
+    "q": "Kolik stojí osobní značka pro makléře?",
+    "a": "Spolupráce začíná na 35 000 Kč měsíčně. Rozpočet na reklamu je navíc, od 15 000 Kč měsíčně."
+   }
+  ],
+  "cta": {
+   "nadpis": "Chcete víc exkluzivních zakázek?",
+   "text": "Domluvte si nezávaznou konzultaci zdarma. Probereme, jestli pro Vás osobní značka dává ekonomický smysl."
+  },
+  "menu": "Pro realitní makléře",
+  "foto": "miroslava-jungrova.jpg",
+  "kratce": "Osobní značka, která přivádí exkluzivní zakázky.",
+  "foto_alt": "Mirka Jungrová, realitní makléřka a klientka BoomBrand",
+  "pilire_nadpis": ""
+ },
+ "osobni-znacka-pro-financni-poradce": {
+  "stitek": "Pro finanční poradce",
+  "h1": "Osobní značka pro finanční poradce",
+  "titulek": "Osobní značka pro finanční poradce — BoomBrand",
+  "popis": "Osobní značka pro finanční poradce a hypoteční specialisty: srozumitelná videa, důvěra a doporučení bez studených telefonátů. Od 35 000 Kč měsíčně.",
+  "perex": "Osobní značka pro finanční poradce od BoomBrand je služba pro poradce, hypoteční specialisty a poradenské týmy v ČR: strategie, natáčení srozumitelných videí o penězích, publikace na Instagram, Facebook, LinkedIn a YouTube a Meta Ads. Cena od 35 000 Kč měsíčně, od poradce 2–3 hodiny natáčení měsíčně.",
+  "fakta": [
+   {
+    "k": "Pro koho",
+    "v": "Finanční poradci, hypoteční specialisté a manažeři poradenských týmů."
+   },
+   {
+    "k": "Co získáte",
+    "v": "Obsah, díky kterému Vás klienti oslovují sami a přicházejí s důvěrou."
+   },
+   {
+    "k": "Cena",
+    "v": "Od 35 000 Kč měsíčně, reklama od 15 000 Kč měsíčně navíc."
+   },
+   {
+    "k": "Kde",
+    "v": "Brno a celá Česká republika."
+   }
+  ],
+  "pilire": [
+   {
+    "nazev": "Důvěra v citlivém oboru",
+    "text": "U peněz lidé nakupují od toho, komu věří. Videa ukazují Vaši odbornost a lidský přístup."
+   },
+   {
+    "nazev": "Srozumitelně, ne prodejně",
+    "text": "Vysvětlujeme hypotéky, investice a pojištění tak, aby to pochopil každý. Bez slibů výnosů."
+   },
+   {
+    "nazev": "Méně studených telefonátů",
+    "text": "Klienti, kteří Vás znají z obsahu, přicházejí připravení a s vyšší ochotou spolupracovat."
+   },
+   {
+    "nazev": "Nábor do týmu",
+    "text": "Silná osobní značka manažera pomáhá i s náborem nových poradců."
+   }
+  ],
+  "postup": [],
+  "faq": [
+   {
+    "q": "Smí finanční poradce propagovat produkty na sítích?",
+    "a": "Obsah stavíme na vzdělávání a vysvětlování, ne na doporučení konkrétních produktů. Texty si před publikací vždy schválíte."
+   },
+   {
+    "q": "Kolik času mi to zabere?",
+    "a": "Zhruba 2–3 hodiny natáčení měsíčně. Ostatní zajistíme my."
+   },
+   {
+    "q": "Kolik stojí osobní značka pro poradce?",
+    "a": "Spolupráce začíná na 35 000 Kč měsíčně. Rozpočet na reklamu je navíc, od 15 000 Kč měsíčně."
+   }
+  ],
+  "cta": {
+   "nadpis": "Chcete, aby Vás klienti oslovovali sami?",
+   "text": "Domluvte si nezávaznou konzultaci zdarma. Probereme, jestli pro Vás osobní značka dává ekonomický smysl."
+  },
+  "menu": "Pro finanční poradce",
+  "foto": "tomas-bubenik.jpg",
+  "kratce": "Důvěra a klienti bez studených telefonátů.",
+  "foto_alt": "Tomáš Bubeník, ředitel Sirius Finance, ve videu natočeném BoomBrand",
+  "pilire_nadpis": ""
  }
 }

@@ -1,18 +1,26 @@
+{% set V = data.obsah.vystupy %}
 <section class="kontakt" id="kontakt" aria-labelledby="kontakt-h">
   <div class="wrap">
-    <p class="stitek kontakt-stitek"><span class="rec" aria-hidden="true"></span>Nezávazná konzultace zdarma</p>
+    <p class="stitek kontakt-stitek"><span class="rec" aria-hidden="true"></span>Nezávazná konzultace zdarma · 30 minut</p>
     <h2 id="kontakt-h" class="kontakt-h" data-reveal>Pojďme točit.</h2>
     <div class="kontakt-grid">
       <div class="kontakt-txt">
         <p class="kontakt-perex">{{ data.obsah.kontakt.text }}</p>
+        <div class="kontakt-vystupy">
+          <p class="kontakt-vystupy-h">{{ V.nadpis }}</p>
+          <ol role="list">
+            {% for b in V.body %}<li><strong>{{ b.nazev }}</strong><span>{{ b.text }}</span></li>{% endfor %}
+          </ol>
+        </div>
         <ul class="kontakt-prima" role="list">
           <li><span>Telefon</span><a href="tel:{{ site.kontakt.telefon|replace(' ', '') }}">{{ site.kontakt.telefon }}</a></li>
           <li><span>E-mail</span><a href="mailto:{{ site.kontakt.email }}">{{ site.kontakt.email }}</a></li>
-          <li><span>Instagram</span><a href="https://www.instagram.com/boombrand_socialmedia/" target="_blank" rel="noopener">@boombrand_socialmedia</a></li>
+          <li><span>Instagram</span><a href="https://www.instagram.com/vojta__barton/" target="_blank" rel="noopener">@vojta__barton</a></li>
         </ul>
       </div>
       <div class="kontakt-form">
         <p class="kontakt-form-h">Napište nám, co děláte</p>
+        <p class="kontakt-form-sub">Zabere vám to minutu. Ozveme se telefonicky do 24&nbsp;hodin.</p>
         {% include "_formular.html" %}
       </div>
     </div>

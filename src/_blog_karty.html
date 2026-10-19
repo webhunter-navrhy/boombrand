@@ -1,0 +1,18 @@
+{# Karty článků jako „klipy“: typografická obálka, kategorie, datum, délka čtení. #}
+{% set KAT = {'znacka': 'Osobní a firemní značka', 'ceny': 'Ceny', 'site': 'Sociální sítě a LinkedIn', 'obory': 'Obory a výsledky'} %}
+<ul class="blog-karty{% if blog_trida is defined %} {{ blog_trida }}{% endif %}" role="list">
+  {% for c in clanky %}
+  <li class="blog-karta" data-kat="{{ c.kategorie|join(' ') }}">
+    <a href="{{ url('blog/' ~ c.slug) }}">
+      <span class="blog-karta-obal">
+        <span class="blog-karta-hlava tc" aria-hidden="true"><span class="blog-karta-kat">{{ KAT[c.kategorie[0]] if c.kategorie else 'Blog' }}</span><span class="blog-karta-tc">{{ c.cteni }} min</span></span>
+        <span class="blog-karta-h">{{ c.h1 }}</span>
+        <span class="blog-karta-pas" aria-hidden="true"><span style="--w: {{ [c.cteni * 14, 100]|min }}%"></span></span>
+      </span>
+      <span class="blog-karta-meta tc"><time datetime="{{ c.datum }}">{{ c.datum|datum_cz }}</time> · {{ c.cteni }} min čtení</span>
+      <span class="blog-karta-p">{{ c.popis }}</span>
+      <span class="blog-karta-dal">Číst článek <span aria-hidden="true">→</span></span>
+    </a>
+  </li>
+  {% endfor %}
+</ul>

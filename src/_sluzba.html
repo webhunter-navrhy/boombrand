@@ -4,39 +4,43 @@
 {% set popis = S.popis %}
 {% set cesta = klic ~ '/' %}
 {% block head %}
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{% for f in S.faq %}{"@type":"Question","name":{{ f.q|replace(' ',' ')|tojson }},"acceptedAnswer":{"@type":"Answer","text":{{ f.a|replace(' ',' ')|tojson }}}}{{ ',' if not loop.last }}{% endfor %}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":{{ S.menu|tojson }},"provider":{"@type":"ProfessionalService","name":"BoomBrand s.r.o.","url":{{ site.url|tojson }}},"areaServed":"CZ","offers":{"@type":"Offer","priceSpecification":{"@type":"UnitPriceSpecification","minPrice":35000,"priceCurrency":"CZK","unitText":"měsíc"}}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{% for f in S.faq %}{"@type":"Question","name":{{ f.q|replace(' ',' ')|replace('⁠','')|tojson }},"acceptedAnswer":{"@type":"Answer","text":{{ f.a|replace(' ',' ')|replace('⁠','')|tojson }}}}{{ ',' if not loop.last }}{% endfor %}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":{{ S.menu|tojson }},"description":{{ S.popis|tojson }},"url":{{ (site.url ~ cesta)|tojson }},"provider":{"@id":{{ (site.url ~ '#firma')|tojson }}},"areaServed":"CZ","offers":{"@type":"Offer","priceCurrency":"CZK","price":35000,"priceSpecification":{"@type":"UnitPriceSpecification","minPrice":35000,"priceCurrency":"CZK","unitText":"měsíc"}}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"BoomBrand","item":{{ site.url|tojson }}},{"@type":"ListItem","position":2,"name":"Služby","item":{{ (site.url ~ 'sluzby/')|tojson }}},{"@type":"ListItem","position":3,"name":{{ S.menu|tojson }},"item":{{ (site.url ~ cesta)|tojson }}}]}</script>
 {% endblock %}
 {% block body_class %}podstranka{% endblock %}
 {% block obsah %}
 <section class="sub-hero" aria-labelledby="sub-h">
   <div class="wrap sub-hero-grid">
     <div class="sub-hero-txt">
-      <nav class="drobky tc" aria-label="Drobečková navigace"><a href="{{ url('') }}">BoomBrand</a> / <span>{{ S.menu }}</span></nav>
+      <nav class="drobky tc" aria-label="Drobečková navigace"><a href="{{ url('') }}">BoomBrand</a> / <a href="{{ url('sluzby') }}">Služby</a> / <span>{{ S.menu }}</span></nav>
       <p class="hero-nad"><span class="rec" aria-hidden="true"></span>{{ S.stitek }}</p>
       <h1 id="sub-h" class="sub-h1">{{ S.h1 }}</h1>
       <p class="perex">{{ S.perex }}</p>
       <div class="tlacitka">
-        <a href="#kontakt" class="btn">Domluvit konzultaci zdarma</a>
-        <a href="{{ url('pripadove-studie') }}" class="btn btn-obrys">Výsledky klientů</a>
+        <a href="#kontakt" class="btn">Nezávazná konzultace zdarma</a>
+        <a href="#cenik" class="btn btn-obrys">Ceník</a>
       </div>
+      <a class="hero-hodnoceni" href="#recenze"><span class="hvezdy" aria-hidden="true">★★★★★</span><span>{{ data.recenze.hodnoceni }} z&nbsp;{{ data.recenze.pocet }} recenzí na Googlu</span></a>
     </div>
     <figure class="sub-hero-foto">
-      {{ img(S.foto, S.foto_alt, sizes='(min-width: 64rem) 40vw, 92vw', cls='foto') }}
+      {{ img(S.foto, S.foto_alt, sizes='(min-width: 64rem) 30vw, 92vw', cls='foto') }}
       <span class="monitor-roh monitor-roh-a" aria-hidden="true"></span><span class="monitor-roh monitor-roh-b" aria-hidden="true"></span>
     </figure>
   </div>
+  {% if S.fakta %}
   <div class="wrap">
     <dl class="sub-fakta">
       {% for f in S.fakta %}<div><dt>{{ f.k }}</dt><dd>{{ f.v }}</dd></div>{% endfor %}
     </dl>
   </div>
+  {% endif %}
 </section>
 
 <section class="sekce papir pilire" aria-labelledby="pil-h">
   <div class="wrap">
     <p class="stitek">Co pro vás uděláme</p>
-    <h2 id="pil-h" class="h-velky">{{ S.menu }} metodou BrandFormance™.</h2>
+    <h2 id="pil-h" class="h-velky">{{ S.pilire_nadpis or (S.menu ~ ' metodou BrandFormance™.') }}</h2>
     <ul class="pilire-rady" role="list">
       {% for p in S.pilire %}<li data-reveal><h3>{{ p.nazev }}</h3><p>{{ p.text }}</p></li>{% endfor %}
     </ul>
@@ -63,6 +67,8 @@
 
 {% include "_reels.html" %}
 
+{% set pocet_rec = 3 %}{% include "_recenze.html" %}
+
 {% set kroky = S.postup %}{% set kroky_nadpis = 'Od konzultace k poptávkám.' %}
 {% include "_proces.html" %}
 
@@ -75,6 +81,13 @@
     </div>
     {% set polozky = S.faq %}{% include "_faq.html" %}
   </div>
+  {% set souvisejici = clanky_ke_sluzbe(klic) %}
+  {% if souvisejici %}
+  <div class="wrap souvisejici">
+    <p class="stitek">Z blogu k tématu</p>
+    {% set clanky = souvisejici %}{% set blog_trida = 'blog-karty-papir' %}{% include "_blog_karty.html" %}
+  </div>
+  {% endif %}
 </section>
 
 {% include "_kontakt.html" %}

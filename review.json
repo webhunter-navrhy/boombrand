@@ -1,0 +1,16 @@
+{
+  "znamka": 7,
+  "slabiny": [
+    "Hero na PC (p_01) se nezměnil. Pořád je tam HUD ‚REC 00:00:17:13‘ s rohy hledáčku, tři plovoucí karty 100M+, 20M+ a 60 mil. Kč a k tomu reels Petra Vojnara a portrét z podcastu. Oprava: smazat HUD, všechny karty i vedlejší fotky. Nechat jednu velkou fotku Vojty z CNN s tlačítkem ‚Pustit rozhovor‘ a pod ní klidný popisek ‚60 mil. Kč v portfoliu makléřky za první 3 měsíce‘.",
+    "Pruh jmen pod hero pořád běží jako marquee (na PC je useknuté ‚etr Vojnar‘ a pod ním přetéká ‚LILI Business‘). Oprava: statický řádek ‚Důvěřují nám‘ s osmi jmény z briefu, který se zalomí do dvou řádků. Strojopisné písmo pořád zůstává u ‚Reels · Petr Vojnar‘, ‚Vojtěch Bartoň · Brno‘, ‚CNN Prima News · Nový den‘, u štítků ‚Před / Po 3 měsících / M0–M3‘ v případovkách, ve štítcích a datech blogových karet a u kroků metody. Oprava: všude Inter s font-variant-numeric: tabular-nums.",
+    "Číslování a čítač se nezměnily. V sekci ‚Jedna metoda, devět cest k poptávkám‘ jsou u služeb pořád čísla 01–09 (mobil m_26–m_27). Oprava: čísla odstranit. V případovce Miroslavy Jungrové se čítač na snímku zastavil na 28 mil. Kč místo 60. Oprava: vypsat rovnou ‚60 mil. Kč‘ bez animace. Text ‚Deset kroků‘ s 10 kroky v Ganttu teď sedí s aktualizovaným briefem (krok Přímé zprávy klient vypustil), ten už je v pořádku."
+  ],
+  "zavazne": [],
+  "silne": [
+    "Brand klienta je dodržený: wordmark BOOMBRAND v Syne vlevo, oranžová #F46527 na tmavém podkladu z původního webu, nadpisy v Syne a text v Interu.",
+    "Obsah stojí na doložených faktech z briefu: případovky Jungrová, Otavová a Vojnar, 9 recenzí z Googlu doslovně, ceník 35/50/65 tis. Kč, CNN Prima News, podcast TalkToWin a video reference klientů.",
+    "QA nehlásí žádné horizontální přetečení na šesti šířkách. Konverze je jasná: CTA ‚Konzultace zdarma‘ v hlavičce, formulář a kontakty v patičce."
+  ],
+  "verdikt": "Žádná z výtek minulého kola se neprojevila. HUD, plovoucí karty, marquee, strojopisné písmo, čísla 01–09 i čítač na 28 mil. Kč jsou na snímcích pořád, nejspíš se nafotil starý build (ověřit, že proběhl build.py a nové snímky). Nová závažná vada se neobjevila, proto známka zůstává 7 a výtky je potřeba opravit doopravdy.",
+  "_hash": "8475a05bf30976909182f2f977372802e4d5a95d"
+}

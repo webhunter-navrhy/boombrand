@@ -1,0 +1,37 @@
+{# Ceník balíčků (z jejich /sluzby) + co ručíme (z /formular). #}
+{% set C = data.obsah.cenik %}{% set Z = data.obsah.zaruka %}
+<div class="cenik" id="cenik">
+  <div class="cenik-hlava">
+    <p class="stitek">Ceník</p>
+    <h2 class="h2">{{ C.nadpis }}</h2>
+    <p class="perex">{{ C.perex }}</p>
+  </div>
+  <ol class="balicky" role="list">
+    {% for b in C.balicky %}
+    <li class="balicek{% if b.doporuceny %} balicek-top{% endif %}" data-reveal data-reveal-delay="{{ loop.index0 }}">
+      {% if b.doporuceny %}<p class="balicek-stitek">Doporučujeme</p>{% endif %}
+      <p class="balicek-pro">{{ b.pro }}</p>
+      <p class="balicek-cena"><span>{{ b.cena }}</span><small>měsíčně</small></p>
+      <dl class="balicek-parametry">
+        <div><dt>Reels měsíčně</dt><dd>{{ b.reels }}</dd></div>
+        <div><dt>Publikace</dt><dd>{{ b.publikace }}</dd></div>
+      </dl>
+      <a href="#kontakt" class="btn{% if not b.doporuceny %} btn-obrys{% endif %} balicek-btn" data-balicek="{{ b.cena }}">Chci {{ b.reels }} reels měsíčně</a>
+    </li>
+    {% endfor %}
+  </ol>
+  <div class="cenik-spod">
+    <div class="cenik-v-cene">
+      <p class="cenik-k">V každém balíčku</p>
+      <ul role="list">
+        {% for x in ['Strategie a obsahový plán', 'Natáčení s kameramanem a technikou', 'Střih, titulky, hudba, grafika', 'Publikace na Instagram, Facebook, LinkedIn a YouTube', 'Správa Meta Ads', 'Měsíční report poptávek'] %}<li>{{ x }}</li>{% endfor %}
+      </ul>
+      <p class="cenik-pozn">Rozpočet na reklamu je navíc, od 15&nbsp;000&nbsp;Kč měsíčně. Doporučujeme spolupráci alespoň na 6&nbsp;měsíců, první výsledky obvykle za 2–3&nbsp;měsíce.</p>
+    </div>
+    <div class="zaruka" data-reveal>
+      <p class="zaruka-h">{{ Z.nadpis }}</p>
+      <p class="zaruka-uvod">{{ Z.uvod }}</p>
+      <ul role="list">{% for x in Z.body %}<li>{{ x }}</li>{% endfor %}</ul>
+    </div>
+  </div>
+</div>

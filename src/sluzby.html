@@ -1,0 +1,25 @@
+{% extends "_base.html" %}
+{% set titulek = 'Služby a ceník – marketing, sociální sítě a osobní značka | BoomBrand' %}
+{% set popis = 'Služby agentury BoomBrand z Brna: osobní a firemní značka, správa sociálních sítí, Instagram, LinkedIn a reklama. Balíčky od 35 000 Kč měsíčně.' %}
+{% set cesta = 'sluzby/' %}
+{% block head %}
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"OfferCatalog","name":"Balíčky spolupráce BoomBrand","itemListElement":[{% for b in data.obsah.cenik.balicky %}{"@type":"Offer","name":{{ b.pro|tojson }},"description":{{ (b.reels ~ ' reels měsíčně, publikace ' ~ b.publikace)|tojson }},"priceCurrency":"CZK","price":{{ b.kc }},"seller":{"@id":{{ (site.url ~ '#firma')|tojson }}}}{{ ',' if not loop.last }}{% endfor %}]}</script>
+{% endblock %}
+{% block body_class %}podstranka{% endblock %}
+{% block obsah %}
+<section class="sub-hero sub-sluzby" aria-labelledby="sl-h">
+  <div class="wrap">
+    <nav class="drobky tc" aria-label="Drobečková navigace"><a href="{{ url('') }}">BoomBrand</a> / <span>Služby</span></nav>
+    <p class="hero-nad"><span class="rec" aria-hidden="true"></span>Služby a ceník</p>
+    <h1 id="sl-h" class="sub-h1">Služby agentury BoomBrand</h1>
+    <div class="onas-sloupce">
+      <p class="perex">Jsme marketingová agentura z Brna. Stavíme majitelům firem osobní i firemní značku metodou BrandFormance™ — spojujeme obsah, sociální sítě a placenou reklamu tak, aby výsledkem byly poptávky, ne jen dosahy.</p>
+      <p>Spolupráce začíná na 35&nbsp;000&nbsp;Kč měsíčně. Od vás potřebujeme 2–3&nbsp;hodiny natáčení měsíčně, zbytek řešíme my.</p>
+    </div>
+    <div class="sub-rejstrik">{% include "_sluzby_rejstrik.html" %}</div>
+  </div>
+</section>
+{% include "_proces.html" %}
+{% set pocet_rec = 3 %}{% include "_recenze.html" %}
+{% include "_kontakt.html" %}
+{% endblock %}

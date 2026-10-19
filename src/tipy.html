@@ -1,0 +1,32 @@
+{% extends "_base.html" %}
+{% set titulek = '20 AI triků, které nahradí grafika i fotografa – PDF zdarma | BoomBrand' %}
+{% set popis = 'Stáhněte si zdarma PDF s 20 AI triky od BoomBrand, které vám ušetří grafika i fotografa při tvorbě obsahu na sociální sítě.' %}
+{% set cesta = 'tipy/' %}
+{% block body_class %}podstranka tipy-stranka{% endblock %}
+{% block obsah %}
+<section class="sub-hero tipy-hero zrno" aria-labelledby="t-h">
+  <div class="hero-svetlo" aria-hidden="true"></div>
+  <div class="wrap tipy-grid">
+    <div class="tipy-txt">
+      <nav class="drobky tc" aria-label="Drobečková navigace"><a href="{{ url('') }}">BoomBrand</a> / <span>Tipy zdarma</span></nav>
+      <p class="hero-nad"><span class="rec" aria-hidden="true"></span>PDF zdarma</p>
+      <h1 id="t-h" class="sub-h1">20 AI triků, které nahradí grafika i&nbsp;fotografa.</h1>
+      <p class="perex">Nechte nám jméno a&nbsp;e-mail a&nbsp;PDF je vaše. Zdarma, bez závazků.</p>
+    </div>
+    <div class="kontakt-form tipy-form">
+      <p class="kontakt-form-h">Stáhněte si tipy v PDF</p>
+      <form class="formular" method="post" novalidate data-form="kontakt" data-ucel="PDF 20 AI triků" data-pdf="{{ (base ~ site.tipy.pdf) if site.tipy.pdf else '' }}" data-dekujeme="Děkujeme! {{ 'Vaše PDF je připravené.' if site.tipy.pdf else 'PDF vám pošleme na e-mail.' }}">
+        <label class="pole"><span>Jméno *</span><input name="Jméno" autocomplete="name" required maxlength="80"></label>
+        <label class="pole"><span>E-mail *</span><input name="E-mail" type="email" autocomplete="email" required placeholder="vas@email.cz" maxlength="120"></label>
+        <label class="souhlas-pole"><input type="checkbox" name="Souhlas s tipy e-mailem" value="ano"><span>Chci občas dostat e-mailem další tipy od BoomBrand. Souhlas můžete kdykoli odvolat odkazem v&nbsp;e-mailu nebo na {{ site.kontakt.email }}. <small>nepovinné</small></span></label>
+        <div class="past" aria-hidden="true"><label>Nevyplňovat <input name="_hp" tabindex="-1" autocomplete="off"></label></div>
+        <button type="submit" class="btn">Získat PDF</button>
+        <p class="formular-gdpr">E-mail použijeme k&nbsp;zaslání PDF. Pokud zaškrtnete souhlas, i&nbsp;k&nbsp;dalším tipům. Více v&nbsp;<a href="{{ url('ochrana-osobnich-udaju') }}">zásadách ochrany osobních údajů</a>.</p>
+        <p class="formular-stav" role="status" aria-live="polite"></p>
+        <a class="btn btn-obrys tipy-pdf" href="#" target="_blank" rel="noopener" hidden data-pdf-odkaz>Otevřít PDF</a>
+      </form>
+    </div>
+  </div>
+</section>
+{% set pocet_rec = 3 %}{% include "_recenze.html" %}
+{% endblock %}

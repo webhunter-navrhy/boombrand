@@ -1,0 +1,50 @@
+{% extends "_base.html" %}
+{% set titulek = c.titulek %}
+{% set popis = c.popis %}
+{% set cesta = 'blog/' ~ c.slug ~ '/' %}
+{% set og_typ = 'article' %}
+{% set KAT = {'znacka': 'Osobní a firemní značka', 'ceny': 'Ceny', 'site': 'Sociální sítě a LinkedIn', 'obory': 'Obory a výsledky'} %}
+{% set otazky = faq_z_tela(c.telo) %}
+{% block head %}
+<meta property="article:published_time" content="{{ c.datum }}">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":{{ c.h1|replace(' ',' ')|tojson }},"description":{{ c.popis|tojson }},"datePublished":{{ c.datum|tojson }},"dateModified":{{ c.datum|tojson }},"inLanguage":"cs","mainEntityOfPage":{{ (site.url ~ cesta)|tojson }},"author":{"@type":"Person","name":"Vojtěch Bartoň","url":{{ (site.url ~ 'o-nas/')|tojson }}},"publisher":{"@id":{{ (site.url ~ '#firma')|tojson }}}{% if c.foto %},"image":{{ (site.url ~ img_url(c.foto, 1280)[base|length:])|tojson }}{% endif %}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"BoomBrand","item":{{ site.url|tojson }}},{"@type":"ListItem","position":2,"name":"Blog","item":{{ (site.url ~ 'blog/')|tojson }}},{"@type":"ListItem","position":3,"name":{{ c.h1|replace(' ',' ')|tojson }},"item":{{ (site.url ~ cesta)|tojson }}}]}</script>
+{% if otazky %}<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{% for f in otazky %}{"@type":"Question","name":{{ f.q|replace(' ',' ')|tojson }},"acceptedAnswer":{"@type":"Answer","text":{{ f.a|replace(' ',' ')|tojson }}}}{{ ',' if not loop.last }}{% endfor %}]}</script>{% endif %}
+{% endblock %}
+{% block body_class %}podstranka clanek-stranka{% endblock %}
+{% block obsah %}
+<article class="clanek" aria-labelledby="cl-h">
+  <header class="clanek-hlava">
+    <div class="wrap clanek-hlava-in">
+      <nav class="drobky tc" aria-label="Drobečková navigace"><a href="{{ url('') }}">BoomBrand</a> / <a href="{{ url('blog') }}">Blog</a> / <span>{{ KAT[c.kategorie[0]] if c.kategorie else 'Článek' }}</span></nav>
+      <p class="clanek-meta tc"><time datetime="{{ c.datum }}">{{ c.datum|datum_cz }}</time> · {{ c.cteni }} min čtení</p>
+      <h1 id="cl-h" class="clanek-h1">{{ c.h1 }}</h1>
+      <p class="clanek-perex">{{ c.popis }}</p>
+      <a class="clanek-autor" href="{{ url('o-nas') }}">{{ img('vojtech-barton.webp', '', sizes='3rem', cls='', eager=False) }}<span><strong>Vojtěch Bartoň</strong><small>zakladatel BoomBrand, host CNN Prima News</small></span></a>
+    </div>
+  </header>
+  {% if c.foto %}
+  <figure class="wrap clanek-foto">
+    {{ img(c.foto, c.foto_alt, sizes='(min-width: 64rem) 56rem, 92vw', cls='foto') }}
+  </figure>
+  {% endif %}
+  <div class="clanek-telo-obal papir">
+    <div class="wrap clanek-grid">
+      <div class="clanek-telo prose">{{ c.telo|safe }}</div>
+      <aside class="clanek-bok" aria-label="Konzultace">
+        <div class="clanek-bok-in">
+          <p class="clanek-bok-h">Chcete to projít na svých číslech?</p>
+          <p>{{ c.zaver or 'Na úvodní konzultaci projdeme, odkud vám dnes chodí zakázky a jestli pro vás osobní značka dává ekonomický smysl. Když ne, řekneme vám to.' }}</p>
+          <a class="btn" href="#kontakt">Domluvit konzultaci zdarma</a>
+          {% if c.sluzba %}<a class="clanek-sluzba" href="{{ url(c.sluzba.href) }}"><span class="tc">Související služba</span><strong>{{ c.sluzba.text }} <span aria-hidden="true">→</span></strong><small>{{ c.sluzba.popis }}</small></a>{% endif %}
+        </div>
+      </aside>
+    </div>
+    <div class="wrap clanek-dalsi">
+      <p class="stitek">Další články</p>
+      {% set clanky = dalsi_clanky(c, 3) %}{% set blog_trida = 'blog-karty-papir' %}{% include "_blog_karty.html" %}
+    </div>
+  </div>
+</article>
+{% include "_kontakt.html" %}
+{% endblock %}

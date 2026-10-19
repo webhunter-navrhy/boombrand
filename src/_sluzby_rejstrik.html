@@ -1,0 +1,10 @@
+{# Rejstřík služeb jako seznam: název, jedna věta, šipka. #}
+<ul class="rejstrik" role="list">
+  {% for k, s in data.sluzby.items() %}
+  <li><a href="{{ url(k) }}">
+    <span class="rejstrik-nazev">{{ s.menu }}</span>
+    <span class="rejstrik-txt">{{ s.kratce }}</span>
+    <span class="rejstrik-sipka" aria-hidden="true">→</span>
+  </a></li>
+  {% endfor %}
+</ul>

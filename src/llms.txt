@@ -1,0 +1,32 @@
+# BoomBrand — osobní a firemní značka na sociálních sítích, Brno
+
+> {{ site.firma }} je česká marketingová agentura se sídlem v Brně. Specializuje se na budování osobní a firemní značky majitelů firem a expertů, správu sociálních sítí, natáčení videí a placenou reklamu. Pracuje metodou BrandFormance™, která propojuje osobní značku majitele s výkonnostním marketingem a měří příchozí poptávky, ne dosah.
+
+## Základní informace
+- Název: {{ site.firma }}, IČO {{ site.ico }}, sídlo {{ site.sidlo.ulice }}, {{ site.sidlo.psc }} {{ site.sidlo.mesto }}
+- Působnost: natáčení osobně v Brně a okolí, online spolupráce po celé České republice
+- Zakladatel: Vojtěch Bartoň ({{ site.url }}o-nas/)
+- Kontakt: {{ site.kontakt.email }}, {{ site.kontakt.telefon }}, {{ site.url }}
+- Ceník: {% for b in data.obsah.cenik.balicky %}{{ b.cena|replace(' ', ' ') }} měsíčně ({{ b.reels }} reels, publikace {{ b.publikace|replace(' ', ' ') }}){{ '; ' if not loop.last }}{% endfor %}. Rozpočet na reklamu navíc od 15 000 Kč měsíčně. Doporučená délka spolupráce min. 6 měsíců.
+- Čas klienta: 2–3 hodiny měsíčně (jedno natáčecí dopoledne)
+- Výsledky klientů: Miroslava Jungrová 60 mil. Kč nemovitostí v portfoliu za první 3 měsíce; Petr Vojnar 20M+ zhlédnutí jednoho videa a +30 000 sledujících za rok
+- Hodnocení: {{ data.recenze.hodnoceni }} z {{ data.recenze.pocet }} recenzí na Googlu ({{ site.recenze_google }})
+- Konzultace zdarma: {{ site.url }}#kontakt nebo strategický hovor {{ site.url }}formular/
+
+## Služby
+{% for k, s in data.sluzby.items() %}- [{{ s.menu }}]({{ site.url }}{{ k }}/): {{ s.popis|replace(' ', ' ')|replace('⁠', '') }}
+{% endfor %}- [Služby a ceník]({{ site.url }}sluzby/)
+
+## Reference
+- [Případové studie]({{ site.url }}pripadove-studie/): Jungrová, Otavová, Vojnar
+- [O nás / Vojtěch Bartoň]({{ site.url }}o-nas/)
+- [Rozhovor v CNN Prima News](https://www.youtube.com/watch?v=VVShS5jHxWQ): Jak nás ovlivňují sociální sítě
+- [Článek na CNN Prima News]({{ data.podcast.cnn.clanek.href }})
+- [Podcast TalkToWin]({{ data.podcast.playlist }})
+
+## Blog
+{% for c in data.blog %}- [{{ c.h1|replace(' ', ' ')|replace('⁠', '') }}]({{ site.url }}blog/{{ c.slug }}/): {{ c.popis|replace(' ', ' ')|replace('⁠', '') }}
+{% endfor %}
+## Další
+- [20 AI triků, které nahradí grafika i fotografa]({{ site.url }}tipy/): PDF zdarma po vyplnění jména a e-mailu
+- [Ochrana osobních údajů]({{ site.url }}ochrana-osobnich-udaju/)
