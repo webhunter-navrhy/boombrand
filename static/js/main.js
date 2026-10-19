@@ -56,13 +56,40 @@
   }
 
 
-  /* --- hero: smyčky reels hrají jen když jsou vidět --- */
-  var scena = document.querySelector('[data-scena]');
-  if (scena && !reduce) {
-    var zapni = function (ano) {
-      scena.querySelectorAll('video[data-autoplay]').forEach(function (v) {
-        if (ano) { var pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); } else v.pause();
+  /* --- hlavička: zvýraznit sekci, ve které návštěvník je --- */
+  var navOdkazy = [].slice.call(document.querySelectorAll('.nav > .nav-a, .nav-sub > .nav-a')).filter(function (a) { return a.hash && a.pathname === location.pathname; });
+  if (navOdkazy.length && 'IntersectionObserver' in window) {
+    var sekce = navOdkazy.map(function (a) { return document.querySelector(a.hash); });
+    var io = new IntersectionObserver(function (en) {
+      en.forEach(function (e) {
+        var i = sekce.indexOf(e.target);
+        if (i > -1) navOdkazy[i].classList.toggle('is-aktivni', e.isIntersecting);
       });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    sekce.forEach(function (el) { if (el) io.observe(el); });
+  }
+
+  /* --- hero scéna: timecode, video a Ken Burns jen když je vidět --- */
+  var scena = document.querySelector('[data-scena]');
+  if (scena) {
+    var tc = scena.querySelector('[data-timecode]');
+    var heroVideo = scena.querySelector('video[data-autoplay]');
+    var start = Date.now(), timer = null;
+    var dva2 = function (x) { return (x < 10 ? '0' : '') + x; };
+    var tik = function () {
+      var t = (Date.now() - start) / 1000;
+      var f = Math.floor((t % 1) * 25), s = Math.floor(t) % 60, m = Math.floor(t / 60) % 60;
+      tc.textContent = '00:' + dva2(m) + ':' + dva2(s) + ':' + dva2(f);
+    };
+    var zapni = function (ano) {
+      scena.classList.toggle('is-pauza', !ano);
+      if (ano) {
+        if (!reduce && !timer && tc) timer = setInterval(tik, 80);
+        if (heroVideo && !reduce) { var pr = heroVideo.play(); if (pr && pr.catch) pr.catch(function () {}); }
+      } else {
+        if (timer) { clearInterval(timer); timer = null; }
+        if (heroVideo) heroVideo.pause();
+      }
     };
     if ('IntersectionObserver' in window) {
       new IntersectionObserver(function (en) { zapni(en[0].isIntersecting); }, { threshold: 0.05 }).observe(scena);
@@ -84,17 +111,14 @@
   document.querySelectorAll('[data-reel]').forEach(function (ram) {
     var btn = ram.querySelector('.reel-play');
     btn.addEventListener('click', function () {
-      if (hraje && hraje !== ram) { var v0 = hraje.querySelector('video.reel-plne'); if (v0) v0.pause(); }
-      var smycka = ram.querySelector('video[data-autoplay]');
-      if (smycka) { smycka.pause(); smycka.removeAttribute('data-autoplay'); smycka.hidden = true; }
-      var v = ram.querySelector('video.reel-plne');
+      if (hraje && hraje !== ram) { var v0 = hraje.querySelector('video'); if (v0) v0.pause(); }
+      var v = ram.querySelector('video');
       if (!v) {
         v = document.createElement('video');
-        v.className = 'reel-plne';
         v.src = ram.getAttribute('data-src');
         v.controls = true; v.playsInline = true; v.setAttribute('playsinline', '');
-        var po = ram.querySelector('img'); v.poster = po ? (po.currentSrc || po.src) : (smycka ? smycka.poster : '');
-        v.setAttribute('aria-label', btn.getAttribute('aria-label').replace(/^Přehrát video( se zvukem)?: /, 'Video: '));
+        v.poster = ram.querySelector('img').currentSrc || '';
+        v.setAttribute('aria-label', btn.getAttribute('aria-label').replace('Přehrát video: ', 'Video: '));
         ram.appendChild(v);
       }
       btn.hidden = true;
@@ -118,7 +142,7 @@
       box.appendChild(f);
       btn.hidden = true;
       box.querySelectorAll('.monitor-rec,.monitor-roh,.hledacek-rec,.hledacek-info,.roh').forEach(function (x) { x.hidden = true; });
-      if (hraje) { var v = hraje.querySelector('video.reel-plne'); if (v) v.pause(); }
+      if (hraje) { var v = hraje.querySelector('video'); if (v) v.pause(); }
     });
   });
 
