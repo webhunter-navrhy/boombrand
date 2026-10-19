@@ -12,7 +12,7 @@ import datetime
 import hashlib
 import html
 import json
-import os
+import os, subprocess
 import re
 import shutil
 import sys
@@ -23,7 +23,7 @@ from PIL import Image, ImageOps
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SRC, DATA, IMG, STATIC, DIST, CACHE = (os.path.join(ROOT, p) for p in ("src", "_data", "img", "static", "dist", ".cache/img"))
-SIRKY = (640, 1280, 1920)
+SIRKY = (400, 640, 1280, 1920)
 RASTER = (".jpg", ".jpeg", ".png", ".webp")
 
 
@@ -148,6 +148,22 @@ def hash_souboru(cesta):
     return hashlib.sha1(open(cesta, "rb").read()).hexdigest()[:10]
 
 
+
+def zmensi_css_js():
+    """Minifikace CSS a JS v dist/ přes esbuild (zdroje ve static/ zůstávají čitelné). Bez esbuildu se jen přeskočí."""
+    eb = os.environ.get("ESBUILD") or shutil.which("esbuild") or os.path.expanduser("~/webhunter-admin/node_modules/.bin/esbuild")
+    if not os.path.exists(eb):
+        print("VAROVÁNÍ: esbuild nenalezen, CSS/JS se neminifikují")
+        return
+    for kde, _, soubory in os.walk(DIST):
+        for f in soubory:
+            if f.endswith((".css", ".js")) and not f.endswith(".min.js"):
+                cesta = os.path.join(kde, f)
+                r = subprocess.run([eb, cesta, "--minify", "--log-level=error", "--allow-overwrite", f"--outfile={cesta}"], capture_output=True, text=True)
+                if r.returncode:
+                    raise BuildError(f"minifikace {f} selhala: {r.stderr.strip()[:300]}")
+
+
 def jsonld(site):
     """Organizace pro všechny stránky: ProfessionalService s doloženými údaji (OR, ARES), zakladatel, profily."""
     k = site.get("kontakt", {})
@@ -189,6 +205,7 @@ def main():
 
     # statické soubory + hash obsahu pro cache busting
     shutil.copytree(STATIC, DIST, dirs_exist_ok=True)
+    zmensi_css_js()
     hashe = {}
 
     def asset(p):

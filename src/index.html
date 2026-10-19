@@ -37,7 +37,7 @@
 
       <figure class="hero-reel vrstva-2">
         <video data-autoplay muted loop playsinline preload="none" width="360" height="640" poster="{{ img_url('hero-reel-poster.jpg', 640) }}" aria-label="Ukázka reels videa s Petrem Vojnarem">
-          <source src="{{ base }}video/hero-reel.mp4" type="video/mp4">
+          <source src="{{ base }}video/hero-reel.mp4?v=2" type="video/mp4">
         </video>
         <figcaption class="tc">Reels · Petr Vojnar</figcaption>
       </figure>
@@ -201,7 +201,7 @@
         <a class="link-sipka karta-odkaz" href="{{ url('pripadove-studie') }}#studie-otavova">Celá případová studie<span aria-hidden="true"> →</span></a>
       </article>
       <article class="karta-studie karta-petr" data-reveal data-reveal-delay="1">
-        <div class="karta-foto">{{ img(P.foto, P.foto_alt, sizes='(min-width: 64rem) 20vw, 40vw', cls='') }}</div>
+        <div class="karta-foto">{{ img(P.foto, P.foto_alt, sizes='(min-width: 64rem) 20vw, (min-width: 48rem) 40vw, 92vw', cls='') }}</div>
         <div class="karta-petr-txt">
           <p class="tc">{{ P.stitek }}</p>
           <h3>{{ P.jmeno }}</h3>

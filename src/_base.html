@@ -18,9 +18,16 @@
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">{% endif %}
 <link rel="icon" href="{{ base }}favicon.svg" type="image/svg+xml">
-<link rel="preload" href="{{ base }}fonts/syne-400-800-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="{{ base }}fonts/syne-400-800-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="{{ asset('fonts/fonts.css') }}">
+<link rel="preload" href="{{ base }}fonts/syne-400-800-cs-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ base }}fonts/inter-400-600-cs-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ base }}fonts/syne-400-800-cs-ext.woff2" as="font" type="font/woff2" crossorigin>
+{# Písma jen se znaky, které web potřebuje (čeština + interpunkce); @font-face rovnou v hlavičce, bez dalšího CSS souboru. #}
+<style>
+@font-face{font-family:'Syne';font-weight:400 800;font-display:swap;src:url({{ base }}fonts/syne-400-800-cs-latin.woff2) format('woff2');unicode-range:U+0020-007E,U+00A0-00FF,U+2010-2027,U+2030-203A,U+2044,U+2060,U+20AC,U+2122,U+2212,U+FEFF,U+FFFD}
+@font-face{font-family:'Syne';font-weight:400 800;font-display:swap;src:url({{ base }}fonts/syne-400-800-cs-ext.woff2) format('woff2');unicode-range:U+0100-017F}
+@font-face{font-family:'Inter';font-weight:400 600;font-display:swap;src:url({{ base }}fonts/inter-400-600-cs-latin.woff2) format('woff2');unicode-range:U+0020-007E,U+00A0-00FF,U+2010-2027,U+2030-203A,U+2044,U+2060,U+20AC,U+2122,U+2212,U+FEFF,U+FFFD}
+@font-face{font-family:'Inter';font-weight:400 600;font-display:swap;src:url({{ base }}fonts/inter-400-600-cs-ext.woff2) format('woff2');unicode-range:U+0100-017F}
+</style>
 <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 <script>document.documentElement.classList.add('js')</script>
 <script>window.BB={endpoint:{{ site.formular.endpoint|tojson }},demo:{{ 'true' if site.formular.demo else 'false' }},mereni:{{ site.mereni|tojson }},base:{{ base|tojson }}};</script>

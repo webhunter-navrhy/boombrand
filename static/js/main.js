@@ -152,9 +152,14 @@
         if (heroVideo) heroVideo.pause();
       }
     };
-    if ('IntersectionObserver' in window) {
-      new IntersectionObserver(function (en) { zapni(en[0].isIntersecting); }, { threshold: 0.05 }).observe(scena);
-    } else { zapni(true); }
+    /* video se začne stahovat až po načtení stránky, ať nezdržuje text a fotky */
+    var hlidej = function () {
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (en) { zapni(en[0].isIntersecting); }, { threshold: 0.05 }).observe(scena);
+      } else { zapni(true); }
+    };
+    var poNacteni = function () { setTimeout(function () { ('requestIdleCallback' in window) ? requestIdleCallback(hlidej, { timeout: 1500 }) : hlidej(); }, 600); };
+    if (document.readyState === 'complete') poNacteni(); else window.addEventListener('load', poNacteni, { once: true });
   }
 
   /* --- pás reels: o kolik se má posunout do strany (spočítá se jen při načtení a změně velikosti) --- */
