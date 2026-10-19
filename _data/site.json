@@ -138,7 +138,7 @@
     "pozn": "aktivni=true až na ostré doméně, jinak by návrh posílal data do Vojtova GA4 a Pixelu"
   },
   "tipy": {
-    "pdf": "",
+    "pdf": "tipy/20-ai-triku.pdf",
     "pozn": "po dodání PDF od klienta nahrát do static/ a sem napsat cestu (např. tipy/20-ai-triku.pdf)"
   },
   "recenze_google": "https://www.google.com/maps?cid=11265541734029459772"

@@ -4,7 +4,7 @@ Stav 19. 10. 2026: návrh je obsahově kompletní (všech 30 URL starého webu +
 Na doméně dnes běží jeho starý web (Lovable, A 185.158.133.1). Pošta jede přes Google Workspace a přepnutím webu se nezmění.
 
 ## 1. Od klienta před spuštěním
-- [ ] PDF „20 AI triků“ → `static/tipy/20-ai-triku.pdf`, do `_data/site.json` → `tipy.pdf: "tipy/20-ai-triku.pdf"`
+- [x] PDF „20 AI triků“ → `static/tipy/20-ai-triku.pdf` (dodáno 19. 10., z Disku klienta)
 - [ ] odsouhlasený text `/ochrana-osobnich-udaju/` (doby uložení, případný nástroj na rozesílku tipů → doplnit mezi zpracovatele)
 - [ ] DPH u cen (pokud je plátce a ceny jsou bez DPH, doplnit „bez DPH“ v `_cenik.html`)
 - [ ] souhlas se sídlem v patičce (§ 435 OZ ho vyžaduje; alternativa = virtuální sídlo)
@@ -36,7 +36,7 @@ Po přepnutí odpojit doménu v Lovable (pozor: neodpojovat dřív, než DNS bě
 - [ ] `https://boom-brand.cz/` i `https://www.boom-brand.cz/` → 200, HTTPS
 - [ ] staré URL bez lomítka (`/osobni-znacka`, `/blog/kolik-stoji-osobni-znacka`) → 301 na verzi s lomítkem (GitHub Pages to dělá sám)
 - [ ] `qa.py https://boom-brand.cz/ ~/boombrand` zelené, bez varování noindex
-- [ ] testovací poptávka z úvodu i z /formular dorazí na barton@boom-brand.cz (pak ji smazat z KV `frm:boombrand:*`)
+- [ ] testovací poptávka z úvodu i z /formular dorazí na barton@boom-brand.cz i vojtechbarton2004@gmail.com (pak ji smazat z KV `frm:boombrand:*`)
 - [ ] lišta cookies: po „Odmítnout“ se nenačte googletagmanager ani connect.facebook.net; po „Přijmout“ ano
 - [ ] GA4: událost `generate_lead` označit jako klíčovou; Meta Events Manager: událost `Lead` z webu
 - [ ] Search Console: odeslat `https://boom-brand.cz/sitemap.xml`
@@ -44,5 +44,5 @@ Po přepnutí odpojit doménu v Lovable (pozor: neodpojovat dřív, než DNS bě
 ## Technika
 - Zdroj: `~/boombrand` (repo webhunter-navrhy/boombrand, main = zdroje, gh-pages = dist)
 - Obsah: `_data/*.json` (sluzby = 9 landingů, blog = články, recenze, obsah = úvod/ceník/formuláře, site = kontakty a nastavení)
-- Formuláře: `https://webhunter-admin.webhunter.workers.dev/api/boombrand/form` (KV `site:boombrand`: formStore, formLang cs, formTo, formOrigins)
+- Formuláře: `https://webhunter-admin.webhunter.workers.dev/api/boombrand/form` (KV `site:boombrand`: formStore, formLang cs, formTo = barton@boom-brand.cz + vojtechbarton2004@gmail.com, formOrigins)
 - Nový článek: přidat objekt do `_data/blog.json` (slug, titulek, popis, h1, datum, cteni, kategorie, telo v HTML, sluzba)
