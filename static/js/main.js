@@ -56,6 +56,67 @@
   }
 
 
+  /* --- design: oranžová tečka na konci velkých nadpisů (jako v logu) --- */
+  document.querySelectorAll('.hero-h1, .h-velky, .sub-h1, .kontakt-h, .h2').forEach(function (h) {
+    var t = h.lastChild;
+    while (t && t.nodeType === 1 && t.lastChild) t = t.lastChild;
+    if (t && t.nodeType === 3 && /\.\s*$/.test(t.nodeValue)) {
+      var i = t.nodeValue.lastIndexOf('.');
+      var za = t.splitText(i); za.splitText(1);
+      var s = document.createElement('span'); s.className = 'tecka'; s.textContent = '.';
+      za.parentNode.replaceChild(s, za);
+    }
+  });
+
+  /* --- design: střihové odkrytí nadpisů a fotek pod úvodem --- */
+  if ('IntersectionObserver' in window && !reduce) {
+    var odkryj = new IntersectionObserver(function (en) {
+      en.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('je-videt'); odkryj.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -12% 0px' });
+    var vUvodu = function (el) { return !!el.closest('.hero, .sub-hero, .vsl-hero, .tipy-hero, .clanek-hlava'); };
+    document.querySelectorAll('.h-velky, .zakl-perex, .h2').forEach(function (el) {
+      if (vUvodu(el) || el.hasAttribute('data-reveal') || el.closest('[data-reveal]')) return;
+      el.classList.add('odkryt'); odkryj.observe(el);
+    });
+    document.querySelectorAll('.proc-foto .foto, .mirka .reel-ram, .karta-foto, .pas-reel .reel-ram, .pas-foto-ram, .zakl-foto img, .epizoda .yt, .zakl-cnn-video, .studie-foto .foto').forEach(function (el) {
+      if (vUvodu(el) || el.closest('[data-reveal]')) return;
+      el.classList.add('stih'); odkryj.observe(el);
+    });
+  }
+
+  /* --- design: světlo pod kurzorem na kartách --- */
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    document.querySelectorAll('.karta-studie, .balicek, .tl-skupina, .zaruka, .pred-po, .kontakt-form, .odl-hlavni, .zakl-cnn').forEach(function (k) {
+      k.classList.add('svetlo-karta');
+      k.addEventListener('pointermove', function (e) {
+        var r = k.getBoundingClientRect();
+        k.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+        k.style.setProperty('--my', (e.clientY - r.top) + 'px');
+      }, { passive: true });
+    });
+  }
+
+  /* --- design: vrstvy úvodní scény reagují na myš (jen při pohybu, žádná smyčka) --- */
+  var heroSekce = document.querySelector('.hero');
+  if (heroSekce && !reduce && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    var cil = heroSekce.querySelector('.scena'), svetlo = heroSekce.querySelector('.hero-svetlo'), cekaP = false, ex = 0, ey = 0;
+    heroSekce.addEventListener('pointermove', function (e) {
+      ex = e.clientX / window.innerWidth * 2 - 1; ey = e.clientY / window.innerHeight * 2 - 1;
+      if (cekaP) return; cekaP = true;
+      requestAnimationFrame(function () {
+        cekaP = false;
+        [cil, svetlo].forEach(function (x) { if (x) { x.style.setProperty('--px', ex.toFixed(3)); x.style.setProperty('--py', ey.toFixed(3)); } });
+      });
+    }, { passive: true });
+  }
+
+  /* --- design: hlavička po odscrollování --- */
+  var hl = document.querySelector('[data-hlavicka]');
+  if (hl) {
+    var hlStav = function () { hl.classList.toggle('je-dole', window.scrollY > 12); };
+    window.addEventListener('scroll', hlStav, { passive: true }); hlStav();
+  }
+
   /* --- hlavička: zvýraznit sekci, ve které návštěvník je --- */
   var navOdkazy = [].slice.call(document.querySelectorAll('.nav > .nav-a, .nav-sub > .nav-a')).filter(function (a) { return a.hash && a.pathname === location.pathname; });
   if (navOdkazy.length && 'IntersectionObserver' in window) {

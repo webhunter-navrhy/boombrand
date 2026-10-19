@@ -1102,7 +1102,7 @@ button { font: inherit; color: inherit; }
 
 /* --- kontakt --- */
 .kern-d { margin-right: .11em; } /* háček ď v Syne s těsným prostrkáním narážel do „m“ */
-.kontakt { isolation: isolate; }
+.kontakt { isolation: isolate; overflow: clip; }
 .kontakt::before { content: ''; position: absolute; z-index: -1; right: -10%; top: -30%; width: 60%; aspect-ratio: 1; pointer-events: none; background: radial-gradient(closest-side, rgb(255 190 150 / .45), transparent 70%); }
 .kontakt-form { border-radius: 22px; background: linear-gradient(var(--ink), var(--ink)) padding-box, var(--hrana) border-box; border: 1px solid transparent; box-shadow: 0 50px 100px -40px rgb(70 25 0 / .7); }
 .pole input, .pole textarea, .pole select { border-radius: 10px; }
@@ -1128,6 +1128,72 @@ button { font: inherit; color: inherit; }
   .hero-jmena .hero-jmeno + .hero-jmeno::before { content: none; }
   .tl-zaver { border-radius: 14px; }
   .chip { padding: .55rem .75rem .6rem; }
+}
+
+
+/* =====================================================================
+   v6 – pohyb a detail (19. 10. 2026): střihové odkrytí nadpisů a fotek,
+   oranžová tečka jako v logu, světlo pod kurzorem na kartách, lesk tlačítek.
+   ===================================================================== */
+:root { --sekce: clamp(4.5rem, 8vw, 7.5rem); }
+.tecka { color: var(--orange); }
+.papir .tecka { color: var(--orange); }
+.kontakt .tecka { color: var(--white); }
+
+/* hlavička po odscrollování */
+.hlavicka { transition: background .3s, box-shadow .3s; }
+.hlavicka.je-dole { background: rgb(10 10 10 / .93); box-shadow: 0 10px 30px -20px rgb(0 0 0 / .9); }
+
+/* lesk primárního tlačítka */
+.btn:not(.btn-obrys) { overflow: hidden; isolation: isolate; }
+.btn:not(.btn-obrys)::before { content: ''; position: absolute; inset: 0; z-index: -1; border-radius: inherit; pointer-events: none;
+  background: linear-gradient(105deg, transparent 38%, rgb(255 255 255 / .38) 50%, transparent 62%) no-repeat; background-size: 260% 100%; background-position: 130% 0; transition: background-position .9s var(--ease); }
+@media (hover: hover) and (pointer: fine) { .btn:not(.btn-obrys):hover::before { background-position: -30% 0; } }
+
+/* světlo pod kurzorem na tmavých kartách */
+.svetlo-karta { isolation: isolate; position: relative; }
+.svetlo-karta::after { content: ''; position: absolute; inset: 0; z-index: -1; border-radius: inherit; pointer-events: none; opacity: 0; transition: opacity .35s;
+  background: radial-gradient(28rem circle at var(--mx, 50%) var(--my, 50%), rgb(244 101 39 / .13), transparent 45%); }
+.svetlo-karta:hover::after { opacity: 1; }
+.balicek-top.svetlo-karta::after { background: radial-gradient(26rem circle at var(--mx, 50%) var(--my, 50%), rgb(255 255 255 / .22), transparent 45%); }
+
+/* čísla na tmavé ploše lehce září */
+.po-cislo, .karta-cislo, .balicek:not(.balicek-top) .balicek-cena span, .chip strong { text-shadow: 0 0 42px rgb(244 101 39 / .35); }
+
+/* úvod: vrstvy scény se nepatrně pohnou s myší */
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .scena > .vrstva-1, .scena > .vrstva-2, .scena > .vrstva-3, .scena > .vrstva-4, .scena > .vrstva-5 { transition: transform .9s cubic-bezier(.2, .7, .2, 1); }
+  .scena > .vrstva-1 { transform: translate3d(calc(var(--px, 0) * -6px), calc(var(--py, 0) * -5px), 0); }
+  .scena > .vrstva-2 { transform: translate3d(calc(var(--px, 0) * 14px), calc(var(--py, 0) * 10px), 0); }
+  .scena > .vrstva-3 { transform: translate3d(calc(var(--px, 0) * 10px), calc(var(--py, 0) * 8px), 0); }
+  .scena > .vrstva-4 { transform: translate3d(calc(var(--px, 0) * 20px), calc(var(--py, 0) * 14px), 0); }
+  .scena > .vrstva-5 { transform: translate3d(calc(var(--px, 0) * 17px), calc(var(--py, 0) * 12px), 0); }
+  .hero-svetlo { transition: transform 1.4s cubic-bezier(.2, .7, .2, 1); transform: translate3d(calc(var(--px, 0) * 40px), calc(var(--py, 0) * 30px), 0); }
+}
+
+/* střih: nadpisy a fotky se při scrollu odkryjí jako přechod ve videu */
+@media (prefers-reduced-motion: no-preference) {
+  .js .odkryt { clip-path: inset(0 -.2em 100% -.2em); transform: translateY(.45em); transition: clip-path 1.05s var(--ease), transform 1.05s var(--ease); }
+  .js .odkryt.je-videt { clip-path: inset(-.4em -.2em -.35em -.2em); transform: none; }
+  .js .stih { clip-path: inset(9% 7% 9% 7% round 20px); transform: scale(.985); transition: clip-path 1.2s var(--ease), transform 1.2s var(--ease); }
+  .js .stih.je-videt { clip-path: inset(-120px -120px -120px -120px round 0); transform: none; }
+  .js .stih > img, .js .stih > .reel-poster, .js .stih > .yt-nahled, .js img.stih { transition: transform 1.6s var(--ease); }
+  .js .stih:not(.je-videt) > img, .js .stih:not(.je-videt) > .reel-poster, .js .stih:not(.je-videt) > .yt-nahled { transform: scale(1.12); }
+}
+
+/* pás reels se rozjede, až když je celý vidět */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) and (min-width: 64.01rem) {
+    .pas { animation-range: cover 22% cover 92%; }
+  }
+}
+
+/* znak v patičce vyjede při doscrollování */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .paticka-znak img { animation: znak linear both; animation-timeline: view(); animation-range: entry 0% cover 45%; }
+    @keyframes znak { from { opacity: .1; transform: translateY(35%) scale(.96); } to { opacity: .9; transform: none; } }
+  }
 }
 
 /* ---------- reveal ---------- */
