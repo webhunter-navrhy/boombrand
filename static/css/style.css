@@ -538,7 +538,7 @@ button { font: inherit; color: inherit; }
 /* ---------- podstránky ---------- */
 .sub-hero { padding: calc(var(--header-h) + clamp(2rem, 5vw, 4.5rem)) 0 clamp(3.5rem, 7vw, 6rem); overflow-x: clip; }
 .drobky { color: var(--muted); margin-bottom: 1.75rem; }
-.drobky a { color: var(--text-dim); text-decoration: none; display: inline-block; padding: .5rem .3rem; margin-inline: -.3rem; }
+.drobky a { color: var(--text-dim); text-decoration: none; display: inline-block; padding: .5rem .6rem; margin-inline: -.6rem; }
 .drobky a:hover { color: var(--orange); }
 .sub-hero-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 2.5rem var(--gutter); align-items: center; }
 .sub-hero-txt { grid-column: 1 / span 7; display: grid; gap: 1.6rem; }
