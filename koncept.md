@@ -71,3 +71,13 @@ Podstránky se stejnými URL: /osobni-znacka/, /firemni-znacka/, /sprava-socialn
 - **Řemeslo:** filmové zrno jen na tmavých sekcích úvodu, metody a reels (koncept filmu a natáčení, ne celá stránka, ne fixed), jemné oranžové světlo za scénou a ve výsledcích, hover na kartách studií a reels, průběh scrollu v hlavičce.
 - Počty zhlédnutí u jednotlivých reels na webu klienta nejsou, proto u videí jen jméno, role a délka (nic nevymýšlíme).
 - Zrno: zakázaný vzor ve výchozím stavu, tady odůvodněný konceptem filmu (lokálně, opacity .07, bez position: fixed).
+
+---
+
+## v3 (19. 10. 2026, po souhlasu klienta: konverze + obsah celého webu + GDPR)
+- Koncept Střižna beze změny. Přibyla obsahová signature: **ceník tří balíčků** (prostřední oranžový „Doporučujeme“) se „Za co ručíme“ a **recenze z Googlu** jako papírová sekce (doslovně, se zdrojem).
+- Skladba úvodu: hero (+ hvězdy 5,0) → loga klientů → proč → metoda (10 kroků) → výsledky → odlišujeme → reels → recenze → proces + ceník → Vojta → služby (rejstřík) + blog → FAQ → kontakt s „Co si z hovoru odnesete“.
+- Nové šablony: `_sluzba.html` pro 9 landingů z `_data/sluzby.json`, `_clanek.html` + `blog.html` (filtr témat), `formular.html` (VSL, minimální hlavička), `tipy.html`, `sluzby.html`, `ochrana-osobnich-udaju.html`.
+- Karty článků: typografická obálka jako „klip“ (téma, délka čtení, pás průběhu) – fotky z jeho blogu jsou zčásti AI s nesmyslným textem.
+- Písmo: Syne + Inter (Plex Mono pryč, `.tc` = Inter s tabulkovými číslicemi).
+- Review 19. 10.: 7/10 po 3 kolech; zbylá výtka „zjednodušit hero na jednu fotku“ vědomě neprovedena – klient odsouhlasil tenhle úvod. Případně nabídnout jako variantu.

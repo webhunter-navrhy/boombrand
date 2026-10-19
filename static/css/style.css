@@ -575,14 +575,15 @@ button { font: inherit; color: inherit; }
 .sub-hero-txt .hero-hodnoceni { margin-top: -.4rem; }
 
 /* důvěřují nám: loga + jména */
-.hero-klienti { align-items: center; }
+.hero-klienti { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: .9rem 2.5rem; }
+.hero-klienti-k { white-space: nowrap; }
 .hero-loga { display: flex; flex-wrap: wrap; align-items: center; gap: .9rem clamp(1.4rem, 3vw, 2.6rem); }
 .hero-loga li { display: flex; align-items: center; }
 .logo-klient { width: auto; height: clamp(1.35rem, 1rem + 1vw, 2rem); max-width: 7.5rem; object-fit: contain; opacity: .82; }
 .hero-loga li:nth-child(1) .logo-klient { height: clamp(1rem, .8rem + .6vw, 1.35rem); }
 .hero-loga li:nth-child(3) .logo-klient, .hero-loga li:nth-child(2) .logo-klient { height: clamp(1.8rem, 1.4rem + 1.2vw, 2.6rem); }
 .hero-jmeno { font-family: var(--f-d); font-weight: 600; font-size: clamp(.95rem, .85rem + .35vw, 1.15rem); letter-spacing: -.015em; color: rgb(255 255 255 / .7); white-space: nowrap; }
-.hero-media { display: inline-flex; align-items: center; gap: .9rem; margin-left: auto; font-size: .8125rem; color: var(--muted); }
+.hero-media { display: inline-flex; align-items: center; gap: .9rem; font-size: .8125rem; color: var(--muted); white-space: nowrap; }
 .logo-cnn { height: 1.9rem; width: auto; opacity: .85; }
 
 /* hlavička: služby ve dvou sloupcích, zjednodušená hlavička na /formular */
@@ -885,7 +886,8 @@ button { font: inherit; color: inherit; }
 
 @media (max-width: 64rem) {
   .nav-panel-sluzby { min-width: 0; }
-  .hero-media { margin-left: 0; }
+  .hero-klienti { grid-template-columns: 1fr; }
+  .hero-media { justify-self: start; }
   .balicky { grid-template-columns: 1fr; max-width: 34rem; }
   .cenik-v-cene, .zaruka { grid-column: 1 / -1; }
   .recenze-mriz { columns: 2 16rem; }

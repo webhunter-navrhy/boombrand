@@ -520,13 +520,13 @@
   }
  ],
  "chybi": [
-  "adresa provozovny / studia (na webu chybí, v návrhu jen „Brno“)",
-  "logo v křivkách (SVG) – wordmark jsme převedli z písma Syne 800 podle webu",
-  "loga klientů (T-Mobile, Sirius Finance…) se souhlasem – v návrhu jen názvy textem",
-  "fotka Zlatky Otavové (case study 02 je zatím bez fotky)",
-  "víc fotek z natáčení (zákulisí, technika, tým) a krátké ukázky reels v nejvyšší kvalitě",
-  "souhlas klientů se zveřejněním videí (na současném webu už jsou)",
-  "ostrý cíl formuláře (v návrhu ukázkový režim)"
+  "PDF „20 AI triků“ (soubor nebo odkaz) – formulář na /tipy zatím jen sbírá zájemce a PDF posíláte ručně",
+  "kontrola textu Zásad ochrany osobních údajů (doby uložení, používáte nástroj na rozesílku tipů?)",
+  "jsou ceny 35/50/65 tis. s DPH, nebo bez? (firma podle ARES nemá DIČ)",
+  "souhlas se zveřejněním sídla v patičce (zákon ho na webu vyžaduje; je to adresa jednatele)",
+  "přístup k DNS na WebSupportu (nebo přepnutí záznamů podle SPUSTENI.md)",
+  "fotka Zlatky Otavové a případně vlastní fotky k článkům blogu",
+  "smlouva o zpracování osobních údajů s WebHunterem (formuláře jdou přes náš backend)"
  ],
  "popis_webu": "Metodou BrandFormance™ stavíme majitelům firem osobní značku, která přivádí klienty i tehdy, když neprodáváte. Od klienta stačí 2–3 hodiny měsíčně.",
  "mesto": "Brno (natáčí osobně v Brně a okolí, online celá ČR)",
