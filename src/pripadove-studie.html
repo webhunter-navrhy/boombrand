@@ -2,6 +2,9 @@
 {% set titulek = 'Případové studie – výsledky klientů BoomBrand' %}
 {% set popis = 'Výsledky klientů BoomBrand: 60 mil. Kč v portfoliu makléřky za 3 měsíce, 20M+ zhlédnutí jednoho videa, měsíc obsahu z jednoho natáčecího dne.' %}
 {% set cesta = 'pripadove-studie/' %}
+{% block head %}
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"BoomBrand","item":{{ site.url|tojson }}},{"@type":"ListItem","position":2,"name":"Případové studie","item":{{ (site.url ~ cesta)|tojson }}}]}</script>
+{% endblock %}
 {% block body_class %}podstranka{% endblock %}
 {% block obsah %}
 <section class="sekce vysledky sub-studie" aria-labelledby="ps-h">
@@ -16,5 +19,6 @@
   </div>
 </section>
 {% include "_reels.html" %}
+{% include "_recenze.html" %}
 {% include "_kontakt.html" %}
 {% endblock %}

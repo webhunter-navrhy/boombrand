@@ -137,6 +137,21 @@
   </div>
 </section>
 
+{# ================= ODLIŠUJEME ================= #}
+<section class="sekce odlisujeme papir" aria-labelledby="odl-h">
+  <div class="wrap">
+    <p class="stitek">Jak se odlišujeme</p>
+    <h2 id="odl-h" class="h-velky">{{ O.odlisujeme.nadpis }}</h2>
+    <ul class="odl-body" role="list">
+      {% for b in O.odlisujeme.body %}<li data-reveal data-reveal-delay="{{ loop.index0 % 3 }}"><h3>{{ b.nazev }}</h3><p>{{ b.text }}</p></li>{% endfor %}
+    </ul>
+    <div class="odl-hlavni" data-reveal>
+      <h3>{{ O.odlisujeme.hlavni.nazev }}</h3>
+      <p>{{ O.odlisujeme.hlavni.text }}</p>
+    </div>
+  </div>
+</section>
+
 {# ================= VÝSLEDKY: Mirka před a po + karty ================= #}
 {% set M = data.studie[0] %}{% set Z = data.studie[1] %}{% set P = data.studie[2] %}
 <section class="sekce vysledky" id="vysledky" aria-labelledby="vys-h">
@@ -149,7 +164,7 @@
 
     <article class="mirka" id="studie-jungrova" aria-labelledby="mirka-h">
       <div class="mirka-reel" data-reveal>
-        <div class="reel-ram" data-reel data-src="{{ base }}video/jungova.mp4">
+        <div class="reel-ram" data-reel data-src="{{ base }}video/jungova.mp4?v=2">
           {{ img(M.foto, M.foto_alt, sizes='(min-width: 64rem) 24vw, 70vw', cls='reel-poster') }}
           <button type="button" class="reel-play" aria-label="Přehrát video: Mirka Jungrová o spolupráci">
             <span class="play-ikona" aria-hidden="true"></span><span class="tc">1:47</span>
@@ -213,21 +228,6 @@
           <a class="link-sipka karta-odkaz" href="{{ url('pripadove-studie') }}#studie-vojnar">Celá případová studie<span aria-hidden="true"> →</span></a>
         </div>
       </article>
-    </div>
-  </div>
-</section>
-
-{# ================= ODLIŠUJEME ================= #}
-<section class="sekce odlisujeme papir" aria-labelledby="odl-h">
-  <div class="wrap">
-    <p class="stitek">Jak se odlišujeme</p>
-    <h2 id="odl-h" class="h-velky">{{ O.odlisujeme.nadpis }}</h2>
-    <ul class="odl-body" role="list">
-      {% for b in O.odlisujeme.body %}<li data-reveal data-reveal-delay="{{ loop.index0 % 3 }}"><h3>{{ b.nazev }}</h3><p>{{ b.text }}</p></li>{% endfor %}
-    </ul>
-    <div class="odl-hlavni" data-reveal>
-      <h3>{{ O.odlisujeme.hlavni.nazev }}</h3>
-      <p>{{ O.odlisujeme.hlavni.text }}</p>
     </div>
   </div>
 </section>

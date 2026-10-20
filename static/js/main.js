@@ -23,7 +23,7 @@
   if ('IntersectionObserver' in window && !reduce) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
-    }, { rootMargin: '0px 0px -8% 0px' });
+    }, { rootMargin: '0px 0px 4% 0px' });
     rev.forEach(function (el) { io.observe(el); });
   } else {
     rev.forEach(function (el) { el.classList.add('is-in'); });
@@ -72,7 +72,7 @@
   if ('IntersectionObserver' in window && !reduce) {
     var odkryj = new IntersectionObserver(function (en) {
       en.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('je-videt'); odkryj.unobserve(e.target); } });
-    }, { rootMargin: '0px 0px -12% 0px' });
+    }, { rootMargin: '0px 0px 4% 0px' });
     var vUvodu = function (el) { return !!el.closest('.hero, .sub-hero, .vsl-hero, .tipy-hero, .clanek-hlava'); };
     document.querySelectorAll('.h-velky, .zakl-perex, .h2').forEach(function (el) {
       if (vUvodu(el) || el.hasAttribute('data-reveal') || el.closest('[data-reveal]')) return;
@@ -172,23 +172,45 @@
     window.addEventListener('load', spocitejPas);
   }
 
-  /* --- reels: přehrání po kliknutí, vždy jen jedno video --- */
+  /* --- reels: přehrání po kliknutí, vždy jen jedno video.
+     Kousek před obrazovkou se načte jen hlavička videa (preload=metadata), takže po kliknutí naběhne hned. --- */
   var hraje = null;
-  document.querySelectorAll('[data-reel]').forEach(function (ram) {
+  var pripravVideo = function (ram) {
+    var v = ram.querySelector('video');
+    if (v) return v;
+    v = document.createElement('video');
+    v.preload = 'metadata';
+    v.src = ram.getAttribute('data-src');
+    v.playsInline = true; v.setAttribute('playsinline', '');
+    v.poster = ram.querySelector('img').currentSrc || '';
+    v.setAttribute('aria-label', ram.querySelector('.reel-play').getAttribute('aria-label').replace('Přehrát video: ', 'Video: '));
+    ram.appendChild(v);
+    return v;
+  };
+  var nacitani = function (box) {
+    var s = document.createElement('span');
+    s.className = 'nacitani'; s.setAttribute('aria-hidden', 'true');
+    box.appendChild(s);
+    return function () { s.remove(); };
+  };
+  var reely = document.querySelectorAll('[data-reel]');
+  if ('IntersectionObserver' in window && navigator.connection && navigator.connection.saveData) {
+    /* úsporný režim dat: nic dopředu */
+  } else if ('IntersectionObserver' in window) {
+    var predem = new IntersectionObserver(function (en) {
+      en.forEach(function (e) { if (e.isIntersecting) { pripravVideo(e.target); predem.unobserve(e.target); } });
+    }, { rootMargin: '300px 100% 300px 100%' });
+    reely.forEach(function (ram) { predem.observe(ram); });
+  }
+  reely.forEach(function (ram) {
     var btn = ram.querySelector('.reel-play');
     btn.addEventListener('click', function () {
       if (hraje && hraje !== ram) { var v0 = hraje.querySelector('video'); if (v0) v0.pause(); }
-      var v = ram.querySelector('video');
-      if (!v) {
-        v = document.createElement('video');
-        v.src = ram.getAttribute('data-src');
-        v.controls = true; v.playsInline = true; v.setAttribute('playsinline', '');
-        v.poster = ram.querySelector('img').currentSrc || '';
-        v.setAttribute('aria-label', btn.getAttribute('aria-label').replace('Přehrát video: ', 'Video: '));
-        ram.appendChild(v);
-      }
+      var v = pripravVideo(ram);
+      v.controls = true; v.preload = 'auto';
       btn.hidden = true;
       hraje = ram;
+      if (v.readyState < 3) { var hotovo = nacitani(ram); v.addEventListener('playing', hotovo, { once: true }); v.addEventListener('error', hotovo, { once: true }); }
       var pr = v.play(); if (pr && pr.catch) pr.catch(function () {});
       v.focus();
     });
@@ -205,6 +227,8 @@
       f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
       f.allowFullscreen = true;
       f.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:0;z-index:4';
+      var hotovo = nacitani(box);
+      f.addEventListener('load', hotovo, { once: true });
       box.appendChild(f);
       btn.hidden = true;
       box.querySelectorAll('.monitor-rec,.monitor-roh,.hledacek-rec,.hledacek-info,.roh').forEach(function (x) { x.hidden = true; });

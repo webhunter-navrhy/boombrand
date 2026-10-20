@@ -5,7 +5,7 @@
       <p class="stitek">Video reference</p>
       <h2 id="reels-h" class="h-velky">Slyšte to přímo od klientů.</h2>
     </div>
-    <p class="perex">Krátká videa od lidí, se kterými dlouhodobě spolupracujeme. Mezi nimi záběry ze zákulisí natáčení. Klikněte na video pro přehrání.</p>
+    <p class="perex">Krátká videa od lidí, se kterými dlouhodobě spolupracujeme. Na konci pásu záběry ze zákulisí natáčení. Klikněte na video pro přehrání.</p>
   </div>
   <div class="pas-obal" data-pas>
     <ul class="pas" role="list">
@@ -15,7 +15,7 @@
         ('yt/ig8-buC5ovQ.jpg', 'Podcast TalkToWin, epizoda s Josefem Hoangem', 'Podcast TalkToWin', 'z169')] %}
       {% for v in data.videa %}
       <li class="pas-1 pas-reel">
-        <div class="reel-ram" data-reel data-src="{{ base }}{{ v.video }}">
+        <div class="reel-ram" data-reel data-src="{{ base }}{{ v.video }}?v=2">
           {{ img(v.poster, '', sizes='(min-width: 64rem) 19rem, 64vw', cls='reel-poster') }}
           <button type="button" class="reel-play" aria-label="Přehrát video: {{ v.jmeno }}, {{ v.role }}">
             <span class="play-ikona" aria-hidden="true"></span><span class="tc">{{ v.delka }}</span>
@@ -24,12 +24,12 @@
         <p class="reel-jmeno">{{ v.jmeno }}</p>
         <p class="reel-role">{{ v.role }}</p>
       </li>
-      {% if loop.index0 < zakulisi|length %}{% set z = zakulisi[loop.index0] %}
+      {% endfor %}
+      {% for z in zakulisi %}
       <li class="pas-1 pas-foto pas-{{ z[3] }}" aria-hidden="true">
         <div class="pas-foto-ram">{{ img(z[0], '', sizes='(min-width: 64rem) 34rem, 80vw', cls='') }}</div>
         <p class="tc pas-foto-k">{{ z[2] }}</p>
       </li>
-      {% endif %}
       {% endfor %}
     </ul>
   </div>

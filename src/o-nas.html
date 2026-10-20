@@ -2,6 +2,10 @@
 {% set titulek = 'O nás – Vojtěch Bartoň, zakladatel BoomBrand' %}
 {% set popis = 'Vojtěch Bartoň, zakladatel a CEO BoomBrand: osobní a firemní značky pro majitele firem, podcast TalkToWin, rozhovor na CNN Prima News.' %}
 {% set cesta = 'o-nas/' %}
+{% block head %}
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfilePage","url":{{ (site.url ~ cesta)|tojson }},"mainEntity":{"@type":"Person","@id":{{ (site.url ~ 'o-nas/#vojtech')|tojson }},"name":"Vojtěch Bartoň","jobTitle":"zakladatel a CEO","worksFor":{"@id":{{ (site.url ~ '#firma')|tojson }}},"url":{{ (site.url ~ cesta)|tojson }},"sameAs":["https://www.instagram.com/vojta__barton/","https://linkedin.com/in/vojtabarton","https://www.facebook.com/vojtechbarton.marketing/"]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"BoomBrand","item":{{ site.url|tojson }}},{"@type":"ListItem","position":2,"name":"O nás","item":{{ (site.url ~ cesta)|tojson }}}]}</script>
+{% endblock %}
 {% block body_class %}podstranka{% endblock %}
 {% block obsah %}
 <section class="sub-hero sub-onas" aria-labelledby="on-h">
