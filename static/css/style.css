@@ -407,7 +407,9 @@ button { font: inherit; color: inherit; }
 .reels-hlava { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 1.5rem var(--gutter); align-items: end; margin-bottom: clamp(2.5rem, 5vw, 4rem); }
 .reels-hlava > div { grid-column: 1 / span 7; }
 .reels-hlava .perex { grid-column: 8 / -1; }
-.pas-obal { overflow-x: clip; }
+.pas-obal { overflow-x: auto; overflow-y: hidden; scroll-snap-type: x proximity; overscroll-behavior-x: contain; scrollbar-width: none; scroll-padding-inline: var(--gutter); padding-block: 1rem 3rem; margin-block: -1rem -3rem; }
+.pas-obal::-webkit-scrollbar { display: none; }
+.pas > * { scroll-snap-align: start; }
 .pas { display: flex; align-items: center; gap: clamp(1rem, 1.6vw, 1.5rem); width: max-content; padding-inline: var(--gutter); }
 .pas-reel { width: clamp(15rem, 19vw, 19rem); }
 .reel-ram { position: relative; aspect-ratio: 9 / 16; border-radius: 12px; overflow: hidden; background: var(--ink-3); box-shadow: 0 0 0 1px rgb(255 255 255 / .08); }
@@ -430,19 +432,6 @@ button { font: inherit; color: inherit; }
 .pas-z34 .pas-foto-ram { aspect-ratio: 3 / 4; } .pas-z43 .pas-foto-ram { aspect-ratio: 4 / 3; } .pas-z169 .pas-foto-ram { aspect-ratio: 16 / 9; }
 .pas-z34 .pas-foto-ram img, .pas-z43 .pas-foto-ram img, .pas-z169 .pas-foto-ram img { width: 100%; }
 .pas-foto-k { margin-top: .7rem; color: var(--muted); }
-.pas-foto:nth-child(4n+2) { margin-top: -6rem; }
-.pas-foto:nth-child(4n) { margin-top: 7rem; }
-@supports (animation-timeline: view()) {
-  @media (prefers-reduced-motion: no-preference) and (min-width: 64.01rem) {
-    .pas { animation: pas-do-strany linear both; animation-timeline: view(); animation-range: cover 0% cover 100%; }
-    @keyframes pas-do-strany { from { transform: translateX(0); } to { transform: translateX(calc(-1 * var(--posun, 0px))); } }
-  }
-}
-@supports not (animation-timeline: view()) {
-  .pas-obal { overflow-x: auto; scroll-snap-type: x proximity; scrollbar-width: none; }
-  .pas > * { scroll-snap-align: start; }
-}
-
 /* ---------- Vojta: editorial ---------- */
 .zakladatel { overflow-x: clip; }
 .zakl-jmeno { position: relative; z-index: 2; font-family: var(--f-d); font-weight: 800; letter-spacing: -.055em; line-height: .88; font-size: min(calc((100vw - 2 * var(--gutter)) / 11.3), 11rem); white-space: nowrap; color: var(--ink); }
@@ -1185,12 +1174,6 @@ button { font: inherit; color: inherit; }
   .js .stih:not(.je-videt) > img, .js .stih:not(.je-videt) > .reel-poster, .js .stih:not(.je-videt) > .yt-nahled { transform: scale(1.12); }
 }
 
-/* pás reels se rozjede, až když je celý vidět */
-@supports (animation-timeline: view()) {
-  @media (prefers-reduced-motion: no-preference) and (min-width: 64.01rem) {
-    .pas { animation-range: cover 22% cover 92%; }
-  }
-}
 
 /* znak v patičce vyjede při doscrollování */
 @supports (animation-timeline: view()) {
@@ -1349,4 +1332,41 @@ button { font: inherit; color: inherit; }
   .paticka-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2rem 1rem; }
   .paticka ul a { font-size: .875rem; }
   .zakl-foto img { aspect-ratio: 4 / 5; }
+}
+
+/* ---------- 20. 10.: pás klientů jako panel buněk, šipky u pásu reels ---------- */
+.hero-klienti { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 1fr); gap: 0 clamp(.75rem, 1.5vw, 1.25rem); padding-block: clamp(1.25rem, 2vw, 1.75rem) clamp(1.5rem, 2.5vw, 2rem); }
+.hk-skupina { display: grid; grid-template-rows: auto 1fr; min-width: 0; }
+.hero-klienti-k { margin: 0 0 .8rem; font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.hk-panel, .hero-klienti ul.hk-panel { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+.hero-loga.hk-panel { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.hk-panel > li, .hk-bunka { display: grid; place-items: center; height: clamp(4.25rem, 5.5vw, 5.25rem); padding: .75rem 1rem; background: var(--ink); transition: background .3s var(--ease); }
+.hk-panel > li:hover, .hk-bunka:hover { background: var(--ink-3); }
+.hero-loga .logo-klient { max-width: 100%; opacity: .78; }
+.hero-loga li:nth-child(1) .logo-klient { height: clamp(1.1rem, .8rem + .55vw, 1.5rem); }
+.hero-loga li:nth-child(2) .logo-klient, .hero-loga li:nth-child(3) .logo-klient { height: clamp(2.2rem, 1.6rem + 1vw, 2.9rem); }
+.hero-loga li:nth-child(4) .logo-klient { height: clamp(1.15rem, .85rem + .6vw, 1.6rem); }
+.hk-bunka .logo-cnn { height: clamp(1.7rem, 1.3rem + .6vw, 2.1rem); opacity: .85; }
+.hero-media { display: none; }
+.hero-jmena { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: .4rem 0; margin-top: 1rem; }
+.hero-jmena .hero-jmeno + .hero-jmeno::before { content: '·'; margin-inline: .75rem; color: rgb(255 255 255 / .28); }
+
+.reels-hlava > .reels-prava { grid-column: 8 / -1; display: grid; gap: 1.25rem; align-content: end; }
+.reels-prava .perex { grid-column: auto; }
+.pas-sipky { display: flex; gap: .6rem; }
+.pas-sipky[hidden] { display: none; }
+.pas-sipka { display: grid; place-items: center; width: 3rem; height: 3rem; border-radius: 50%; border: 1px solid rgb(255 255 255 / .2); background: transparent; color: #fff; font-size: 1.15rem; cursor: pointer; transition: background .25s var(--ease), border-color .25s, opacity .25s; }
+.pas-sipka:hover:not(:disabled) { background: var(--orange); border-color: var(--orange); color: var(--ink); }
+.pas-sipka:disabled { opacity: .3; cursor: default; }
+
+@media (max-width: 64rem) {
+  .reels-hlava > .reels-prava { grid-column: 1 / -1; }
+  .pas-sipky { display: none; }
+}
+@media (max-width: 47.99rem) {
+  .hero-klienti { grid-template-columns: minmax(0, 1fr); gap: 1.25rem; }
+  .hero-loga.hk-panel { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hk-panel > li, .hk-bunka { height: 4.25rem; }
+  .hero-jmena { margin-top: 0; gap: .35rem 1.1rem; }
+  .hero-jmena .hero-jmeno + .hero-jmeno::before { content: none; }
 }

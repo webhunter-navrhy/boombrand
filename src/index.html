@@ -52,16 +52,19 @@
   </div>
 
   <div class="wrap hero-klienti">
-    <p class="hero-klienti-k">Důvěřují nám</p>
-    <div class="hero-klienti-rady">
-      <ul class="hero-loga" role="list">
+    <div class="hk-skupina">
+      <p class="hero-klienti-k" id="hk-duveruji">Důvěřují nám</p>
+      <ul class="hero-loga hk-panel" role="list" aria-labelledby="hk-duveruji">
         {% for l in O.loga %}<li>{{ img(l.soubor, l.nazev, sizes='8rem', cls='logo-klient', eager=False) }}</li>{% endfor %}
       </ul>
-      <ul class="hero-jmena" role="list">
-        {% for j in O.duveruji %}<li class="hero-jmeno">{{ j }}</li>{% endfor %}
-      </ul>
     </div>
-    <p class="hero-media"><span>Vystoupili jsme v</span>{{ img('loga/cnn-prima-bila.png', 'CNN Prima News', sizes='7rem', cls='logo-cnn', eager=False) }}</p>
+    <div class="hk-skupina hk-media">
+      <p class="hero-klienti-k">Vystoupili jsme v</p>
+      <div class="hk-panel"><div class="hk-bunka">{{ img('loga/cnn-prima-bila.png', 'CNN Prima News', sizes='7rem', cls='logo-cnn', eager=False) }}</div></div>
+    </div>
+    <ul class="hero-jmena" role="list" aria-label="Další klienti a spolupráce">
+      {% for j in O.duveruji %}<li class="hero-jmeno">{{ j }}</li>{% endfor %}
+    </ul>
   </div>
 </section>
 

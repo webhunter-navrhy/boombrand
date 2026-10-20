@@ -162,14 +162,26 @@
     if (document.readyState === 'complete') poNacteni(); else window.addEventListener('load', poNacteni, { once: true });
   }
 
-  /* --- pás reels: o kolik se má posunout do strany (spočítá se jen při načtení a změně velikosti) --- */
+  /* --- pás reels: normální vodorovné posouvání (swipe, trackpad) + šipky na PC --- */
   var pasObal = document.querySelector('[data-pas]');
-  if (pasObal) {
-    var pas = pasObal.querySelector('.pas');
-    var spocitejPas = function () { pas.style.setProperty('--posun', Math.max(0, pas.scrollWidth - pasObal.clientWidth) + 'px'); };
-    spocitejPas();
-    window.addEventListener('resize', spocitejPas, { passive: true });
-    window.addEventListener('load', spocitejPas);
+  var sipky = document.querySelector('.pas-sipky');
+  if (pasObal && sipky) {
+    var tl = sipky.querySelectorAll('[data-pas-sipka]');
+    var stavSipek = function () {
+      var max = pasObal.scrollWidth - pasObal.clientWidth;
+      sipky.hidden = max < 8;
+      tl[0].disabled = pasObal.scrollLeft < 8;
+      tl[1].disabled = pasObal.scrollLeft > max - 8;
+    };
+    tl.forEach(function (b) {
+      b.addEventListener('click', function () {
+        pasObal.scrollBy({ left: +b.getAttribute('data-pas-sipka') * pasObal.clientWidth * 0.7, behavior: reduce ? 'auto' : 'smooth' });
+      });
+    });
+    pasObal.addEventListener('scroll', stavSipek, { passive: true });
+    window.addEventListener('resize', stavSipek, { passive: true });
+    window.addEventListener('load', stavSipek);
+    stavSipek();
   }
 
   /* --- reels: přehrání po kliknutí, vždy jen jedno video.
